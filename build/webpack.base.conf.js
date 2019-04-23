@@ -58,7 +58,16 @@ module.exports = {
           options: { sourceMap: true }
         }
       ]
-    }, {
+    },
+    {
+      test: /\.pug$/,
+      loader: 'pug-loader',
+      options: {
+          pretty: true
+      }
+    },
+    
+    {
       test: /\.css$/,
       use: [
         'style-loader',
@@ -86,7 +95,7 @@ module.exports = {
     // Copy HtmlWebpackPlugin and change index.html for another html page
     new HtmlWebpackPlugin({
       hash: false,
-      template: `${PATHS.src}/index.html`,
+      template: `${PATHS.src}/index.pug`,
       filename: './index.html'
     }),
     new CopyWebpackPlugin([

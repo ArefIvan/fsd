@@ -43,7 +43,18 @@ module.exports = {
       options: {
         name: `${PATHS.assets}img/[name].[ext]`
       }
-    }, {
+    },
+ 
+    {
+      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      loader: 'url-loader',
+      options: {
+        // publicPath:"../fonts",
+        name: `${PATHS.assets}fonts/[name].[ext]`,
+        limit: 1000
+      }
+    },
+    {
       test: /\.scss$/,
       use: [
         'style-loader',

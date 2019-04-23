@@ -1,3 +1,10 @@
 .wrapper {
   display: flex;
 }
+@font-face {
+	font-family: 'Quicksand-Bold';
+	src: url('../fonts/Quicksand-Bold/Quicksand-Bold.eot');
+  
+	font-weight: bold;
+	font-style: normal;
+}

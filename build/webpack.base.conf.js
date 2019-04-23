@@ -7,6 +7,7 @@ const { VueLoaderPlugin } = require('vue-loader')
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
+  build: path.join(__dirname,'../build'),
   assets: 'assets/'
 }
 
@@ -52,7 +53,7 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
+          options: { sourceMap: true, config: { path: `${PATHS.build}/postcss.config.js` } }
         }, {
           loader: 'sass-loader',
           options: { sourceMap: true }
@@ -77,7 +78,7 @@ module.exports = {
           options: { sourceMap: true }
         }, {
           loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: `${PATHS.src}/js/postcss.config.js` } }
+          options: { sourceMap: true, config: { path: `${PATHS.build}/postcss.config.js` } }
         }
       ]
     }]

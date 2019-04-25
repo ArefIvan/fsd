@@ -1,7 +1,24 @@
 .button{
-    color :$primary-color;
+    
     font-family: $mainFont;
     font-weight: bold;
-
-    font-size: 20px;
-}
+    font-size :1em;
+    width: 320px;
+    height: 42px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 2em;
+    border-color: linear-gradient(top ,$purple-color, #8ba3f9 );
+    position: relative;
+    text-align: center;
+//background: linear-gradient(top ,$purple-color, #8ba3f9 ) ;
+    // 8ba3f9
+   
+    
+      &__title{  
+        font-size: 0.9em;                 
+        text-transform: uppercase;
+        color:white;
+      }
+    
+    }

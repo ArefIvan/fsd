@@ -1,24 +1,49 @@
-.button{
-    
+$fontColor:white;
+
+
+.button{  
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
     width: 320px;
     height: 42px;
-    border-width: 2px;
-    border-style: solid;
-    border-radius: 2em;
-    border-color: linear-gradient(top ,$purple-color, #8ba3f9 );
+    line-height: 42px;
     position: relative;
     text-align: center;
-//background: linear-gradient(top ,$purple-color, #8ba3f9 ) ;
-    // 8ba3f9
+    background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
+      &:before{
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 2px;
+            background-color:$fontColor;
+            right:8px;
+            top:50%;
+        }
+       &:after{
+            content:"";
+            width: 12px;
+            height: 12px;
+            border-width:0 2px 2px 0;
+            border-style:solid;
+            border-color:$fontColor;
+            background:transparent;
+            position: absolute;
+            right: 8px;
+            transform:rotate(-45deg);
+           
+       } 
    
     
       &__title{  
         font-size: 0.9em;                 
         text-transform: uppercase;
-        color:white;
+        color:$fontColor;
+
+      }
+      &__border{
+
+          position: absolute;
       }
     
     }

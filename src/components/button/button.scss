@@ -6,37 +6,40 @@ $fontColor:white;
     font-weight: bold;
     font-size :1em;
     width: 320px;
-    height: 42px;
-    line-height: 42px;
+    height: 44px;
+    line-height: 44px;
     position: relative;
     text-align: center;
+    border:0px solid transparent;
+    border-radius: 22px;
     background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
       &:before{
             content: "";
             position: absolute;
-            width: 24px;
+            width: 12px;
             height: 2px;
             background-color:$fontColor;
-            right:8px;
+            right:15px;
             top:50%;
         }
        &:after{
             content:"";
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-width:0 2px 2px 0;
             border-style:solid;
             border-color:$fontColor;
             background:transparent;
             position: absolute;
-            right: 8px;
+            right: 14px;
+            top:calc(50%-4px);
             transform:rotate(-45deg);
            
        } 
    
     
       &__title{  
-        font-size: 0.9em;                 
+        font-size: 12px;                 
         text-transform: uppercase;
         color:$fontColor;
 

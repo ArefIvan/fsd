@@ -5,15 +5,21 @@ $fontColor:white;
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
-    width: 320px;
+    width: 99px;
     height: 44px;
     line-height: 44px;
     position: relative;
     text-align: center;
     border:0px solid transparent;
     border-radius: 22px;
-    background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
-      &:before{
+    font-size: 12px;                 
+    text-transform: uppercase;
+    
+
+      &--default{
+        background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
+        color:$fontColor;
+        &:before{
             content: "";
             position: absolute;
             width: 12px;
@@ -37,16 +43,27 @@ $fontColor:white;
            
        } 
    
-    
-      &__title{  
-        font-size: 12px;                 
-        text-transform: uppercase;
-        color:$fontColor;
 
       }
-      &__border{
+      &--border{
+          background: $backgroundColor;
+          color:$purple-color;
+          height: 40px;
+          &::before{
+              content:"";
+              position: absolute;
+              z-index: -1;
+              height: calc(100%+4px);
+              width:calc(100%+4px);
+              border:0px solid transparent;
+              border-radius: 22px;
+              left:-2px;
+              top:-2px;
+              background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
 
-          position: absolute;
+          }
+
+         
       }
     
     }

@@ -5,7 +5,7 @@ $fontColor:white;
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
-    width: 99px;
+    width: 320px;
     height: 44px;
     line-height: 44px;
     position: relative;
@@ -14,8 +14,17 @@ $fontColor:white;
     border-radius: 22px;
     font-size: 12px;                 
     text-transform: uppercase;
+   
     
+        i{
+            
+            vertical-align: middle;
+            text-align: end;
 
+        }
+        i::after{
+            content: "arrow_forward"
+        }
       &--default{
         background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
         color:$fontColor;

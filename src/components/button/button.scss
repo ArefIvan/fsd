@@ -1,78 +1,53 @@
 $fontColor:white;
+$buttonHeight:40px;
+$buttonBorder:2px;
 
-
-.button{  
+// Default
+.button{ 
+    display: block; 
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
-    width: 320px;
-    height: 44px;
-    line-height: 44px;
+    width:320px ;
+    height: $buttonHeight;
+    line-height: $buttonHeight;
     position: relative;
     text-align: center;
     border:0px solid transparent;
-    border-radius: 22px;
+    border-radius:$buttonHeight/2;
     font-size: 12px;                 
     text-transform: uppercase;
-   
+    color:$fontColor;
     
+      &::before{
+          content:"";
+          position: absolute;
+          z-index: -1;
+          height: $buttonHeight + $buttonBorder*2;
+          width:calc(100% + #{$buttonBorder}*2);
+          border:0px solid transparent;
+          border-radius: ($buttonHeight + $buttonBorder*2)/2;
+          left:-($buttonBorder);
+          top:-($buttonBorder);
+          background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
+
+      }
+//  Modification  
+      &--arrow{
         i{
-            
+            position: absolute;
             vertical-align: middle;
             text-align: end;
-
+            right: ($buttonHeight - 24px) /2; //8px;
+            top:calc(50%-12px);        
+              &::after{
+                  content: "arrow_forward"
+              }
         }
-        i::after{
-            content: "arrow_forward"
-        }
-      &--default{
-        background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
-        color:$fontColor;
-        &:before{
-            content: "";
-            position: absolute;
-            width: 12px;
-            height: 2px;
-            background-color:$fontColor;
-            right:15px;
-            top:50%;
-        }
-       &:after{
-            content:"";
-            width: 8px;
-            height: 8px;
-            border-width:0 2px 2px 0;
-            border-style:solid;
-            border-color:$fontColor;
-            background:transparent;
-            position: absolute;
-            right: 14px;
-            top:calc(50%-4px);
-            transform:rotate(-45deg);
-           
-       } 
-   
-
       }
-      &--border{
+           &--border{
           background: $backgroundColor;
           color:$purple-color;
-          height: 40px;
-          &::before{
-              content:"";
-              position: absolute;
-              z-index: -1;
-              height: calc(100%+4px);
-              width:calc(100%+4px);
-              border:0px solid transparent;
-              border-radius: 22px;
-              left:-2px;
-              top:-2px;
-              background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
-
-          }
-
-         
-      }
+        }
     
     }

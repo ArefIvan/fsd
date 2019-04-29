@@ -1,11 +1,9 @@
 .textfield{
     display: inline-block;
     line-height: 42px;
-    text-align: left;
-  
+    text-align: left;  
     &--subscrtext{
-         position: relative;
-   
+         position: relative;   
         i{
             position: absolute;
             top:calc(50%-12px);
@@ -14,7 +12,6 @@
                 &:after{
                     content:'arrow_forward';
             }   
-
         }
     }
     &--dropdown{
@@ -34,8 +31,6 @@
         }
     }
     
-
-
     &__text{            
             width: 247px;
             height: 42px;

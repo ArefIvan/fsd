@@ -1,9 +1,9 @@
 $fontColor:white;
-
 $buttonHeight:40px;
 $buttonBorder:2px;
 .button{  
-
+    display: block;
+    width: 140px;
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
@@ -48,15 +48,5 @@ $buttonBorder:2px;
            &--border{
           background: $backgroundColor;
           color:$purple-color;
-        }
-
-           
-      
-       
-   
-
-
-     
-
-    
+        }  
     }

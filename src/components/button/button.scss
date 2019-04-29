@@ -1,10 +1,9 @@
 $fontColor:white;
+
 $buttonHeight:40px;
 $buttonBorder:2px;
+.button{  
 
-// Default
-.button{ 
-    display: block; 
     font-family: $mainFont;
     font-weight: bold;
     font-size :1em;
@@ -16,8 +15,8 @@ $buttonBorder:2px;
     border:0px solid transparent;
     border-radius:$buttonHeight/2;
     font-size: 12px;                 
-    text-transform: uppercase;
-    color:$fontColor;
+    text-transform: uppercase; 
+
     
       &::before{
           content:"";
@@ -35,6 +34,7 @@ $buttonBorder:2px;
 //  Modification  
       &--arrow{
         i{
+
             position: absolute;
             vertical-align: middle;
             text-align: end;
@@ -49,5 +49,14 @@ $buttonBorder:2px;
           background: $backgroundColor;
           color:$purple-color;
         }
+
+           
+      
+       
+   
+
+
+     
+
     
     }

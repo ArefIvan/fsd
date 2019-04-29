@@ -1,0 +1,54 @@
+
+.field{
+    
+    height: 42px;
+    font-size: 14px;
+    border: 1px solid #{$primary-color--25};
+    border-radius: 4px;   
+    color: $primary-color--75;
+    font-family: $mainFont; 
+    @include  placeholder{
+        color: $primary-color--25;
+        font-family: $mainFont;        
+     };
+    &__wrapper{
+        width: 100%;
+        position: relative;        
+    }
+    &__input-text{
+        width:calc(100%-15px);
+        padding-left:15px;
+            &:hover,&:focus{
+            border: 1px solid #{$primary-color--50};
+            outline: none;   
+            @include  placeholder{
+                color: $primary-color--75;
+                font-family: $mainFont;               
+            };
+        }   
+    }
+    &__text{
+        padding-left:15px;
+        line-height: 42px;
+        text-align: left; 
+    }
+    &__icon{
+        position: absolute;
+            top:calc(50%-12px);
+            right: 10px;
+            &--arrow-right{
+                color: $purple-color;
+                &:after{
+                    content:'arrow_forward';
+            }   
+            }
+            &--down{
+                color: $primary-color--50;
+                &:after{
+                    content:'expand_more';
+            }   
+            }
+    }
+
+
+}

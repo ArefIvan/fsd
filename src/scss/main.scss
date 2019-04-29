@@ -3,13 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "../components/button/button.scss";
-// @import "../components/textFields/textfields.scss";
+ @import "../components/form/field.scss";
 //src\components\button\button.scss
 
-.test{
-  text-align: center;
-  font-family: $headersFont;
-  font-weight: bold;
-  font-size: 14px;
-}
 

@@ -1,0 +1,9 @@
+.input{
+    height: 40px;
+    border: 1px solid #{$primary-color--25};//$primary-color--25
+    border-radius: 4px;
+    padding-left: 15px;
+    color: $primary-color--25;
+    font-family: $mainFont;    
+    :-ms-input-placeholder
+}

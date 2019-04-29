@@ -1,0 +1,20 @@
+.rate{
+    &__item{
+        color: $purple-color;
+        &--star{
+            &:before{
+                content: "star"
+            }
+        }
+        &--star-half{
+            &::before{
+                content: "star_half"
+            }
+        }
+        &--star-border{
+            &::before{
+                content: "star_border"
+            }
+        }
+    }
+}

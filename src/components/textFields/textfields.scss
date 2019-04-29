@@ -1,7 +1,11 @@
 .textfield{
     display: inline-block;
+    line-height: 42px;
+    text-align: left;
+  
     &--subscrtext{
-    position: relative;
+         position: relative;
+   
         i{
             position: absolute;
             top:calc(50%-12px);
@@ -13,14 +17,32 @@
 
         }
     }
+    &--dropdown{
+        position: relative;
+        
+   
+        i{
+            position: absolute;
+            top:calc(50%-12px);
+            right: 10px;
+            color: $primary-color--50;
 
-    &__input{
+                &:after{
+                    content:'expand_more';
+            }   
+
+        }
+    }
+    
+
+
+    &__text{            
             width: 247px;
-            height: 40px;
-            border: 1px solid #{$primary-color--25};//$primary-color--25
+            height: 42px;
+            border: 1px solid #{$primary-color--25};
             border-radius: 4px;
-            padding-left: 15px;
-            color: $primary-color--25;
+            padding: 0 0 0 15px;
+            color: $primary-color--75;
             font-family: $mainFont; 
         
             @include  placeholder{
@@ -37,7 +59,7 @@
                     };
                 }
                 
-            
+       
            
          }
 }

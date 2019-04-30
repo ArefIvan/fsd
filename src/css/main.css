@@ -1,8 +1,5 @@
-.test{
-    margin:10px auto;
-    padding :20px;
-    display: flex;
-    flex-wrap: wrap;
+.wrapper{
+    max-width: 750px;
+    margin: 20px auto;
 }
-.test div{width: 320px;}
 

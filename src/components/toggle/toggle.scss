@@ -1,5 +1,6 @@
 .toggle{
     display: flex;
+
         &__wrapper{
             position: relative;
             box-sizing: border-box;
@@ -15,17 +16,20 @@
             border-radius: 50%;
             position: absolute;
             top:calc(50%-6px);
-            left: 4px;
-            
+            left: 4px;           
+        }
+        &__text{
+            font-family: $mainFont;
+            font-size: 14px;
+            color:$primary-color--75;
+            padding-left: 10px;
         }
         &__input{
             height: 0;
             width: 0;
-            position: absolute;
-           
+            position: absolute;           
             &:checked+.toggle__wrapper{
-                 border-color:$purple-color;
-                
+                 border-color:$purple-color;                
             }
             &:checked+.toggle__wrapper .toggle__icon{
                 background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;

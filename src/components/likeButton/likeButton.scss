@@ -1,18 +1,17 @@
 .like{ 
     font-family: $mainFont;
+    width: 38px;
     
     &__wrapper{
-         display: flex;
-        justify-content: space-around;
+        
         position: relative; 
         height: 18px;
-        width: 38px;
+        width: 100%;
         border: 0px solid transparent;
         border-radius: 10px;
         text-align: right;
         color:$primary-color--25;
         background-color: white;
-        
             &::before{
                 content:"";
                 position: absolute;
@@ -22,17 +21,23 @@
                 border:0px solid transparent;
                 border-radius: 10px;
                 top:-1px;
+                right: -1px;
                 background: $primary-color--25 ;
             }
     }   
     &__count{
-        margin: auto 0;
+        position: absolute;
         font-size: 10px;
+        top:calc(50%-6px);
+        right: 10px;
     }
     &__icon{
-       margin: auto 2px;
+        position: absolute;
         font-size: 10px !important;
+        top:calc(50%-5px);
+        left: 5px;
         &:after{
+
             content:"favorite_border";
             
         }

@@ -1,0 +1,19 @@
+.checkbox{
+    &__label{
+    display: flex;
+   }
+
+    &__input{
+        margin: auto 0;
+        height: 20px;
+        width: 20px;
+        // background-color: white;
+    }
+    &__title{
+        margin: auto 10px;
+        color: $primary-color--50;
+        font-family: $mainFont;
+        font-size: 14px;
+    }
+
+}

@@ -1,6 +1,6 @@
 
 // JS - ./js/index.js
-//import './js/'
+import './components/range/range'
 // SCSS
 import './scss/main.scss'
 // CSS (example)

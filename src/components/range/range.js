@@ -7,8 +7,9 @@ import $ from 'jquery';
 $(document).ready(function(){
     var ran = $(".range-slide1") 
     var ran1=$(".range-slide2")
-    range(ran1)
     range(ran)
+    // range(ran1)
+    
     function range(elem){
         
         let inputs = elem.children('.range__input'); 

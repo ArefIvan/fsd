@@ -1,7 +1,9 @@
 .range{
+    &__input-wrapper{
     position: relative;
     height: 20px;
     width: 200px;
+    }
     &__input{
         position: absolute;
         top:5px;

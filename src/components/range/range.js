@@ -11,35 +11,39 @@ $(document).ready(function(){
     range(ran)
     function range(elem){
         
-        let inputs = elem.children('.range__input');
+        let inputs = elem.children('.range__input'); 
         let bar = elem.children(".range__bar")
-        let to = inputs[0];
-        let from = inputs[1];
+        let from = inputs[0]; 
+        let to = inputs[1];
         let max = inputs[0].max;
         let min = inputs[0].min;
         
+        
         bar.css({
-            left:( ( to.value - min ) / ( (max - min) / 100 ) + 1) + "%",
-            width:( ( from.value - min ) / ( ( max - min ) / 100 ) ) - ( ( to.value - min ) / ( ( max - min ) / 100 ) )+"%",
+            left:( ( from.value - min ) / ( (max - min) / 100 ) ) + "%",
+            width:( ( to.value - min ) / ( ( max - min ) / 100 ) ) - ( ( from.value - min ) / ( ( max - min ) / 100 ) )+"%",
     })
     inputs.on('input',function(){
-        let valTo = parseInt(to.value);
         let valFrom = parseInt(from.value);
+        
+        let valTo = parseInt(to.value);
+        let percFrom= (valFrom-min)/((max-min)/100);
         let percTo = (valTo-min)/((max-min)/100);
-        let percFrom = (valFrom-min)/((max-min)/100);
         bar.css({
-            left:percTo + 1 + "%",
-            width:(percFrom - percTo) + "%",
+            left:(percFrom)?percFrom  + "%":"1%",
+            width:((percTo - percFrom)<100)?(percTo - percFrom) + "%":"99%",
         })
-        if(this.value==valTo){            
-            if(valTo>=valFrom){
-                to.value = valFrom - ((max/100)*3);
+        if(this.value==valFrom){ 
+                       
+            if(valFrom>valTo){
+                from.value = valTo - ((max/100)*2);
                 return;
         }
         }
-        if(this.value==valFrom){            
-            if(valFrom<=valTo){
-                this.value= valTo + ((max/100)*3);
+        if(this.value==valTo){
+                   
+            if(valTo<valFrom){
+                to.value = valFrom + ((max/100)*2);
                 return;
         }
         }

@@ -27,14 +27,14 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    height: 20px;
+    height: 60px;
    
      &-line{
         position: relative;
         display: block;
         overflow: hidden;
         outline: none !important;
-        top:6px;
+        top:80%;
         height: 6px;
         box-sizing: border-box;
         border-radius: 3px;
@@ -46,7 +46,7 @@
         display: block;
         left: 0;
         width: 0;
-        top:6px;
+        top:80%;
         height: 6px;
         background: linear-gradient(to bottom, $green-color,$green-color2);
     }
@@ -56,7 +56,7 @@
         box-sizing: border-box;
         cursor: default;
         z-index: 1;
-        top:3px;
+        top:calc(80%-3px);
         width: 12px;
         height: 12px;
         border-radius: 50%;
@@ -66,19 +66,35 @@
             z-index: 2;
         }
     }
-    &-min{
+    &-to,&-from{
+        top:0;
+    }
+    &-to{
+        right: 30%;
+    }
+    &-from{
+        right: 15%;
+    }
+
+
+
+    &-min,&-max{
         position: absolute;
         display: block;
-        cursor: default;
+        cursor: default;      
+        top:15px
+    }
+    &-min{
         left: 0;
     }
     &-max{
-        position: absolute;
-        display: block;
-        cursor: default;
+        
         right: 0;
+        
     }
+
     &-hidden-input{
+        -webkit-appearance: none;
         position: absolute !important;
         display: block !important;
         top: 0 !important;

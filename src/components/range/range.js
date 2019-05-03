@@ -5,16 +5,22 @@ import $ from 'jquery';
 
 
 $(document).ready(function(){
-    
-    var inputs = $('.range__input');
-    var bar = $(".range__bar")
-    var to = inputs[0];
-    var from = inputs[1];
-    var max = inputs[0].max;
-    var min = inputs[0].min;
-    bar.css({
-        left:(to.value-min)/((max-min)/100)+"%",
-        width:((from.value-min)/((max-min)/100))-((to.value-min)/((max-min)/100))+"%",
+    var ran = $(".range-slide1") 
+    var ran1=$(".range-slide2")
+    range(ran1)
+    range(ran)
+    function range(elem){
+        let $range = elem;
+        let inputs = $range.children('.range__input');
+        let bar = $range.children(".range__bar")
+        let to = inputs[0];
+        let from = inputs[1];
+        let max = inputs[0].max;
+        let min = inputs[0].min;
+        console.log($range)
+        bar.css({
+            left:(to.value-min)/((max-min)/100)+"%",
+            width:((from.value-min)/((max-min)/100))-((to.value-min)/((max-min)/100))+"%",
     })
     inputs.on('input',function(){
         let valTo = parseInt(to.value);
@@ -33,18 +39,12 @@ $(document).ready(function(){
                 return;
         }
         }
-        if(this.value==valFrom){
-            
+        if(this.value==valFrom){            
             if(valFrom<=valTo){
                 this.value= valTo + ((max/100)*3);
-               
                 return;
         }
         }
-        
-       
-        console.log(valTo)
-        console.log(valFrom)
     })
-;    
+;}   
 })

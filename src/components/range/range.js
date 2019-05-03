@@ -10,10 +10,13 @@ $(document).ready(function(){
     var bar = $(".range__bar")
     var to = inputs[0];
     var from = inputs[1];
-    var width = inputs.width();
     var max = inputs[0].max;
     var min = inputs[0].min;
-    inputs.input(function(){
+    bar.css({
+        left:(to.value-min)/((max-min)/100)+"%",
+        width:((from.value-min)/((max-min)/100))-((to.value-min)/((max-min)/100))+"%",
+    })
+    inputs.on('input',function(){
         let valTo = parseInt(to.value);
         let valFrom = parseInt(from.value);
         let percTo = (valTo-min)/((max-min)/100);

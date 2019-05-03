@@ -10,27 +10,25 @@ $(document).ready(function(){
     range(ran1)
     range(ran)
     function range(elem){
-        let $range = elem;
-        let inputs = $range.children('.range__input');
-        let bar = $range.children(".range__bar")
+        
+        let inputs = elem.children('.range__input');
+        let bar = elem.children(".range__bar")
         let to = inputs[0];
         let from = inputs[1];
         let max = inputs[0].max;
         let min = inputs[0].min;
-        console.log($range)
+        
         bar.css({
-            left:(to.value-min)/((max-min)/100)+"%",
-            width:((from.value-min)/((max-min)/100))-((to.value-min)/((max-min)/100))+"%",
+            left:( ( to.value - min ) / ( (max - min) / 100 ) + 1) + "%",
+            width:( ( from.value - min ) / ( ( max - min ) / 100 ) ) - ( ( to.value - min ) / ( ( max - min ) / 100 ) )+"%",
     })
     inputs.on('input',function(){
         let valTo = parseInt(to.value);
         let valFrom = parseInt(from.value);
         let percTo = (valTo-min)/((max-min)/100);
         let percFrom = (valFrom-min)/((max-min)/100);
-
-
         bar.css({
-            left:percTo + "%",
+            left:percTo + 1 + "%",
             width:(percFrom - percTo) + "%",
         })
         if(this.value==valTo){            

@@ -15,17 +15,22 @@ $(document).ready(function(){
             
             return;
         }
-        
+        let valueFrom = elem.prev('.range__values').children('.range__value-from');
+        let valueTo = elem.prev('.range__values').children('.range__value-to');
         let inputs = elem.children('.range__input'); 
         let bar = elem.children(".range__bar")
         let from = inputs[0]; 
         let to = inputs[1];
         let max = inputs[0].max;
-        let min = inputs[0].min;        
+        let min = inputs[0].min; 
+
     bar.css({
         left:( ( from.value - min ) / ( (max - min) / 100 ) ) + "%",
         width:( ( to.value - min ) / ( ( max - min ) / 100 ) ) - ( ( from.value - min ) / ( ( max - min ) / 100 ) )+"%",
     })
+    valueFrom.html(from.value);
+    valueTo.html(to.value);
+
     inputs.on('input',function(){
         let valFrom = parseInt(from.value);       
         let valTo = parseInt(to.value);
@@ -35,6 +40,8 @@ $(document).ready(function(){
             left:(percFrom)?percFrom  + "%":"1%",
             width:((percTo - percFrom)<100)?(percTo - percFrom) + "%":"99%",
         })
+        valueFrom.html(from.value);
+        valueTo.html(to.value)
         if(this.value==valFrom){                    
             if(valFrom>valTo){
                 from.value = valTo - ((max/100)*2);

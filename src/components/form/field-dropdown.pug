@@ -1,3 +1,6 @@
 .field-dropdown
-    .field__text Сколько гостей
-    i(class="material-icons field__icon field__icon--down")
+    .field-dropdown__up
+        .field-dropdown__text Сколько гостей
+        .field-dropdown__icon.material-icons
+    .field-dropdown__down.hidden
+        include ../counter/counter.pug

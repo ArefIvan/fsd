@@ -1,18 +1,9 @@
 
-.field{
-    position: relative;
-    display: block;
-    height: 42px;
-    
-    border-radius: 4px;   
-        
-
+.field-text{
+    position: relative;    
+    height: 40px;      
     font-size: 14px;    
-    font-family: $mainFont; 
-    &--dropdown{
-        border-radius: 4px; 
-        border: 1px solid #{$primary-color--25};
-    }
+    font-family: $mainFont;    
     &__input-text{
         
         width:100%;
@@ -43,28 +34,19 @@
             
         }   
     
-    &__text{
-        padding-left:15px;
-        line-height: 42px;
-        text-align: left; 
-    }
+  
     &__icon{
         position: absolute;
             top:calc(50%-12px);
             right: 10px;
-            &--arrow-right{
-                color: $purple-color;
-                &:after{
-                    content:'arrow_forward';
+            color: $purple-color;
+            &:after{
+                content:'arrow_forward';
             }   
             }
-            &--down{
-                color: $primary-color--50;
-                &:after{
-                    content:'expand_more';
-            }   
-            }
-    }
+          
+            
+    
 
 
 }

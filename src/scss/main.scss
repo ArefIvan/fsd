@@ -3,14 +3,7 @@
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset.scss";
-@import "../components/button/button.scss";
-@import "../components/form/field.scss";
-@import "../components/rate/rate.scss";
-@import "../components/toggle/toggle.scss";
-@import "../components/likeButton/likeButton.scss";
-@import "../components/checkbox/checkbox.scss";
-@import "../components/radiobutton/radiobutton.scss";
-@import "../components/range/range.scss";
+@import "utils/components.scss";
 //src\components\button\button.scss
 
 

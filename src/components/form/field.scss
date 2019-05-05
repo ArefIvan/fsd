@@ -9,7 +9,10 @@
 
     font-size: 14px;    
     font-family: $mainFont; 
-   
+    &--dropdown{
+        border-radius: 4px; 
+        border: 1px solid #{$primary-color--25};
+    }
     &__input-text{
         
         width:100%;

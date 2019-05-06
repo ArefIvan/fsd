@@ -2,6 +2,7 @@
 // JS - ./js/index.js
 import './components/range/range'
 import "./components/counter/counter"
+import "./components/form/field-dropdown"
 // SCSS
 import './scss/main.scss'
 // CSS (example)

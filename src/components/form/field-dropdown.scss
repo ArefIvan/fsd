@@ -1,21 +1,58 @@
 .field-dropdown{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between ;
     border-radius: 4px; 
+    color: $primary-color--75;
     border: 1px solid #{$primary-color--25};
+    
 
-
-    &__text{
+    &__title{
+        height: 42px;
+        line-height: 42px;
+        
         padding-left:15px;   
-        text-align: left; 
+        text-align: left;
+         
     }
     &__icon{
+        margin:auto 10px;
         &::before{
-            content:"expand_more"
+            content:"expand_more";
         }
         
+    }
+    &--expand{
+        border-color:$primary-color--50;        
     } 
+    &--expand &__content{
+        border-top: 1px solid #{$primary-color--50};
+        padding: 7px 7px 14px 14px;
+        height: auto;
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        border:0;
+        height: 0px;
+        width: 100%;
+        padding: 0;   
+        box-sizing: border-box;
+        overflow: hidden;
+        
+    }
+    &__content-footer{
+        width: 100%;
+        align-self:flex-end;
+        display: flex;
+        justify-content: space-between;
+         .cancel{
+            color:$primary-color--50;
+        }
+         .assept{
+             color:$purple-color;
+         }
+    }
+    
+}
 
-}
-.hidden{
-    display:none;
-}

@@ -1,5 +1,13 @@
 .counter
-    .counter__title
-    .counter__button.count__button-dec(distabled) -
-    input.count__count(type='text' name="" value="2")
-    .count__button.count__button-inc +
+    .h3.counter__title Взрослых
+    .counter__wrap
+        button.counter__button.dec -
+        input.h3.counter__count(type='text' name="" value="2" data-min="1" data-max="7")
+        button.counter__button.inc +
+
+.counter
+    .h3.counter__title детей
+    .counter__wrap
+        button.counter__button.dec -
+        input.h3.counter__count(type='text' name="" value="3" data-min="" data-max="12")
+        button.counter__button.inc +

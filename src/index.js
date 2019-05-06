@@ -1,6 +1,7 @@
 
 // JS - ./js/index.js
 import './components/range/range'
+import "./components/counter/counter"
 // SCSS
 import './scss/main.scss'
 // CSS (example)

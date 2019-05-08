@@ -16,7 +16,27 @@
          
     }
     &__date{
-        -webkit-appearance: none;
+        width:100%;
+        padding-left:10px;     
+        height: 100%;
+        @include  placeholder{
+            color: $primary-color--75;
+            font-family: $mainFont;               
+            };
+            &:hover,&:focus{                  
+                height: 100%;
+            }
+            &:hover{
+                @include  placeholder{               
+                    color: $primary-color--75;
+                    font-family: $mainFont;    
+                }
+            }
+            &:focus{
+                @include  placeholder{             
+                    color: transparent;
+                }
+            }     
     }
     &__icon{
         margin:auto 10px;

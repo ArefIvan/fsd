@@ -3,10 +3,11 @@ function catalogItemDropdown(field){
     
     let dropdown = function(el){
 
-        let header = el.children(".field-dropdown__header")
+        let btn = el.children().children(".field-dropdown__icon")
         let content = el.children('.field-dropdown__content')
         content.hide();
-        header.on("click",function(){
+        btn.on("click",function(){
+            el.toggleClass("field-dropdown--expand")
             content.stop(true).slideToggle()
         })
     };   

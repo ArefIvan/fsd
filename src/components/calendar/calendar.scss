@@ -1,13 +1,16 @@
 .calendar{
+    width: 320px;
     line-height: 40px !important;
     text-align: center;
-    border: 1px solid #{$primary-color--25};
+   
     &__header{
+        margin-bottom:20px;
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
     &__arrow{
-        line-height: 40px ;
+        line-height: 40px !important ;
         width: 40px;
         height: 40px;
         color:$purple-color;
@@ -23,7 +26,11 @@
         }
     }
     &__days-week{
-        color:$purple-color
+        font-size: 12px;
+        font-weight: 700;
+        height: 40px;
+        line-height: 40px;
+        color:$purple-color !important ;
     }
     &__table{
         margin : 0 auto;
@@ -33,6 +40,18 @@
         height: 40px;
         font-size: 12px;
         color:$primary-color--50;
+
+         
+        
         
     }
+    .today{
+        background: linear-gradient(to bottom ,#{$green-color},#{$blue-color});
+        border-radius: 50%;
+        color:white;
+    }
+    .prevMonth,.nextMonth{
+        color: $primary-color--25;
+    }
+
 }

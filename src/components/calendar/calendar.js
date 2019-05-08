@@ -1,11 +1,12 @@
 
 let calendar = document.querySelector(".calendar");
-let prevBtn = calendar.querySelector(".calendar__arrow--prev");
-let nextBtn = calendar.querySelector(".calendar__arrow--next");
-let title = calendar.querySelector(".calendar__title");
-let calContent = calendar.querySelector(".calendar__content")
-console.log(nextBtn)
-function Calendar2(id, year, month) {
+
+
+  function Calendar(el, year, month) {
+    let prevBtn = el.querySelector(".calendar__arrow--prev");
+    let nextBtn = el.querySelector(".calendar__arrow--next");
+    let title = el.querySelector(".calendar__title");
+    let calContent = el.querySelector(".calendar__content")
     var Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
         DlastPrev = new Date(year,month,0).getDate()
         D = new Date(year,month,Dlast),// переменая с датой последнего дня месяца
@@ -44,7 +45,7 @@ function Calendar2(id, year, month) {
     let count = 1;
     for(var i = DNlast; i < 7; i++){ 
       if(DNlast){
-        content += '<td class = "calendar__day nextMouth">' +count
+        content += '<td class = "calendar__day nextMonth">' +count
         count++
       }
       else{content+='<td class = "calendar__day">&nbsp';}
@@ -55,14 +56,15 @@ function Calendar2(id, year, month) {
     title.dataset.year = D.getFullYear();
     if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
         calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
-    }
-    }
-    Calendar2("calendar", new Date().getFullYear(), new Date().getMonth());
-    // переключатель минус месяц
-    prevBtn.onclick = function() {
-      Calendar2("calendar", title.dataset.year, parseFloat(title.dataset.month)-1);
-    }
-    // переключатель плюс месяц
-    nextBtn.onclick = function() {
-      Calendar2("calendar", title.dataset.year, parseFloat(title.dataset.month)+1);
-    }
+      }
+      prevBtn.onclick = function() {
+        Calendar(calendar, title.dataset.year, parseFloat(title.dataset.month)-1);
+      }
+      // переключатель плюс месяц
+      nextBtn.onclick = function() {
+        Calendar(calendar, title.dataset.year, parseFloat(title.dataset.month)+1);
+      }
+
+      }
+   Calendar(calendar, new Date().getFullYear(), new Date().getMonth());
+    

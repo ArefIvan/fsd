@@ -1,19 +1,22 @@
-.field-dropdown{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between ;
+.field-dropdown{    
     border-radius: 4px; 
     color: $primary-color--75;
     border: 1px solid #{$primary-color--25};
-    
+    &__header{
+        display: flex;
+        justify-content: space-between ;
+        height: 42px;
+        line-height: 42px; 
+    }
 
     &__title{
-        height: 42px;
-        line-height: 42px;
-        
+             
         padding-left:15px;   
         text-align: left;
          
+    }
+    &__date{
+        -webkit-appearance: none;
     }
     &__icon{
         margin:auto 10px;
@@ -33,6 +36,7 @@
     &__content{
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         border:0;
         height: 0px;
         width: 100%;

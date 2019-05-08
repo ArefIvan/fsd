@@ -13,22 +13,22 @@ function Calendar2(id, year, month) {
     if (DNfirst != 0) { //если первый день месяца не воскресение
         ld = DlastPrev - DNfirst + 2 
       for(var  i = 1; i < DNfirst; i++){ 
-          calendar += '<td class = "prevMonth">' + ld
+          calendar += '<td class = "calendar__day prevMonth">' + ld
           ld++
         }; // добавить столбцов сколько дней от пн до 1 числа
     }else{
         ld = DlastPrev - 5;
       for(var  i = 0; i < 6; i++){
 
-           calendar += '<td>' + ld
+           calendar += '<td class="calendar__day">' + ld
            ld ++
         };// иначе добавить 6 столбцов
     }
     for(var  i = 1; i <= Dlast; i++) {
       if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
-        calendar += '<td class="today">' + i;
+        calendar += '<td class="calendar__day today">' + i;
       }else{
-        calendar += '<td>' + i;
+        calendar += '<td class="calendar__day">' + i;
       }
       if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
         calendar += '<tr>';
@@ -37,7 +37,7 @@ function Calendar2(id, year, month) {
     let count = 1;
     for(var i = DNlast; i < 7; i++){ 
 
-        calendar += '<td class = "nextMouth">' +count
+        calendar += '<td class = "calendar__day nextMouth">' +count
         count++
     };
     document.querySelector('#'+id+' tbody').innerHTML = calendar;

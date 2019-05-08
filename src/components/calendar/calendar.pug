@@ -1,15 +1,16 @@
-table#calendar2
+
+table#calendar2.calendar
     thead
         tr  
-            td <
-            td(colspan="5")
-            td >
-        tr
-            td Пн
-            td Вт
-            td Ср
-            td Чт
-            td Пт
-            td Сб
-            td Вс
+            td.material-icons.calendar__arrow.calendar__arrow--prev 
+            td.calendar__month.h2(colspan="5")
+            td.material-icons.calendar__arrow.calendar__arrow--next 
+        tr.calendar__days-week
+            td.calendar__day Пн
+            td.calendar__day Вт
+            td.calendar__day Ср
+            td.calendar__day Чт
+            td.calendar__day Пт
+            td.calendar__day Сб
+            td.calendar__day Вс
     tbody

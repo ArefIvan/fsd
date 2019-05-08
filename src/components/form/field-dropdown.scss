@@ -19,6 +19,7 @@
         width:100%;
         padding-left:10px;     
         height: 100%;
+        border-radius: 4px;
         @include  placeholder{
             color: $primary-color--75;
             font-family: $mainFont;               

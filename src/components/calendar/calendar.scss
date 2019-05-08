@@ -1,6 +1,11 @@
 .calendar{
     line-height: 40px !important;
     text-align: center;
+    border: 1px solid #{$primary-color--25};
+    &__header{
+        display: flex;
+        justify-content: space-between;
+    }
     &__arrow{
         line-height: 40px ;
         width: 40px;
@@ -17,10 +22,17 @@
             }
         }
     }
+    &__days-week{
+        color:$purple-color
+    }
+    &__table{
+        margin : 0 auto;
+    }
     &__day{
         width: 40px;
         height: 40px;
         font-size: 12px;
+        color:$primary-color--50;
         
     }
 }

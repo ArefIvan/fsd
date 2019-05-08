@@ -1,8 +1,9 @@
 .calendar
-    .material-icons.calendar__arrow.calendar__arrow--prev
-    .calendar__month.h2
-    .material-icons.calendar__arrow.calendar__arrow--next 
-    table#calendar2
+    .calendar__header
+        .material-icons.calendar__arrow.calendar__arrow--prev
+        .calendar__title.h2
+        .material-icons.calendar__arrow.calendar__arrow--next 
+    table.calendar__table#calendar2
         thead        
             tr.calendar__days-week
                 td.calendar__day Пн
@@ -12,4 +13,4 @@
                 td.calendar__day Пт
                 td.calendar__day Сб
                 td.calendar__day Вс
-        tbody
+        tbody.calendar__content

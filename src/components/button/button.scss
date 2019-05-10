@@ -37,14 +37,21 @@ $buttonBorder:2px;
             vertical-align: middle;
             text-align: end;
             right: ($buttonHeight - 24px) /2; //8px;
-            top:calc(50%-12px);        
+            top:50%; 
+            transform: translateY(-50%) ;      
               &::after{
                   content: "arrow_forward"
               }
         }
       }
-           &--border{
-          background: $backgroundColor;
-          color:$purple-color;
+          &--noborder{
+            color:$purple-color;
+             &::before{
+               background: none;
+             }
+          }
+          &--border{
+            background: $backgroundColor;
+            color:$purple-color;
         }  
     }

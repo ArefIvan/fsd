@@ -28,7 +28,7 @@ let calendar = document.querySelector(".calendar");
         ld = DlastPrev - 5;
       for(var  i = 0; i < 6; i++){
 
-           content += '<td class="calendar__day">' + ld
+           content += '<td class="calendar__day prevMonth">' + ld
            ld ++
         };// иначе добавить 6 столбцов
     }

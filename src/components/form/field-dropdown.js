@@ -16,3 +16,23 @@ function catalogItemDropdown(field){
     })
 }
 catalogItemDropdown(".field-dropdown")
+function catalogItemDropdownDate(field){
+    
+    let dropdownDate = function(el){
+
+        let date = el.children().children(".field-dropdown__date")
+        date.on("input",function(){
+            let value = this.value;
+            value =  value.split("")
+            console.log(value)
+           
+            console.log(value)
+        })
+        
+        
+    };   
+    $(field).each(function(){
+        dropdownDate($(this));
+    })
+}
+catalogItemDropdownDate(".field-dropdown--date")

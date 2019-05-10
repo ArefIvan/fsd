@@ -1,4 +1,14 @@
-.field-dropdown
+.field-dropdown.field-dropdown--date
+    .field-dropdown__header
+        input.field-dropdown__date(type="text" placeholder="dd:mm:YYYY")
+        i.material-icons.field-dropdown__icon
+    .field-dropdown__content 
+        include ../calendar/calendar.pug
+        .field-dropdown__content-footer
+            span.h3.cancel Очистить
+            span.h3.assept Применить
+            
+.field-dropdown.field-dropdown--date
     .field-dropdown__header
         input.field-dropdown__date(type="text" placeholder="dd:mm:YYYY")
         i.material-icons.field-dropdown__icon

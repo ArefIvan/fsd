@@ -23,12 +23,14 @@ function catalogItemDropdownDate(field){
         let date = el.children().children(".field-dropdown__date")
         date.on("change",function(){
             let value = this.value;
+
             if(isValidDate(value)){
                 console.log("+")
 
             }else{
                 console.log("-")
             }
+
         })
         
         

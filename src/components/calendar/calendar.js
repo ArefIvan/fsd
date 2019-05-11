@@ -36,7 +36,15 @@ let calendar = document.querySelector(".calendar");
       if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
         content += '<td class="calendar__day today">' + i;
       }else{
-        content += '<td class="calendar__day">' + i;
+        if(i < new Date().getDate() 
+          && D.getFullYear() == new Date().getFullYear() 
+          && D.getMonth() == new Date().getMonth()
+          ||D.getFullYear() < new Date().getFullYear()
+          ||D.getMonth() < new Date().getMonth()){
+        content += '<td class="calendar__day past-day">' + i;
+         }
+         else{content += '<td class="calendar__day">' + i;
+        }
       }
       if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
         content += '<tr>';

@@ -18,11 +18,11 @@ function catalogItemCalendar(calendars){
     days.forEach(day => { 
       // console.log(day)
       day.onclick = ()=>{
-      if(selectedDayFrom===undefined){
+      if(selectedDayFrom===undefined){ //если from день не выбран
         day.classList.add("selected")
         selectedDayFrom = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
       }else{
-        if(selectedDayFrom.getFullYear() == title.dataset.year
+        if(selectedDayFrom.getFullYear() == title.dataset.year //если кликаем по from
             &&selectedDayFrom.getMonth()==title.dataset.month
             &&selectedDayFrom.getDate() == day.innerHTML ){
           day.classList.remove("selected")
@@ -61,17 +61,27 @@ function catalogItemCalendar(calendars){
           };// иначе добавить 6 столбцов
       }
       for(let  i = 1; i <= Dlast; i++) {
-        if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
-          content += '<td class="calendar__day today">' + i;
+        if(selectedDayFrom !==undefined
+        &&selectedDayFrom.getFullYear() == D.getFullYear() //если кликаем по from
+        &&selectedDayFrom.getMonth()==D.getMonth()
+        &&selectedDayFrom.getDate() == i){
+          content += '<td class="calendar__day future-day selected">' + i;
+
         }else{
-          if(i > new Date().getDate() 
-            && D.getFullYear() == new Date().getFullYear() 
-            && D.getMonth() == new Date().getMonth()
-            ||D.getFullYear() > new Date().getFullYear()
-            ||D.getMonth() > new Date().getMonth()){
-          content += '<td class="calendar__day future-day">' + i;
-          }
-          else{content += '<td class="calendar__day">' + i;
+            if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
+              content += '<td class="calendar__day today">' + i;
+            }else{
+          
+              if(i > new Date().getDate() 
+                && D.getFullYear() == new Date().getFullYear() 
+                && D.getMonth() == new Date().getMonth()
+                ||D.getFullYear() > new Date().getFullYear()
+                ||D.getMonth() > new Date().getMonth()){
+              content += '<td class="calendar__day future-day">' + i;
+              }
+              else{content += '<td class="calendar__day">' + i;
+              }
+         
           }
         }
         if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {

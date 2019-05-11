@@ -16,6 +16,8 @@ function catalogItemDropdown(field){
     })
 }
 catalogItemDropdown(".field-dropdown")
+
+// dropdown_date
 function catalogItemDropdownDate(field){
   
     let dropdownDate = function(el){
@@ -41,9 +43,10 @@ function catalogItemDropdownDate(field){
 }
 catalogItemDropdownDate(".field-dropdown--date")
 
+// Проверка даты
 function isValidDate(dateString)
 {
-    // проверяем на правильность
+    // первая проверка на правильность
     if(!/^\d{1,2}\.\d{1,2}\.\d{4}$/.test(dateString))
         return false;
 

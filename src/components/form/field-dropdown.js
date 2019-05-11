@@ -23,10 +23,15 @@ function catalogItemDropdownDate(field){
         let date = el.children().children(".field-dropdown__date")
         date.on("input",function(){
             let value = this.value;
-            value =  value.split("")
+             value =  value.split(/[^0-9.]/).join("").split(/\.{2,}/).join("");
+             this.value = value; 
+            value.split('.');
+
+  
+            // this.value = value;            
             console.log(value)
            
-            console.log(value)
+           
         })
         
         

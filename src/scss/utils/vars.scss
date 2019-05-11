@@ -28,6 +28,7 @@ $light-color             : #999999;
 $green-color             : #6fcf97;
 $blue-color              : #66D2EA;
 $purple-color            : #bc9cff;
+$purple2-color           : #8ba3f9;
 $backgroundColor         : #FFFFFF;
 
 // Neutral Color
@@ -41,3 +42,6 @@ $border-base             : #DCDFE6;
 $border-light            : #E4E7ED;
 $border-lighter          : #EBEEF5;
 $border-lightex          : #F2F6FC;
+
+//Gradiens
+$primary-gradient        :linear-gradient(to bottom,$purple-color,$purple2-color);

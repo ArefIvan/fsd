@@ -45,6 +45,11 @@
         
         
     }
+    .selected{
+        color: white;
+        background: $primary-gradient;
+        border-radius: 50%;
+    }
     .today{
         background: linear-gradient(to bottom ,#{$green-color},#{$blue-color});
         border-radius: 50%;

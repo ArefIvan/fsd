@@ -1,6 +1,6 @@
 function catalogItemCalendar(calendars){
-  let calendars_el = document.querySelector(calendars);
-  console.log(calendars_el)
+  let calendarsEl = document.querySelectorAll(calendars);
+  console.log(calendarsEl)
 
 
   let calendar = function(el) {
@@ -9,8 +9,34 @@ function catalogItemCalendar(calendars){
     let nextBtn = el.querySelector(".calendar__arrow--next");
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content");
+    let selectedDayFrom;
+    let selectedtDayTo;
+  function selectDay(){
+
+    let days=calContent.querySelectorAll('.future-day');
+    // console.log(days)
+    days.forEach(day => { 
+      // console.log(day)
+      day.onclick = ()=>{
+      if(selectedDayFrom===undefined){
+        day.classList.add("selected")
+        selectedDayFrom = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+      }else{
+        if(selectedDayFrom.getFullYear() == title.dataset.year
+            &&selectedDayFrom.getMonth()==title.dataset.month
+            &&selectedDayFrom.getDate() == day.innerHTML ){
+          day.classList.remove("selected")
+          selectedDayFrom = undefined;
+        }
+      }
+      console.log(selectedDayFrom)
+    }
+      
+    });
+  }
 
   function getContentCal(year, month){
+      
       let Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
           DlastPrev = new Date(year,month,0).getDate()
           D = new Date(year,month,Dlast),// переменая с датой последнего дня месяца
@@ -38,12 +64,12 @@ function catalogItemCalendar(calendars){
         if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
           content += '<td class="calendar__day today">' + i;
         }else{
-          if(i < new Date().getDate() 
+          if(i > new Date().getDate() 
             && D.getFullYear() == new Date().getFullYear() 
             && D.getMonth() == new Date().getMonth()
-            ||D.getFullYear() < new Date().getFullYear()
-            ||D.getMonth() < new Date().getMonth()){
-          content += '<td class="calendar__day past-day">' + i;
+            ||D.getFullYear() > new Date().getFullYear()
+            ||D.getMonth() > new Date().getMonth()){
+          content += '<td class="calendar__day future-day">' + i;
           }
           else{content += '<td class="calendar__day">' + i;
           }
@@ -69,15 +95,20 @@ function catalogItemCalendar(calendars){
         }
         prevBtn.onclick = function() {
           getContentCal(title.dataset.year, parseFloat(title.dataset.month)-1);
+          selectDay();
         }
         // переключатель плюс месяц
         nextBtn.onclick = function() {
-          getContentCal(title.dataset.year, parseFloat(title.dataset.month)+1);
+          getContentCal(title.dataset.year, parseFloat(title.dataset.month)+1)
+          selectDay();
         }
 
     }   
    getContentCal(new Date().getFullYear(), new Date().getMonth());
+   selectDay();
   };
-  calendars_el.forEach(calendar(el));
+  calendarsEl.forEach(item => {calendar(item)
+    
+  });
 }
 catalogItemCalendar(".calendar")

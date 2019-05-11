@@ -1,0 +1,24 @@
+.field-dropdown.field-dropdown--date
+    .field-dropdown__header
+        input.field-dropdown__date(type="text" placeholder="dd:mm:YYYY")
+        i.material-icons.field-dropdown__icon
+    .field-dropdown__content 
+        .calendar
+            .calendar__header
+                .material-icons.calendar__arrow.calendar__arrow--prev
+                .calendar__title.h2
+                .material-icons.calendar__arrow.calendar__arrow--next 
+            table.calendar__table#calendar2
+                thead        
+                    tr.calendar__days-week
+                        td Пн
+                        td Вт
+                        td Ср
+                        td Чт
+                        td Пт
+                        td Сб
+                        td Вс
+                tbody.calendar__content
+        .field-dropdown__content-footer
+            span.h3.cancel Очистить
+            span.h3.assept Применить

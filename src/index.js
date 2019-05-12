@@ -4,6 +4,7 @@ import './components/range/range'
 import "./components/counter/counter"
 import "./components/form/field-dropdown"
 import "./components/calendar/calendar"
+import "./blocks/dropdown-calendar/dropdown-calendar"
 // SCSS
 import './scss/main.scss'
 // CSS (example)

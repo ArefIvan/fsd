@@ -1,6 +1,6 @@
 function catalogItemCalendar(calendars){
   let calendarsEl = document.querySelectorAll(calendars);
-  console.log(calendarsEl)
+  
 
 
   let calendar = function(el) {
@@ -9,8 +9,8 @@ function catalogItemCalendar(calendars){
     let nextBtn = el.querySelector(".calendar__arrow--next");
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content");
-    let selectedDayFrom;
-    let selectedtDayTo;
+    let selectedDay1 = el.dataset.selectedDay1;
+    let selectedDay2 = el.dataset.selectedDay2;
   function selectDay(){
 
     let days=calContent.querySelectorAll('.future-day');
@@ -18,20 +18,35 @@ function catalogItemCalendar(calendars){
     days.forEach(day => { 
       // console.log(day)
       day.onclick = ()=>{
-      if(selectedDayFrom===undefined){ //если from день не выбран
+      if(selectedDay1===undefined){ //если from день не выбран
         day.classList.add("selected")
-        selectedDayFrom = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+        selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+        
       }else{
-        if(selectedDayFrom.getFullYear() == title.dataset.year //если кликаем по from
-            &&selectedDayFrom.getMonth()==title.dataset.month
-            &&selectedDayFrom.getDate() == day.innerHTML ){
+        if(selectedDay1.getFullYear() == title.dataset.year //если кликаем по from
+            &&selectedDay1.getMonth()==title.dataset.month
+            &&selectedDay1.getDate() == day.innerHTML ){
           day.classList.remove("selected")
-          selectedDayFrom = undefined;
-        }
+          selectedDay1 = undefined;
+        }else{
+          if(selectedDay2===undefined){ //если from день не выбран
+            day.classList.add("selected")
+            selectedDay2 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+          }else{
+            if(selectedDay2.getFullYear() == title.dataset.year //если кликаем по from
+                &&selectedDay2.getMonth()==title.dataset.month
+                &&selectedDay2.getDate() == day.innerHTML ){
+              day.classList.remove("selected")
+              selectedDay2 = undefined;
+                }
+              }
+          }
+        } 
+        el.dataset.selectedDay1=selectedDay1;
+        el.dataset.selectedDay2=selectedDay2;
+          //  console.log(selectedDay1)
+          // console.log(selectedDay2)
       }
-      console.log(selectedDayFrom)
-    }
-      
     });
   }
 
@@ -61,10 +76,10 @@ function catalogItemCalendar(calendars){
           };// иначе добавить 6 столбцов
       }
       for(let  i = 1; i <= Dlast; i++) {
-        if(selectedDayFrom !==undefined
-        &&selectedDayFrom.getFullYear() == D.getFullYear() //если кликаем по from
-        &&selectedDayFrom.getMonth()==D.getMonth()
-        &&selectedDayFrom.getDate() == i){
+        if(selectedDay1 !==undefined
+        &&selectedDay1.getFullYear() == D.getFullYear() //если кликаем по from
+        &&selectedDay1.getMonth()==D.getMonth()
+        &&selectedDay1.getDate() == i){
           content += '<td class="calendar__day future-day selected">' + i;
 
         }else{

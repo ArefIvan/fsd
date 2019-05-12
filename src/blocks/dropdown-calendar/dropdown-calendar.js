@@ -5,6 +5,19 @@ function catalogItemDropdownDate(field){
     let dropdownDate = function(el){
 
         let date = el.children().children(".field-dropdown__date")
+        let calendar= el.children().children('.calendar')
+        calendar.on('click',function(){
+            let value=this.dataset.selectedDay1
+            if(value!=='undefined'){
+                value = dateFormat(value);
+                date.val(value);
+            }
+            else{
+                date.val("")
+            }
+           
+            console.log(this.dataset.selectedDay1)
+        })
         date.on("change",function(){
             let value = this.value;
 
@@ -24,6 +37,17 @@ function catalogItemDropdownDate(field){
     })
 }
 catalogItemDropdownDate(".field-dropdown--date")
+
+function dateFormat(str){
+    let date =new Date(str)
+    let day= date.getDate();
+    let month = date.getMonth();
+    let year = date.getFullYear();
+    if(day<10)day='0'+ day;
+    if(month<10)month= "0" + month;
+
+    return day + "." + month + "."+ year
+}
 
 // Проверка даты
 function isValidDate(dateString)

@@ -55,6 +55,9 @@
         border-radius: 50%;
         color:white;
     }
+    .future-day{
+        cursor: pointer;
+    }
     .prevMonth,.nextMonth{
         color: $primary-color--25;
     }

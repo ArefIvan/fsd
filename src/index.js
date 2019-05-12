@@ -3,7 +3,7 @@
 // import './components/range/range'
 // import "./components/counter/counter"
 // import "./components/form/field-dropdown"
-import "./blocks/dropdown-calendar/dropdown-calendar"
+import "./blocks/dropdown-date/dropdown-date"
 // import "./components/calendar/calendar"
 
 // SCSS

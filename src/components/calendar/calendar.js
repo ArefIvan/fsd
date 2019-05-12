@@ -1,23 +1,25 @@
-function catalogItemCalendar(calendars){
-  let calendarsEl = document.querySelectorAll(calendars);
+// function catalogItemCalendar(calendars){
+//   let calendarsEl = document.querySelectorAll(calendars);
   
 
 
-  let calendar = function(el) {
-    console.log(el)
+    let calendar = function(el) {
+    
     let prevBtn = el.querySelector(".calendar__arrow--prev");
     let nextBtn = el.querySelector(".calendar__arrow--next");
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content");
     let selectedDay1 = el.dataset.selectedDay1;
     let selectedDay2 = el.dataset.selectedDay2;
+    console.log(selectedDay2)
   function selectDay(){
 
     let days=calContent.querySelectorAll('.future-day');
-    // console.log(days)
+    
     days.forEach(day => { 
-      // console.log(day)
+     
       day.onclick = ()=>{
+        
       if(selectedDay1===undefined){ //если from день не выбран
         day.classList.add("selected")
         selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
@@ -29,23 +31,26 @@ function catalogItemCalendar(calendars){
           day.classList.remove("selected")
           selectedDay1 = undefined;
         }else{
-          if(selectedDay2===undefined){ //если from день не выбран
-            day.classList.add("selected")
-            selectedDay2 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
-          }else{
-            if(selectedDay2.getFullYear() == title.dataset.year //если кликаем по from
-                &&selectedDay2.getMonth()==title.dataset.month
-                &&selectedDay2.getDate() == day.innerHTML ){
-              day.classList.remove("selected")
-              selectedDay2 = undefined;
+          if(selectedDay2!="none"){
+              
+              if(selectedDay2===undefined){ //если from день не выбран
+              day.classList.add("selected")
+              selectedDay2 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+            }else{
+              if(selectedDay2.getFullYear() == title.dataset.year //если кликаем по from
+                  &&selectedDay2.getMonth()==title.dataset.month
+                  &&selectedDay2.getDate() == day.innerHTML ){
+                day.classList.remove("selected")
+                selectedDay2 = undefined;
+                  }
                 }
               }
           }
         } 
         el.dataset.selectedDay1=selectedDay1;
         el.dataset.selectedDay2=selectedDay2;
-          //  console.log(selectedDay1)
-          // console.log(selectedDay2)
+           
+         
       }
     });
   }
@@ -53,12 +58,12 @@ function catalogItemCalendar(calendars){
   function getContentCal(year, month){
       
       let Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
-          DlastPrev = new Date(year,month,0).getDate()
+          DlastPrev = new Date(year,month,0).getDate(),
           D = new Date(year,month,Dlast),// переменая с датой последнего дня месяца
           DNlast = new Date(D.getFullYear(),D.getMonth(),Dlast).getDay(),// день недели последнего дня месяца от 0(воскресенье) до 6(суббота)
           DNfirst = new Date(D.getFullYear(),D.getMonth(),1).getDay(),// день недели 1 числа этого же месяца от 0(воскресенье) до 6(суббота)
           content = '<tr>',// строка
-          month=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
+          months=["Январь","Февраль","Март","Апрель","Май","Июнь","Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
           ld=0;
           
       if (DNfirst != 0) { //если первый день месяца не воскресение
@@ -112,8 +117,9 @@ function catalogItemCalendar(calendars){
         else{content+='<td class = "calendar__day">&nbsp';}
       };
       calContent.innerHTML = content;
-      title.innerHTML = month[D.getMonth()] +' '+ D.getFullYear();
+      title.innerHTML = months[D.getMonth()] +' '+ D.getFullYear();
       title.dataset.month = D.getMonth();
+      
       title.dataset.year = D.getFullYear();
       if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
           calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
@@ -132,8 +138,9 @@ function catalogItemCalendar(calendars){
    getContentCal(new Date().getFullYear(), new Date().getMonth());
    selectDay();
   };
-  calendarsEl.forEach(item => {calendar(item)
+  export default calendar;
+  // calendarsEl.forEach(item => {calendar(item)
     
-  });
-}
-catalogItemCalendar(".calendar")
+//   });
+// }
+// catalogItemCalendar(".calendar")

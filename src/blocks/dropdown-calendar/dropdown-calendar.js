@@ -1,24 +1,33 @@
+import "../../components/form/field-dropdown"
+import calendar from "../../components/calendar/calendar"
 
 // dropdown_date
 function catalogItemDropdownDate(field){
+    let cal = calendar;
+    let fieldsEl = document.querySelectorAll(field)
   
     let dropdownDate = function(el){
-
-        let date = el.children().children(".field-dropdown__date")
-        let calendar= el.children().children('.calendar')
-        calendar.on('click',function(){
+        
+        let date = el.querySelector(".field-dropdown__date")
+        let calendar= el.querySelector('.calendar');
+        calendar.dataset.selectedDay2='none';
+        cal(calendar);
+        console.log(calendar.dataset)
+        calendar.onclick = function(){
+            console.log (this.dataset)
+            
             let value=this.dataset.selectedDay1
             if(value!=='undefined'){
                 value = dateFormat(value);
-                date.val(value);
+                date.value=value;
             }
             else{
-                date.val("")
+                date.value = ""
             }
            
-            console.log(this.dataset.selectedDay1)
-        })
-        date.on("change",function(){
+            
+        }
+        date.onchange = function(){
             let value = this.value;
 
             if(isValidDate(value)){
@@ -28,13 +37,16 @@ function catalogItemDropdownDate(field){
                 console.log("-")
             }
 
-        })
+        }
         
         
     };   
-    $(field).each(function(){
-        dropdownDate($(this));
+    fieldsEl.forEach(item =>{
+        dropdownDate(item)
     })
+    // $(field).each(function(){
+    //     dropdownDate($(this));
+    // })
 }
 catalogItemDropdownDate(".field-dropdown--date")
 
@@ -75,3 +87,7 @@ function isValidDate(dateString)
     // проверка дня 
     return day > 0 && day <= monthLength[month - 1];
 };
+
+
+import "../../components/form/field-dropdown"
+import "../../components/calendar/calendar"

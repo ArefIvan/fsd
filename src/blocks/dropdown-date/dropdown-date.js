@@ -10,11 +10,11 @@ function catalogItemDropdownDate(field){
         
         let date = el.querySelector(".field-dropdown__date")
         let calendar= el.querySelector('.calendar');
-        calendar.dataset.selectedDay2='none';
+        // calendar.dataset.selectedDay2='none';
         cal(calendar);
-        console.log(calendar.dataset)
+       
         calendar.onclick = function(){
-            console.log (this.dataset)
+            
             
             let value=this.dataset.selectedDay1
             if(value!=='undefined'){

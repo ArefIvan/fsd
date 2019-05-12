@@ -11,7 +11,7 @@
     let calContent = el.querySelector(".calendar__content");
     let selectedDay1 = el.dataset.selectedDay1;
     let selectedDay2 = el.dataset.selectedDay2;
-    console.log(selectedDay2)
+    
   function selectDay(){
 
     let days=calContent.querySelectorAll('.future-day');
@@ -19,11 +19,13 @@
     days.forEach(day => { 
      
       day.onclick = ()=>{
-        
+        let sd1,sd2;
       if(selectedDay1===undefined){ //если from день не выбран
         day.classList.add("selected")
         selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
-        
+        // sd1=this;
+        sd1=day;
+        console.log(sd1)
       }else{
         if(selectedDay1.getFullYear() == title.dataset.year //если кликаем по from
             &&selectedDay1.getMonth()==title.dataset.month
@@ -34,17 +36,22 @@
           if(selectedDay2!="none"){
               
               if(selectedDay2===undefined){ //если from день не выбран
-              day.classList.add("selected")
+                console.log(sd1)
+              day.classList.add("selected-range")
+              sd1.classList.remove("selected")
+              sd1.classList.add("selected-range")
               selectedDay2 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+              
             }else{
               if(selectedDay2.getFullYear() == title.dataset.year //если кликаем по from
-                  &&selectedDay2.getMonth()==title.dataset.month
+                  &&selectedDay2.getMonth() == title.dataset.month
                   &&selectedDay2.getDate() == day.innerHTML ){
                 day.classList.remove("selected")
                 selectedDay2 = undefined;
                   }
                 }
               }
+            rangeDate(selectedDay1,selectedDay2)
           }
         } 
         el.dataset.selectedDay1=selectedDay1;
@@ -54,7 +61,23 @@
       }
     });
   }
+  function rangeDate(day1,day2){
+    let days=calContent.querySelectorAll('.future-day');
+    let from = (day1>day2)?day2:day1;
+    let to = (from==day1)?day2:day1;
+    days.forEach(day => {
+      let date=new Date(title.dataset.year,title.dataset.month,day.innerHTML);
+      if(from&&to){
+        if(date>from&&date<to){
+          day.classList.add("range-day")
+        }
+      }else{
+        day.classList.remove("range-day")
+      }
 
+     })
+
+  }
   function getContentCal(year, month){
       
       let Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
@@ -82,9 +105,13 @@
       }
       for(let  i = 1; i <= Dlast; i++) {
         if(selectedDay1 !==undefined
-        &&selectedDay1.getFullYear() == D.getFullYear() //если кликаем по from
+        &&selectedDay1.getFullYear() == D.getFullYear() //если есть выбранный день
         &&selectedDay1.getMonth()==D.getMonth()
-        &&selectedDay1.getDate() == i){
+        &&selectedDay1.getDate() == i
+        ||selectedDay2 !==undefined
+        &&selectedDay2.getFullYear() == D.getFullYear() //если есть второй выбранный день
+        &&selectedDay2.getMonth()==D.getMonth()
+        &&selectedDay2.getDate() == i){
           content += '<td class="calendar__day future-day selected">' + i;
 
         }else{

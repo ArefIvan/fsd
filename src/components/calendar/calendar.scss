@@ -45,10 +45,18 @@
         
         
     }
+    .range-day{
+        background-color: greenyellow;
+    }
     .selected{
         color: white;
         background: $primary-gradient;
         border-radius: 50%;
+    }
+    .selected-range{
+        color: white;
+        background: $primary-gradient;
+        border-radius: 50% 0;
     }
     .today{
         background: linear-gradient(to bottom ,#{$green-color},#{$blue-color});

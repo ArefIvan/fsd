@@ -13,41 +13,40 @@
     let selectedDay2 = el.dataset.selectedDay2;
     
   function selectDay(){
-    let sd1;
-    let sd2;
+    console.log(selectedDay1)
+    let from;
+    let to;
     let days=calContent.querySelectorAll('.future-day');
     
     days.forEach(day => { 
-      let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
-      if(date==selectedDay1){
-        day.classList.add("selected");
-        sd1=day;
-      }
-      if(date==selectedDay2){
-        day.classList.add('selected-2')
-        sd1.classList.add('selected-1')
-        }
+      
+      let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
+      
+        console.log(selectedDay1)
         day.onclick = (e)=>{
           if(selectedDay1 == undefined){ 
-            sd1=e.target
-            sd1.classList.add("selected")
+            from=e.target
+            from.classList.add("selected")
             selectedDay1 = date;
+            
           }else{
               if(selectedDay1==date){
                   if(selectedDay2==undefined){ 
-                    console.log(2)
-                    sd1.classList.remove("selected",'selected-1');
-                    sd1='';
+                    
+                    from.classList.remove("selected",'selected-1');
+
+                    from='';
+                    
                     selectedDay1=undefined;
                     
                   }else{
-                    console.log(sd1)
-                      sd1.classList.remove("selected",'selected-1');
-                      console.log(sd1.classList)
-                      sd1=sd2;
-                      sd1.classList.remove("selected-2")
-                      console.log(sd1)
-                      sd2="";
+                    console.log(from)
+                      from.classList.remove("selected",'selected-1');
+                      console.log(from.classList)
+                      from=to;
+                      from.classList.remove("selected-2")
+                      console.log(from)
+                      to="";
                       selectedDay1=selectedDay2;
                       selectedDay2=undefined;
                   }
@@ -61,24 +60,24 @@
                    if(date<selectedDay1){
                       selectedDay2=selectedDay1;
                       selectedDay1=date;
-                      sd2 = sd1;
-                      sd1 = e.target;
-                      sd1.classList.add("selected","selected-1")
-                      sd2.classList.add("selected-2")
+                      to = from;
+                      from = e.target;
+                      from.classList.add("selected","selected-1")
+                      to.classList.add("selected-2")
                       
                     }
                     if(date>selectedDay1){
                       selectedDay2=date;
-                      sd2 = e.target
-                      sd2.classList.add("selected","selected-2")
-                      sd1.classList.add("selected-1")
+                      to = e.target
+                      to.classList.add("selected","selected-2")
+                      from.classList.add("selected-1")
                       rangeDate(selectedDay1,selectedDay2)
                     }
                 }else{
                   if(selectedDay2==date){
-                    sd2.classList.remove("selected","selected-2")
-                    sd1.classList.remove("selected-1")
-                    sd2="";
+                    to.classList.remove("selected","selected-2")
+                    from.classList.remove("selected-1")
+                    to="";
                     selectedDay2=undefined
 
                   }
@@ -87,13 +86,13 @@
             }
             }
             rangeDate(selectedDay1,selectedDay2)
-              console.log(selectedDay1)
-              console.log(selectedDay2)
+            el.dataset.selectedDay1=selectedDay1;
+            el.dataset.selectedDay2=selectedDay2;
     }
 
 
-        el.dataset.selectedDay1=selectedDay1;
-        el.dataset.selectedDay2=selectedDay2;
+        
+        console.log(el.dataset.selectedDay1)
            
          
       
@@ -189,19 +188,21 @@
       if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
           calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
         }
+        
         prevBtn.onclick = function() {
           getContentCal(title.dataset.year, parseFloat(title.dataset.month)-1);
-          selectDay();
+          selectDay()
+          
         }
         // переключатель плюс месяц
         nextBtn.onclick = function() {
-          getContentCal(title.dataset.year, parseFloat(title.dataset.month)+1)
-          selectDay();
+          getContentCal(title.dataset.year, parseFloat(title.dataset.month)+1);
+          selectDay()
         }
 
     }   
    getContentCal(new Date().getFullYear(), new Date().getMonth());
-   selectDay();
+   selectDay()
   };
   export default calendar;
   // calendarsEl.forEach(item => {calendar(item)

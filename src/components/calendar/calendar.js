@@ -13,52 +13,90 @@
     let selectedDay2 = el.dataset.selectedDay2;
     
   function selectDay(){
-
+    let sd1;
+    let sd2;
     let days=calContent.querySelectorAll('.future-day');
     
     days.forEach(day => { 
-     
-      day.onclick = ()=>{
-        let sd1,sd2;
-      if(selectedDay1===undefined){ //если from день не выбран
-        day.classList.add("selected")
-        selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
-        // sd1=this;
+      let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
+      if(date==selectedDay1){
+        day.classList.add("selected");
         sd1=day;
-        console.log(sd1)
-      }else{
-        if(selectedDay1.getFullYear() == title.dataset.year //если кликаем по from
-            &&selectedDay1.getMonth()==title.dataset.month
-            &&selectedDay1.getDate() == day.innerHTML ){
-          day.classList.remove("selected")
-          selectedDay1 = undefined;
-        }else{
-          if(selectedDay2!="none"){
-              
-              if(selectedDay2===undefined){ //если from день не выбран
-                console.log(sd1)
-              day.classList.add("selected-range")
-              sd1.classList.remove("selected")
-              sd1.classList.add("selected-range")
-              selectedDay2 = new Date(title.dataset.year,title.dataset.month,day.innerHTML)
-              
-            }else{
-              if(selectedDay2.getFullYear() == title.dataset.year //если кликаем по from
-                  &&selectedDay2.getMonth() == title.dataset.month
-                  &&selectedDay2.getDate() == day.innerHTML ){
-                day.classList.remove("selected")
-                selectedDay2 = undefined;
+      }
+      if(date==selectedDay2){
+        day.classList.add('selected-2')
+        sd1.classList.add('selected-1')
+        }
+        day.onclick = (e)=>{
+          if(selectedDay1 == undefined){ 
+            sd1=e.target
+            sd1.classList.add("selected")
+            selectedDay1 = date;
+          }else{
+              if(selectedDay1==date){
+                  if(selectedDay2==undefined){ 
+                    console.log(2)
+                    sd1.classList.remove("selected",'selected-1');
+                    sd1='';
+                    selectedDay1=undefined;
+                    
+                  }else{
+                    console.log(sd1)
+                      sd1.classList.remove("selected",'selected-1');
+                      console.log(sd1.classList)
+                      sd1=sd2;
+                      sd1.classList.remove("selected-2")
+                      console.log(sd1)
+                      sd2="";
+                      selectedDay1=selectedDay2;
+                      selectedDay2=undefined;
+                  }
+                }else{
+
+               
+              if(selectedDay2=='none'){
+                return
+              }else{
+                if(selectedDay2==undefined){
+                   if(date<selectedDay1){
+                      selectedDay2=selectedDay1;
+                      selectedDay1=date;
+                      sd2 = sd1;
+                      sd1 = e.target;
+                      sd1.classList.add("selected","selected-1")
+                      sd2.classList.add("selected-2")
+                      
+                    }
+                    if(date>selectedDay1){
+                      selectedDay2=date;
+                      sd2 = e.target
+                      sd2.classList.add("selected","selected-2")
+                      sd1.classList.add("selected-1")
+                      rangeDate(selectedDay1,selectedDay2)
+                    }
+                }else{
+                  if(selectedDay2==date){
+                    sd2.classList.remove("selected","selected-2")
+                    sd1.classList.remove("selected-1")
+                    sd2="";
+                    selectedDay2=undefined
+
                   }
                 }
               }
+            }
+            }
             rangeDate(selectedDay1,selectedDay2)
-          }
-        } 
+              console.log(selectedDay1)
+              console.log(selectedDay2)
+    }
+
+
         el.dataset.selectedDay1=selectedDay1;
         el.dataset.selectedDay2=selectedDay2;
            
          
-      }
+      
     });
   }
   function rangeDate(day1,day2){

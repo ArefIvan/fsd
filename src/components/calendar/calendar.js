@@ -3,19 +3,20 @@
   
 
 
-    let calendar = function(el) {
+  let calendar = function(el) {
     
     let prevBtn = el.querySelector(".calendar__arrow--prev");
     let nextBtn = el.querySelector(".calendar__arrow--next");
-    let title = el.querySelector(".calendar__title");
-    let calContent = el.querySelector(".calendar__content");
+    // let title = el.querySelector(".calendar__title");
+    // let calContent = el.querySelector(".calendar__content");
     
+   
+    
+ function selectDay(el){ 
     let from;
     let to;
-    
-  function selectDay(){
-
-    
+    let calContent = el.querySelector(".calendar__content")
+    let title = el.querySelector(".calendar__title");
     let selectedDay1 = (el.dataset.selectedDay1)?new Date(el.dataset.selectedDay1):'';
     let selectedDay2 = el.dataset.selectedDay2;
     if(selectedDay2!="none"){
@@ -52,7 +53,7 @@
               to.classList.add("selected","selected-2")
           }
         }
-        rangeDate(selectedDay1,selectedDay2)
+        rangeDate(el,selectedDay1,selectedDay2)
         
         day.onclick = (e)=>{
           if(selectedDay2=="none"){
@@ -90,8 +91,9 @@
                       from.classList.remove("selected",'selected-1');
                       
                       from=to;
+                      if(from){
                       from.classList.remove("selected-2")
-                      
+                      }
                       to="";
                       selectedDay1=selectedDay2;
                       selectedDay2='';
@@ -104,14 +106,18 @@
                           to = from;
                           from = e.target;
                           from.classList.add("selected","selected-1")
-                          to.classList.add("selected-2")
+                          if(to){
+                            to.classList.add("selected-2")
+                          }
                           
                         }
                         if(date>selectedDay1){
                           selectedDay2=date;
                           to = e.target
                           to.classList.add("selected","selected-2")
+                          if(from){
                           from.classList.add("selected-1")
+                          }
                           // rangeDate(selectedDay1,selectedDay2)
                         }
                     }else{
@@ -119,7 +125,9 @@
                       &&title.dataset.month==selectedDay2.getMonth()
                       &&title.dataset.year==selectedDay2.getFullYear()){
                         to.classList.remove("selected","selected-2")
-                        from.classList.remove("selected-1")
+                        if(from){
+                          from.classList.remove("selected-1")
+                        }
                         to="";
                         selectedDay2=''
 
@@ -129,14 +137,10 @@
               
                 }
             }
-            rangeDate(selectedDay1,selectedDay2)
+            rangeDate(el,selectedDay1,selectedDay2)
             
             el.dataset.selectedDay1=selectedDay1;
             el.dataset.selectedDay2=selectedDay2;
-            console.log(from)
-            console.log(to);
-            console.log(selectedDay1)
-            console.log(selectedDay2)
          }
     }
 
@@ -148,7 +152,9 @@
       
     });
   }
-  function rangeDate(day1,day2){
+  function rangeDate(el,day1,day2){
+    let title = el.querySelector(".calendar__title");
+    let calContent = el.querySelector(".calendar__content")
     let days=calContent.querySelectorAll('.future-day');
     let from = (day1>day2)?day2:day1;
     let to = (from==day1)?day2:day1;
@@ -165,8 +171,9 @@
      })
 
   }
-  function getContentCal(year, month){
-      
+  function getContentCal(el,year, month){
+      let title = el.querySelector(".calendar__title");
+      let calContent = el.querySelector(".calendar__content")
       let Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
           DlastPrev = new Date(year,month,0).getDate(),
           D = new Date(year,month,Dlast),// переменая с датой последнего дня месяца
@@ -229,19 +236,19 @@
         }
         
         prevBtn.onclick = function() {
-          getContentCal(title.dataset.year, parseFloat(title.dataset.month)-1);
-          selectDay()
+          getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)-1);
+          selectDay(el)
           
         }
         // переключатель плюс месяц
         nextBtn.onclick = function() {
-          getContentCal(title.dataset.year, parseFloat(title.dataset.month)+1);
-          selectDay()
+          getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)+1);
+          selectDay(el)
         }
 
     }   
-   getContentCal(new Date().getFullYear(), new Date().getMonth());
-   selectDay()
+   getContentCal(el,new Date().getFullYear(), new Date().getMonth());
+   selectDay(el)
   };
   export default calendar;
   // calendarsEl.forEach(item => {calendar(item)

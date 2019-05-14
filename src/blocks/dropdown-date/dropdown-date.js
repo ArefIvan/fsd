@@ -17,7 +17,7 @@ function catalogItemDropdownDate(field){
             
             
             let value=this.dataset.selectedDay1
-            if(value!=='undefined'){
+            if(value!==''){
                 value = dateFormat(value);
                 date.value=value;
             }
@@ -38,14 +38,8 @@ function catalogItemDropdownDate(field){
 
             
             calendar.dataset.selectedDay1=value;
-            console.log(calendar.dataset.selectedDay1)
-
-            // if(isValidDate(value)){
-            //     console.log("+")
-
-            // }else{
-            //     console.log("-")
-            // }
+            cal(calendar);
+            
 
         }
         
@@ -63,7 +57,7 @@ catalogItemDropdownDate(".field-dropdown--date")
 function dateFormat(str){
     let date =new Date(str)
     let day= date.getDate();
-    let month = date.getMonth();
+    let month = date.getMonth()+1;
     let year = date.getFullYear();
     if(day<10)day='0'+ day;
     if(month<10)month= "0" + month;

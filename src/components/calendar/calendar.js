@@ -11,25 +11,28 @@
     let calContent = el.querySelector(".calendar__content");
     let selectedDay1 = el.dataset.selectedDay1;
     let selectedDay2 = el.dataset.selectedDay2;
-    
-  function selectDay(){
-    
     let from;
     let to;
+    
+  function selectDay(){
+
+    
+
     let days=calContent.querySelectorAll('.future-day');
     
     days.forEach(day => { 
       
       let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
         if(selectedDay1!=undefined){ 
-            if(day.innerHTML==selectedDay1.getDate()
-              &&title.month==selectedDay1.getMonth()
-              &&title.year==selectedDay1.getFullYear()){
-                console.log(1)
+            if(day.innerHTML == selectedDay1.getDate()
+              &&title.dataset.month==selectedDay1.getMonth()
+              &&title.dataset.year==selectedDay1.getFullYear())
+              {
+                
                 from = day;
                 from.classList.add("selected")
                   if(selectedDay2!=undefined&&selectedDay2!='none'){
-                    console.log("1.1")
+                    
                     from.classList.add("selected-1")
                   }
               }
@@ -37,9 +40,9 @@
         if(selectedDay2!=undefined&&selectedDay2!='none'){  
           
           if(day.innerHTML==selectedDay2.getDate()
-          &&title.month==selectedDay2.getMonth()
-          &&title.year==selectedDay2.getFullYear()){
-            console.log(2)
+          &&title.dataset.month==selectedDay2.getMonth()
+          &&title.dataset.year==selectedDay2.getFullYear()){
+            
               to = day;
               to.classList.add("selected","selected-2")
           }
@@ -47,13 +50,20 @@
         rangeDate(selectedDay1,selectedDay2)
         
         day.onclick = (e)=>{
+
+          
           if(selectedDay1 == undefined){ 
+            console.log(2)
             from=e.target
             from.classList.add("selected")
-            selectedDay1 = date;
+            selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
             
           }else{
-              if(selectedDay1==date){
+            console.log(1)
+              if(day.innerHTML == selectedDay1.getDate()
+              &&title.dataset.month==selectedDay1.getMonth()
+              &&title.dataset.year==selectedDay1.getFullYear()){
+                
                   if(selectedDay2==undefined){ 
                     
                     from.classList.remove("selected",'selected-1');
@@ -63,19 +73,19 @@
                     selectedDay1=undefined;
                     
                   }else{
-                    console.log(from)
+                      console.log(1)
                       from.classList.remove("selected",'selected-1');
-                      console.log(from.classList)
+                      
                       from=to;
                       from.classList.remove("selected-2")
-                      console.log(from)
+                      
                       to="";
                       selectedDay1=selectedDay2;
                       selectedDay2=undefined;
                   }
                 }else{
 
-               
+               console.log("4")
               if(selectedDay2=='none'){
                 return
               }else{
@@ -97,7 +107,9 @@
                       // rangeDate(selectedDay1,selectedDay2)
                     }
                 }else{
-                  if(selectedDay2==date){
+                  if(day.innerHTML==selectedDay2.getDate()
+                  &&title.dataset.month==selectedDay2.getMonth()
+                  &&title.dataset.year==selectedDay2.getFullYear()){
                     to.classList.remove("selected","selected-2")
                     from.classList.remove("selected-1")
                     to="";
@@ -109,13 +121,18 @@
             }
             }
             rangeDate(selectedDay1,selectedDay2)
+            
             el.dataset.selectedDay1=selectedDay1;
             el.dataset.selectedDay2=selectedDay2;
+            console.log(from)
+            console.log(to);
+            console.log(selectedDay1)
+            console.log(selectedDay2)
     }
 
 
         
-        console.log(el.dataset.selectedDay1)
+        
            
          
       

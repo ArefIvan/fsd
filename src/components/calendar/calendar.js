@@ -7,12 +7,25 @@
     
     let prevBtn = el.querySelector(".calendar__arrow--prev");
     let nextBtn = el.querySelector(".calendar__arrow--next");
-    // let title = el.querySelector(".calendar__title");
+     let title = el.querySelector(".calendar__title");
     // let calContent = el.querySelector(".calendar__content");
     
-   
+    prevBtn.onclick = function() {
+      getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)-1);
+      selectDay(el)
+      
+    }
+    // переключатель плюс месяц
+    nextBtn.onclick = function() {
+      getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)+1);
+      selectDay(el)
+    }
     
- function selectDay(el){ 
+ 
+   getContentCal(el,new Date().getFullYear(), new Date().getMonth());
+   selectDay(el)
+  };
+  export function selectDay(el){ 
     let from;
     let to;
     let calContent = el.querySelector(".calendar__content")
@@ -152,7 +165,7 @@
       
     });
   }
-  function rangeDate(el,day1,day2){
+  export function rangeDate(el,day1,day2){
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content")
     let days=calContent.querySelectorAll('.future-day');
@@ -201,7 +214,7 @@
      })
 
   }
-  function getContentCal(el,year, month){
+  export function getContentCal(el,year, month){
       let title = el.querySelector(".calendar__title");
       let calContent = el.querySelector(".calendar__content")
       let Dlast = new Date(year,month+1,0).getDate(),//узнать какой последний день месяца,
@@ -265,22 +278,10 @@
           calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
         }
         
-        prevBtn.onclick = function() {
-          getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)-1);
-          selectDay(el)
-          
-        }
-        // переключатель плюс месяц
-        nextBtn.onclick = function() {
-          getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)+1);
-          selectDay(el)
-        }
+        
 
     }   
-   getContentCal(el,new Date().getFullYear(), new Date().getMonth());
-   selectDay(el)
-  };
-  export default calendar;
+  export default {calendar,selectDay,rangeDate,getContentCal};
   // calendarsEl.forEach(item => {calendar(item)
     
 //   });

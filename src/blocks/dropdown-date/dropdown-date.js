@@ -1,9 +1,14 @@
 import "../../components/form/field-dropdown"
-import calendar from "../../components/calendar/calendar"
+import calendar from "../../components/calendar/calendar.js"
+// import selectDay from "../../components/calendar/calendar"
 
 // dropdown_date
 function catalogItemDropdownDate(field){
-    let cal = calendar;
+    let selectDay =calendar.selectDay;
+    let getContentCal= calendar.getContentCal;
+    console.log(selectDay)
+    let cal = calendar.calendar;
+    console.log(cal)
     let fieldsEl = document.querySelectorAll(field)
   
     let dropdownDate = function(el){
@@ -17,7 +22,8 @@ function catalogItemDropdownDate(field){
             
             
             let value=this.dataset.selectedDay1
-            if(value!==''){
+            if(value!==''&&value!==undefined){
+                console.log(value)
                 value = dateFormat(value);
                 date.value=value;
             }
@@ -29,16 +35,26 @@ function catalogItemDropdownDate(field){
         }
         date.onchange = function(){
             let value = this.value;
-
+            let valueStr;
+            let now = new Date()
 
             value=value.split('.')
             
             
             value = new Date(value[2],(value[1]-1),value[0])
+            
+            if(value<now){
+                value = now
+
+            }
 
             
             calendar.dataset.selectedDay1=value;
-            cal(calendar);
+            valueStr = dateFormat(value);
+            this.value=valueStr
+            getContentCal(calendar,value.getFullYear(),value.getMonth())
+            selectDay(calendar)
+            
             
 
         }
@@ -93,5 +109,3 @@ function isValidDate(dateString)
 };
 
 
-import "../../components/form/field-dropdown"
-import "../../components/calendar/calendar"

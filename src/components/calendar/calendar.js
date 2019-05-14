@@ -17,7 +17,12 @@
 
     
     let selectedDay1 = (el.dataset.selectedDay1)?new Date(el.dataset.selectedDay1):'';
-    let selectedDay2 = (el.dataset.selectedDay2)?new Date(el.dataset.selectedDay2):'';
+    let selectedDay2 = el.dataset.selectedDay2;
+    if(selectedDay2!="none"){
+     selectedDay2 = (el.dataset.selectedDay2)?new Date(el.dataset.selectedDay2):'';
+    }else{
+      selectedDay2=="none";
+    }
     let days=calContent.querySelectorAll('.future-day');
     
     days.forEach(day => { 

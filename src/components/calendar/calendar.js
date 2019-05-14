@@ -13,7 +13,7 @@
     let selectedDay2 = el.dataset.selectedDay2;
     
   function selectDay(){
-    console.log(selectedDay1)
+    
     let from;
     let to;
     let days=calContent.querySelectorAll('.future-day');
@@ -21,8 +21,31 @@
     days.forEach(day => { 
       
       let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
-      
-        console.log(selectedDay1)
+        if(selectedDay1!=undefined){ 
+            if(day.innerHTML==selectedDay1.getDate()
+              &&title.month==selectedDay1.getMonth()
+              &&title.year==selectedDay1.getFullYear()){
+                console.log(1)
+                from = day;
+                from.classList.add("selected")
+                  if(selectedDay2!=undefined&&selectedDay2!='none'){
+                    console.log("1.1")
+                    from.classList.add("selected-1")
+                  }
+              }
+        }
+        if(selectedDay2!=undefined&&selectedDay2!='none'){  
+          
+          if(day.innerHTML==selectedDay2.getDate()
+          &&title.month==selectedDay2.getMonth()
+          &&title.year==selectedDay2.getFullYear()){
+            console.log(2)
+              to = day;
+              to.classList.add("selected","selected-2")
+          }
+        }
+        rangeDate(selectedDay1,selectedDay2)
+        
         day.onclick = (e)=>{
           if(selectedDay1 == undefined){ 
             from=e.target
@@ -71,7 +94,7 @@
                       to = e.target
                       to.classList.add("selected","selected-2")
                       from.classList.add("selected-1")
-                      rangeDate(selectedDay1,selectedDay2)
+                      // rangeDate(selectedDay1,selectedDay2)
                     }
                 }else{
                   if(selectedDay2==date){

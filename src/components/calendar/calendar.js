@@ -9,21 +9,21 @@
     let nextBtn = el.querySelector(".calendar__arrow--next");
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content");
-    let selectedDay1 = el.dataset.selectedDay1;
-    let selectedDay2 = el.dataset.selectedDay2;
+    
     let from;
     let to;
     
   function selectDay(){
 
     
-
+    let selectedDay1 = (el.dataset.selectedDay1)?new Date(el.dataset.selectedDay1):'';
+    let selectedDay2 = (el.dataset.selectedDay2)?new Date(el.dataset.selectedDay2):'';
     let days=calContent.querySelectorAll('.future-day');
     
     days.forEach(day => { 
       
       let date = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
-        if(selectedDay1!=undefined){ 
+        if(selectedDay1!=''){ 
             if(day.innerHTML == selectedDay1.getDate()
               &&title.dataset.month==selectedDay1.getMonth()
               &&title.dataset.year==selectedDay1.getFullYear())
@@ -31,13 +31,13 @@
                 
                 from = day;
                 from.classList.add("selected")
-                  if(selectedDay2!=undefined&&selectedDay2!='none'){
+                  if(selectedDay2!=''&&selectedDay2!='none'){
                     
                     from.classList.add("selected-1")
                   }
               }
         }
-        if(selectedDay2!=undefined&&selectedDay2!='none'){  
+        if(selectedDay2!=''&&selectedDay2!='none'){  
           
           if(day.innerHTML==selectedDay2.getDate()
           &&title.dataset.month==selectedDay2.getMonth()
@@ -60,7 +60,7 @@
           }else{
 
           
-          if(selectedDay1 == undefined){ 
+          if(selectedDay1 == ''){ 
             console.log(2)
             from=e.target
             from.classList.add("selected")
@@ -72,13 +72,13 @@
               &&title.dataset.month==selectedDay1.getMonth()
               &&title.dataset.year==selectedDay1.getFullYear()){
                 
-                  if(selectedDay2==undefined){ 
+                  if(selectedDay2==''){ 
                     
                     from.classList.remove("selected",'selected-1');
 
                     from='';
                     
-                    selectedDay1=undefined;
+                    selectedDay1='';
                     
                   }else{
                       console.log(1)
@@ -89,10 +89,10 @@
                       
                       to="";
                       selectedDay1=selectedDay2;
-                      selectedDay2=undefined;
+                      selectedDay2='';
                   }
                 }else{
-                    if(selectedDay2==undefined){
+                    if(selectedDay2==''){
                       if(date<selectedDay1){
                           selectedDay2=selectedDay1;
                           selectedDay1=date;
@@ -116,7 +116,7 @@
                         to.classList.remove("selected","selected-2")
                         from.classList.remove("selected-1")
                         to="";
-                        selectedDay2=undefined
+                        selectedDay2=''
 
                       }
                     }
@@ -186,18 +186,6 @@
           };// иначе добавить 6 столбцов
       }
       for(let  i = 1; i <= Dlast; i++) {
-        if(selectedDay1 !==undefined
-        &&selectedDay1.getFullYear() == D.getFullYear() //если есть выбранный день
-        &&selectedDay1.getMonth()==D.getMonth()
-        &&selectedDay1.getDate() == i
-        ||selectedDay2 !==undefined
-        &&selectedDay2 !=="none"
-        &&selectedDay2.getFullYear() == D.getFullYear() //если есть второй выбранный день
-        &&selectedDay2.getMonth()==D.getMonth()
-        &&selectedDay2.getDate() == i){
-          content += '<td class="calendar__day future-day selected">' + i;
-
-        }else{
             if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
               content += '<td class="calendar__day today">' + i;
             }else{
@@ -213,7 +201,7 @@
               }
          
           }
-        }
+        
         if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
           content += '<tr>';
         }

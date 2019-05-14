@@ -156,8 +156,38 @@
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content")
     let days=calContent.querySelectorAll('.future-day');
+    let daysNextMouth = calContent.querySelectorAll(".nextMonth");
+    let daysPrevMouth = calContent.querySelectorAll(".prevMonth");
     let from = (day1>day2)?day2:day1;
     let to = (from==day1)?day2:day1;
+    daysPrevMouth.forEach(day => {
+      let date=new Date(title.dataset.year,parseFloat(title.dataset.month)-1,day.innerHTML);
+      if(from&&to){
+        if(date>from&&date<to||
+          day.innerHTML==from.getDate()
+          &&(parseFloat(title.dataset.month)-1)==from.getMonth()
+          &&title.dataset.year==from.getFullYear()){
+          day.classList.add("range-day")
+        }
+      }else{
+        day.classList.remove("range-day")
+      }
+
+     })
+    daysNextMouth.forEach(day => {
+      let date=new Date(title.dataset.year,parseFloat(title.dataset.month)+1,day.innerHTML);
+      if(from&&to){
+        if(date>from&&date<to||
+          day.innerHTML== to.getDate()
+          &&(parseFloat(title.dataset.month)+1)==to.getMonth()
+          &&title.dataset.year==to.getFullYear()){
+          day.classList.add("range-day")
+        }
+      }else{
+        day.classList.remove("range-day")
+      }
+
+     })
     days.forEach(day => {
       let date=new Date(title.dataset.year,title.dataset.month,day.innerHTML);
       if(from&&to){

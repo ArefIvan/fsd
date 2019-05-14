@@ -1,6 +1,6 @@
 .field-dropdown.field-dropdown--date
     .field-dropdown__header
-        input.field-dropdown__date(type="text" placeholder="dd.mm.yyyy")
+        input.field-dropdown__date(type="text" placeholder="dd.mm.yyyy" name="")
         i.material-icons.field-dropdown__icon
     .field-dropdown__content 
         .calendar
@@ -8,7 +8,7 @@
                 .material-icons.calendar__arrow.calendar__arrow--prev
                 .calendar__title.h2
                 .material-icons.calendar__arrow.calendar__arrow--next 
-            table.calendar__table#calendar2
+            table.calendar__table
                 thead        
                     tr.calendar__days-week
                         td Пн
@@ -20,5 +20,5 @@
                         td Вс
                 tbody.calendar__content
         .field-dropdown__content-footer
-            span.h3.cancel Очистить
-            span.h3.assept Применить
+            button(type="reset").h3.cancel Очистить
+            button(type="submit").h3.assept Применить

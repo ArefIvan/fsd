@@ -30,12 +30,22 @@ function catalogItemDropdownDate(field){
         date.onchange = function(){
             let value = this.value;
 
-            if(isValidDate(value)){
-                console.log("+")
 
-            }else{
-                console.log("-")
-            }
+            value=value.split('.')
+            
+            
+            value = new Date(value[2],(value[1]-1),value[0])
+
+            
+            calendar.dataset.selectedDay1=value;
+            console.log(calendar.dataset.selectedDay1)
+
+            // if(isValidDate(value)){
+            //     console.log("+")
+
+            // }else{
+            //     console.log("-")
+            // }
 
         }
         

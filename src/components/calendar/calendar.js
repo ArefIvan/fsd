@@ -50,6 +50,14 @@
         rangeDate(selectedDay1,selectedDay2)
         
         day.onclick = (e)=>{
+          if(selectedDay2=="none"){
+            selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
+             if(from){ from.classList.remove("selected")}
+              from = day;
+              from.classList.add("selected");
+              el.dataset.selectedDay1=selectedDay1;
+            
+          }else{
 
           
           if(selectedDay1 == undefined){ 
@@ -84,41 +92,37 @@
                       selectedDay2=undefined;
                   }
                 }else{
+                    if(selectedDay2==undefined){
+                      if(date<selectedDay1){
+                          selectedDay2=selectedDay1;
+                          selectedDay1=date;
+                          to = from;
+                          from = e.target;
+                          from.classList.add("selected","selected-1")
+                          to.classList.add("selected-2")
+                          
+                        }
+                        if(date>selectedDay1){
+                          selectedDay2=date;
+                          to = e.target
+                          to.classList.add("selected","selected-2")
+                          from.classList.add("selected-1")
+                          // rangeDate(selectedDay1,selectedDay2)
+                        }
+                    }else{
+                      if(day.innerHTML==selectedDay2.getDate()
+                      &&title.dataset.month==selectedDay2.getMonth()
+                      &&title.dataset.year==selectedDay2.getFullYear()){
+                        to.classList.remove("selected","selected-2")
+                        from.classList.remove("selected-1")
+                        to="";
+                        selectedDay2=undefined
 
-               console.log("4")
-              if(selectedDay2=='none'){
-                return
-              }else{
-                if(selectedDay2==undefined){
-                   if(date<selectedDay1){
-                      selectedDay2=selectedDay1;
-                      selectedDay1=date;
-                      to = from;
-                      from = e.target;
-                      from.classList.add("selected","selected-1")
-                      to.classList.add("selected-2")
-                      
+                      }
                     }
-                    if(date>selectedDay1){
-                      selectedDay2=date;
-                      to = e.target
-                      to.classList.add("selected","selected-2")
-                      from.classList.add("selected-1")
-                      // rangeDate(selectedDay1,selectedDay2)
-                    }
-                }else{
-                  if(day.innerHTML==selectedDay2.getDate()
-                  &&title.dataset.month==selectedDay2.getMonth()
-                  &&title.dataset.year==selectedDay2.getFullYear()){
-                    to.classList.remove("selected","selected-2")
-                    from.classList.remove("selected-1")
-                    to="";
-                    selectedDay2=undefined
-
-                  }
+               
+              
                 }
-              }
-            }
             }
             rangeDate(selectedDay1,selectedDay2)
             
@@ -128,6 +132,7 @@
             console.log(to);
             console.log(selectedDay1)
             console.log(selectedDay2)
+         }
     }
 
 
@@ -186,6 +191,7 @@
         &&selectedDay1.getMonth()==D.getMonth()
         &&selectedDay1.getDate() == i
         ||selectedDay2 !==undefined
+        &&selectedDay2 !=="none"
         &&selectedDay2.getFullYear() == D.getFullYear() //если есть второй выбранный день
         &&selectedDay2.getMonth()==D.getMonth()
         &&selectedDay2.getDate() == i){

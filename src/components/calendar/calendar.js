@@ -37,7 +37,8 @@
     }else{
       selectedDay2=="none";
     }
-    let days=calContent.querySelectorAll('.future-day');
+    let days = calContent.querySelectorAll('.future-day');
+    let today = calContent.querySelector('.today');
     
     days.forEach(day => { 
       
@@ -173,6 +174,9 @@
     let daysPrevMouth = calContent.querySelectorAll(".prevMonth");
     let from = (day1>day2)?day2:day1;
     let to = (from==day1)?day2:day1;
+    if(to=='none'){
+      return
+    }
     daysPrevMouth.forEach(day => {
       let date=new Date(title.dataset.year,parseFloat(title.dataset.month)-1,day.innerHTML);
       if(from&&to){

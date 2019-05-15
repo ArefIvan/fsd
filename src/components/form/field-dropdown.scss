@@ -7,6 +7,7 @@
         justify-content: space-between ;
         height: 42px;
         line-height: 42px; 
+        
     }
 
     &__title{
@@ -72,12 +73,30 @@
         display: flex;
         justify-content: space-between;
          .cancel{
+            background-color: inherit;
             color:$primary-color--50;
         }
          .assept{
              color:$purple-color;
+             background-color: inherit;
          }
     }
+    .error{
+        
+         border:1px solid red;
+         position: relative;
+            &::before{
+                content:'введите дату в формате дд.мм.гггг';
+                line-height: 2;
+                position: absolute;
+                left :0;
+                top:0;
+                transform: translateY(-100%);
+                color:red;
+                font-size: 0.5em
+            }
+     }
+
     
 }
 

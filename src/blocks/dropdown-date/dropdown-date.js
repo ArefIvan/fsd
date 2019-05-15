@@ -15,8 +15,9 @@ function catalogItemDropdownDate(field){
         
         let date = el.querySelector(".field-dropdown__date")
         let calendar= el.querySelector('.calendar');
-        // calendar.dataset.selectedDay2='none';
+        calendar.dataset.selectedDay2='none';
         cal(calendar);
+        console.log(date.parentNode)
        
         calendar.onclick = function(){
             
@@ -34,29 +35,24 @@ function catalogItemDropdownDate(field){
             
         }
         date.onchange = function(){
-            let value = this.value;
+            let value = this.value;          
             let valueStr;
             let now = new Date()
-
-            value=value.split('.')
-            
-            
-            value = new Date(value[2],(value[1]-1),value[0])
-            
-            if(value<now){
-                value = now
-
+            if(isValidDate(value)){     
+               value=value.split('.')         
+                value = new Date(value[2],(value[1]-1),value[0])            
+                if(value<now){
+                    value = now
+                }   
+                calendar.dataset.selectedDay1=value;
+                valueStr = dateFormat(value);
+                this.value=valueStr
+                date.parentNode.classList.remove('error')
+                getContentCal(calendar,value.getFullYear(),value.getMonth())
+                selectDay(calendar)
+            }else{
+                date.parentNode.classList.add('error')
             }
-
-            
-            calendar.dataset.selectedDay1=value;
-            valueStr = dateFormat(value);
-            this.value=valueStr
-            getContentCal(calendar,value.getFullYear(),value.getMonth())
-            selectDay(calendar)
-            
-            
-
         }
         
         

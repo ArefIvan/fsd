@@ -1,16 +1,9 @@
 import $ from 'jquery';
-// import jQuery from "jquery";
-// import "../../../node_modules/ion-rangeslider/css/ion.rangeSlider.min.css" 
 
-
-
-$(document).ready(function(){
-    var ran = $(".range-slide1") 
-    var ran1=$(".range-slide2")
-    range(ran)
-    range(ran1)
+range($(".range-slide"))
     
-    function range(elem){
+    
+function range(elem){
         if(!(elem.children().is('.range__input'))){
             
             return;
@@ -56,5 +49,5 @@ $(document).ready(function(){
         }
         }
     })
-;}   
-})
+;} 
+export default range

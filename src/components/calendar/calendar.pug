@@ -1,19 +1,21 @@
-.calendar
-    .calendar__header
-        .material-icons.calendar__arrow.calendar__arrow--prev
-        .calendar__title.h2
-        .material-icons.calendar__arrow.calendar__arrow--next 
-    table.calendar__table
-        thead        
-            tr.calendar__days-week
-                td Пн
-                td Вт
-                td Ср
-                td Чт
-                td Пт
-                td Сб
-                td Вс
-        tbody.calendar__content
-    .calendar__footer
-        button(type="reset").h3.cancel Очистить
-        button(type="submit").h3.assept Применить
+mixin calendar(range)
+    -let str=(range)?'':"none"
+    .calendar(data-selected-day2=str)
+        .calendar__header
+            .material-icons.calendar__arrow.calendar__arrow--prev
+            .calendar__title.h2
+            .material-icons.calendar__arrow.calendar__arrow--next 
+        table.calendar__table
+            thead        
+                tr.calendar__days-week
+                    td Пн
+                    td Вт
+                    td Ср
+                    td Чт
+                    td Пт
+                    td Сб
+                    td Вс
+            tbody.calendar__content
+        .calendar__footer
+            button(type="reset").h3.cancel Очистить
+            button(type="submit").h3.assept Применить

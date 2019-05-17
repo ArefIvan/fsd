@@ -81,9 +81,9 @@
              background-color: inherit;
          }
     }
-    .error{
+    &__error{
         
-         border:1px solid red;
+        
          position: relative;
             &::before{
                 content:'введите дату в формате дд.мм.гггг';

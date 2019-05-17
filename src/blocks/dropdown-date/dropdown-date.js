@@ -5,23 +5,17 @@ import calendar from "../../components/calendar/calendar.js"
 // dropdown_date
 function catalogItemDropdownDate(field){
     let selectDay =calendar.selectDay;
-    let getContentCal= calendar.getContentCal;
-    console.log(selectDay)
+    let getContentCal= calendar.getContentCal; 
     let cal = calendar.calendar;
-    console.log(cal)
     let fieldsEl = document.querySelectorAll(field)
   
     let dropdownDate = function(el){
         
-        let date = el.querySelector(".field-dropdown__date")
-        let calendar= el.querySelector('.calendar');
-        calendar.dataset.selectedDay2='none';
+        let date = el.querySelector(".field-dropdown__date"); //поле даты   
+        let calendar= el.querySelector('.calendar'); //калердарь
+        calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
         cal(calendar);
-        console.log(date.parentNode)
-       
         calendar.onclick = function(){
-            
-            
             let value=this.dataset.selectedDay1
             if(value!==''&&value!==undefined){
                 console.log(value)
@@ -47,11 +41,11 @@ function catalogItemDropdownDate(field){
                 calendar.dataset.selectedDay1=value;
                 valueStr = dateFormat(value);
                 this.value=valueStr
-                date.parentNode.classList.remove('error')
+                date.parentNode.classList.remove('field-dropdown__error')
                 getContentCal(calendar,value.getFullYear(),value.getMonth())
                 selectDay(calendar)
             }else{
-                date.parentNode.classList.add('error')
+                date.parentNode.classList.add('field-dropdown__error')
             }
         }
         
@@ -60,9 +54,7 @@ function catalogItemDropdownDate(field){
     fieldsEl.forEach(item =>{
         dropdownDate(item)
     })
-    // $(field).each(function(){
-    //     dropdownDate($(this));
-    // })
+
 }
 catalogItemDropdownDate(".field-dropdown--date")
 

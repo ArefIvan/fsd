@@ -11,24 +11,41 @@ function catalogItemDropdownDate(field){
   
     let dropdownDate = function(el){
         
-        let date = el.querySelector(".field-dropdown__date"); //поле даты   
+        let dateOne = el.querySelector(".field-dropdown__date--one"); //поле даты 
+        let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
+        console.log(dateOne)
         let calendar= el.querySelector('.calendar'); //калердарь
-        calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
+        // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
         cal(calendar);
+
         calendar.onclick = function(){
-            let value=this.dataset.selectedDay1
-            if(value!==''&&value!==undefined){
-                console.log(value)
-                value = dateFormat(value);
-                date.value=value;
+            let valueOne = this.dataset.selectedDay1
+            let valueTwo = this.dataset.selectedDay2
+            if(valueOne!==''&&valueOne!==undefined){
+                if(valueTwo=="none"){
+                     valueOne = dateFormatFull(valueOne);
+                }else{
+                    valueOne = dateFormatShort(valueOne)
+                }
+                dateOne.value=valueOne;
             }
             else{
-                date.value = ""
+                dateOne.valueOne = ""
             }
+            if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){
+                
+                valueTwo = dateFormatShort(valueTwo);
+                dateTwo.value=valueTwo;
+            }
+            else{
+                dateTwo.valueTwo = ""
+            }
+            
            
             
         }
-        date.onchange = function(){
+
+        dateOne.onchange = function(){
             let value = this.value;          
             let valueStr;
             let now = new Date()
@@ -39,9 +56,10 @@ function catalogItemDropdownDate(field){
                     value = now
                 }   
                 calendar.dataset.selectedDay1=value;
+                
                 valueStr = dateFormat(value);
                 this.value=valueStr
-                date.parentNode.classList.remove('field-dropdown__error')
+                dateOne.parentNode.classList.remove('field-dropdown__error')
                 getContentCal(calendar,value.getFullYear(),value.getMonth())
                 selectDay(calendar)
             }else{
@@ -58,7 +76,7 @@ function catalogItemDropdownDate(field){
 }
 catalogItemDropdownDate(".field-dropdown--date")
 
-function dateFormat(str){
+function dateFormatFull(str){
     let date =new Date(str)
     let day= date.getDate();
     let month = date.getMonth()+1;
@@ -67,6 +85,15 @@ function dateFormat(str){
     if(month<10)month= "0" + month;
 
     return day + "." + month + "."+ year
+}
+function dateFormatShort(str){
+    let date =new Date(str)
+    let day= date.getDate(); 
+    let months=["Янв","Фев","Мар","Апh","Май","Июн","Июл","Авг","Сен","Окт","Ноя","Дек"];
+    let month =months[date.getMonth()];
+    if(day<10)day='0'+ day;
+
+    return day + " " + month 
 }
 
 // Проверка даты

@@ -16,6 +16,9 @@
         text-align: left;
          
     }
+    &__datewrap{
+        display: flex;
+    }
     &__date{
         width:12em;
         padding-left:10px;     

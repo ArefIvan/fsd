@@ -2,7 +2,7 @@
 //   let calendarsEl = document.querySelectorAll(calendars);
   
 
-
+  document.querySelector(".calendar")
   let calendar = function(el) {
     
     let prevBtn = el.querySelector(".calendar__arrow--prev");
@@ -279,13 +279,16 @@
       
       title.dataset.year = D.getFullYear();
       if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-          calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
+          // calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
+          console.log("1")
         }
         
         
 
     }   
   export default {calendar,selectDay,rangeDate,getContentCal};
+
+  calendar(document.querySelector(".calendar"))
   // calendarsEl.forEach(item => {calendar(item)
     
 //   });

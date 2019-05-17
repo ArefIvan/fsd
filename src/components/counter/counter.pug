@@ -1,13 +1,8 @@
-.counter
-    .h3.counter__title Взрослых
-    .counter__wrap
-        button.counter__button.dec -
-        input.h3.counter__count(type='text' name="" value="2" data-min="" data-max="7")
-        button.counter__button.inc +
+mixin counter(title,name,min='0',max='10' ,value='0')
+    .counter
+        .h3.counter__title= title
+        .counter__wrap
+            button.counter__button.dec -
+            input.h3.counter__count(type='text' name=name value=value data-min=min data-max=max)
+            button.counter__button.inc +
 
-.counter
-    .h3.counter__title детей
-    .counter__wrap
-        button.counter__button.dec -
-        input.h3.counter__count(type='text' name="" value="3" data-min="23" data-max="44")
-        button.counter__button.inc +

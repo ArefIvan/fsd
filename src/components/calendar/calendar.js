@@ -262,6 +262,7 @@
           }
         
         if (new Date(D.getFullYear(),D.getMonth(),i).getDay() == 0) {
+
           content += '<tr>';
         }
       }
@@ -271,17 +272,18 @@
           content += '<td class = "calendar__day nextMonth">' +count
           count++
         }
-        else{content+='<td class = "calendar__day">&nbsp';}
+        // else{content+='<td class = "calendar__day">&nbsp';} //раскоментировать для фиксированного кол-ва недель
       };
+       // if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
+      //     calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
+          
+      //   }
       calContent.innerHTML = content;
       title.innerHTML = months[D.getMonth()] +' '+ D.getFullYear();
       title.dataset.month = D.getMonth();
       
       title.dataset.year = D.getFullYear();
-      if (calContent.querySelectorAll('tr').length < 6) {  // чтобы при перелистывании месяцев не "подпрыгивала" вся страница, добавляется ряд пустых клеток. Итог: всегда 6 строк для цифр
-          // calContent.innerHTML += '<tr><td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td class = "calendar__day">&nbsp;<td>&nbsp;';
-          console.log("1")
-        }
+     
         
         
 

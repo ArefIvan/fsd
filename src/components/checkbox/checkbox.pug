@@ -1,7 +1,6 @@
-label(for='checkbox')
-    input(type="checkbox", name="" ,class="checkbox__input"  id="checkbox")
-    .checkbox
-        .checkbox__icon   
-    
-    
-    
+mixin checkbox(name,id)
+    - id=id?id:name
+    label(for=id)
+        input(type="checkbox", name=name ,class="checkbox__input"  id= id )
+        .checkbox
+            .checkbox__icon   

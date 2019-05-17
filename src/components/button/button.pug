@@ -1,5 +1,6 @@
-a(href='#' class='button button--noborder')
-    span.button__title lorem
-    i(class='material-icons button__material-icon')
-    .button__border
+mixin btn(title)
+    button.button.h3&attributes(attributes)
+        span.button__title= title
+        i(class='material-icons button__material-icon')
+        .button__border
  

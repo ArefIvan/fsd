@@ -4,8 +4,6 @@ $buttonBorder:2px;
 .button{  
     display: block;
     width: 140px;
-    font-family: $mainFont;
-    font-weight: bold;
     text-decoration: none;
     height: $buttonHeight;
     line-height: $buttonHeight;
@@ -13,10 +11,10 @@ $buttonBorder:2px;
     text-align: center;
     border:0px solid transparent;
     border-radius:$buttonHeight/2;
-    font-size: 12px;                 
-    text-transform: uppercase; 
+    color:$fontColor;
 
-    
+
+  
       &::before{
           content:"";
           position: absolute;

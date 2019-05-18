@@ -1,4 +1,8 @@
 .rate{
+    &__input{
+        width: 0;
+        height: 0;
+    }
     &__item{
         color: $purple-color;
         &--star{

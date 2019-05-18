@@ -4,7 +4,8 @@
 // import "./components/counter/counter"
 // import "./components/form/field-dropdown"
 // import "./blocks/dropdown-date/dropdown-date"
-import "./components/calendar/calendar"
+// import "./components/calendar/calendar"
+import "./components/rate/rate"
 
 // SCSS
 import './scss/main.scss'

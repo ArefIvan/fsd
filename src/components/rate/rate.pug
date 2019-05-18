@@ -1,6 +1,16 @@
-.rate
-    i.material-icons.rate__item.rate__item--star
-    i.material-icons.rate__item.rate__item--star
-    i.material-icons.rate__item.rate__item--star-half
-    i.material-icons.rate__item.rate__item--star-border
-    i.material-icons.rate__item.rate__item--star-border
+mixin rate(item,rate,input,name,id)
+    if input
+        -id = (id)?id:name
+        label(for=id)    
+            .rate(data-rating=rate)
+                input.rate__input(type="text" id=id name=name )
+                - let count = 0
+                while count < item   
+                    i.material-icons.rate__item.rate__item--star-border
+                    - count++
+    else
+         .rate(data-rating=rate)
+                - let count = 0
+                while count < item   
+                    i.material-icons.rate__item.rate__item--star-border
+                    - count++

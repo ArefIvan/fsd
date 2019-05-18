@@ -1,6 +1,7 @@
-function rate(el){
+export function rate(el){
 let rating = el.dataset.rating-1
 let items = el.querySelectorAll(".rate__item")
+let inp = el.querySelector(".rate__input")
 items.forEach((item,i) => {
     if(i<=rating){
         item.classList.remove("rate__item--star-border")
@@ -12,7 +13,7 @@ items.forEach((item,i) => {
 });
    
 }
-function getRate(el){
+export function getRate(el){
     let rat= el.dataset.rating
     let items = el.querySelectorAll(".rate__item")
 
@@ -26,5 +27,4 @@ function getRate(el){
    
 }
 
-rate(document.querySelector(".rate"))
-getRate(document.querySelector(".rate"))
+export default {rate,getRate}

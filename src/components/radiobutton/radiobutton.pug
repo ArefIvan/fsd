@@ -1,12 +1,10 @@
-label
-    input(type="radio", name="radio1" ,class="radiobutton__input")
-    .radiobutton
-        .radiobutton__icon 
-label 
-    input(type="radio", name="radio1" ,class="radiobutton__input")
-    .radiobutton
-        .radiobutton__icon
-label
-    input(type="radio", name="radio1" ,class="radiobutton__input")
-    .radiobutton
-        .radiobutton__icon
+mixin radiobutton(title,name,item)
+    -let count=0
+    while count<item
+        .radiobutton
+            label
+                input(type="radio", name=name ,class="radiobutton__input")
+                .radiobutton__btn
+                    .radiobutton__icon
+            .radiobutton_title= title[count] 
+        -count++

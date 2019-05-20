@@ -1,10 +1,8 @@
-mixin radiobutton(title,name,item)
-    -let count=0
-    while count<item
+mixin radiobutton(title,name)
+    each val in title
         .radiobutton
-            label
+            label.radiobutton__label
                 input(type="radio", name=name ,class="radiobutton__input")
                 .radiobutton__btn
                     .radiobutton__icon
-            .radiobutton_title= title[count] 
-        -count++
+                .radiobutton__title= val 

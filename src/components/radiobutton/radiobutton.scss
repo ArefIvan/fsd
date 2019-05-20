@@ -1,5 +1,13 @@
-.radiobutton{ 
+.radiobutton{
+     
+    display: flex;
+    
+    &__label{
+
+        display: flex;
+    }
     &__btn{
+        margin:auto;
         position: relative;
         box-sizing: border-box;
         height: 20px;
@@ -24,12 +32,19 @@
         height: 0;
         width: 0;
         position: absolute;           
-        &:checked+.radiobutton__btn{
+        &:checked~.radiobutton__btn{
                 border-color:$purple-color;                
         
              .radiobutton__icon{
                 background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
             }
         }
+        &:checked~.radiobutton__title{
+            color:$primary-color--75;
+        }
+    }
+    &__title{
+        margin: auto 0 auto 20px;
+        color:$primary-color--50;
     }
 }

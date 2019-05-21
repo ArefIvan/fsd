@@ -4,6 +4,7 @@
 @import "utils/fonts";
 @import "utils/reset.scss";
 @import "utils/components.scss";
+@import "form-element.scss";
 //src\components\button\button.scss
 
 
@@ -11,9 +12,10 @@
     font-family: $mainFont;
     color:$primary-color--75;
     line-height: $mainLineHeight;
+    font-size: $mainFontSize
 }
 .wrapper{
-    max-width:450px;
+    
     margin: 20px auto;
 }
 

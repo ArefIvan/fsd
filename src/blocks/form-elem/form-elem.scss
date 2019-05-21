@@ -1,0 +1,15 @@
+.form-element{
+    
+    margin: 10px 33px;
+    &__header{
+        line-height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 5px;
+    }
+    &__subtitle{
+        color:$primary-color--50;
+        text-transform: uppercase;
+        font-size:0.85em;
+    }
+}

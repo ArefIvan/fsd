@@ -16,13 +16,14 @@ function range(elem){
         let to = inputs[1];
         let max = inputs[0].max;
         let min = inputs[0].min; 
+        let prefix= "&#x20bd;"
 
     bar.css({
         left:( ( from.value - min ) / ( (max - min) / 100 ) ) + "%",
         width:( ( to.value - min ) / ( ( max - min ) / 100 ) ) - ( ( from.value - min ) / ( ( max - min ) / 100 ) )+"%",
     })
-    valueFrom.html(from.value);
-    valueTo.html(to.value);
+    valueFrom.html(from.value+prefix);
+    valueTo.html(to.value+prefix);
 
     inputs.on('input',function(){
         let valFrom = parseInt(from.value);       

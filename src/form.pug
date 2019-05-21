@@ -2,7 +2,8 @@ include blocks/form-elem/form-elem.pug
 include components/form/field-text.pug
 include components/checkbox/checkbox.pug
 include components/range/range.pug
-
+include components/form/field-dropdown.pug
+include components/counter/counter.pug
 
 
 doctype html
@@ -14,6 +15,15 @@ html
             section.column  
                 +form-elem("text field","default hover/focus")
                     +text-field("email")
+                +form-elem("dropdown","default")
+                    +dropdown("Сколько гостей")
+                        +counter("Взрослых","adult",0,5)
+                        +counter("Детей","childs",0,5)
+                        +counter("Младенцы","adult",0,5)
+                    
+                        
+                            
+                    
             section.column
                 form(action="",method='get' name= "")
                     +form-elem("checkbox button")
@@ -22,3 +32,5 @@ html
                         +checkbox("guests","Можно пригласить гостей (до 10 человек)")
                             
             section.column
+                 form(action="",method='get' name= "")
+                    +range("range-slider","range",0,15000,1000,5000,10000)

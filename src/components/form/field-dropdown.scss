@@ -60,8 +60,7 @@
     }
     &__content{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: wrap;        
         border:0;
         height: 0px;
         width: 100%;
@@ -71,6 +70,7 @@
         
     }
     &__content-footer{
+        margin-top: 20px;
         width: 100%;
         align-self:flex-end;
         display: flex;
@@ -84,9 +84,7 @@
              background-color: inherit;
          }
     }
-    &__error{
-        
-        
+    &__error{      
          position: relative;
             &::before{
                 content:'введите дату в формате дд.мм.гггг';

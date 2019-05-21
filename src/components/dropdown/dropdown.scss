@@ -1,0 +1,105 @@
+.field-dropdown{    
+    border-radius: 4px; 
+    color: $primary-color--75;
+    border: 1px solid #{$primary-color--25};
+    &__header{
+        display: flex;
+        justify-content: space-between ;
+        height: 42px;
+        line-height: 42px; 
+        
+    }
+
+    &__title{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;     
+        padding-left:15px;   
+        text-align: left;
+         
+    }
+    &__datewrap{
+        display: flex;
+    }
+    &__date{
+        width:12em;
+        padding-left:10px;     
+        height: 100%;
+        border-radius: 4px;
+        @include  placeholder{
+            color: $primary-color--50;
+            font-family: $mainFont;               
+            };
+            &:hover,&:focus{                  
+                height: 100%;
+            }
+            &:hover{
+                @include  placeholder{               
+                    color: $primary-color--75;
+                    font-family: $mainFont;    
+                }
+            }
+            &:focus{
+                @include  placeholder{             
+                    color: transparent;
+                }
+            }     
+    }
+    &__icon{
+        margin:auto 10px;
+        &::before{
+            content:"expand_more";
+        }
+        
+    }
+    &--expand{
+        border-color:$primary-color--50;        
+    } 
+    &--expand &__content{
+        border-top: 1px solid #{$primary-color--50};
+        padding: 7px 7px 14px 14px;
+        height: auto;
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;        
+        border:0;
+        height: 0px;
+        width: 100%;
+        padding: 0;   
+        box-sizing: border-box;
+        overflow: hidden;
+        
+    }
+    &__content-footer{
+        margin-top: 20px;
+        width: 100%;
+        align-self:flex-end;
+        display: flex;
+        justify-content: space-between;
+         .cancel{
+            background-color: inherit;
+            color:$primary-color--50;
+        }
+         .assept{
+             color:$purple-color;
+             background-color: inherit;
+         }
+    }
+    &__error{      
+         position: relative;
+            &::before{
+                content:'введите дату в формате дд.мм.гггг';
+                line-height: 2;
+                position: absolute;
+                left :0;
+                top:0;
+                transform: translateY(-100%);
+                color:red;
+                font-size: 0.5em
+            }
+     }
+
+    
+}
+

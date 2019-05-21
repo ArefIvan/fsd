@@ -1,0 +1,35 @@
+mixin dropdownDateOne(footer=true)   
+    .field-dropdown.field-dropdown--date
+        .field-dropdown__header
+            input.field-dropdown__date(type="text" placeholder="dd:mm:YYYY")
+            i.material-icons.field-dropdown__icon
+        .field-dropdown__content 
+            block
+            if footer
+            .field-dropdown__content-footer
+                span.h3.cancel Очистить
+                span.h3.assept Применить
+
+mixin dropDateRange()
+    .field-dropdown.field-dropdown--date
+    .field-dropdown__header
+        span.field-dropdown__date.field-dropdown__date--one(type="text" placeholder="dd.mm" name="") 
+        span.field-dropdown__date.field-dropdown__date--two(type="text" placeholder="dd.mm" name="")
+        i.material-icons.field-dropdown__icon
+    .field-dropdown__content 
+        block
+        .field-dropdown__content-footer
+            button(type="reset").h3.cancel Очистить
+            button(type="submit").h3.assept Применить           
+
+mixin dropdown(title)
+    .field-dropdown 
+        .field-dropdown__header
+            .field-dropdown__title= title
+            title
+            i.material-icons.field-dropdown__icon
+        .field-dropdown__content
+            block
+            .field-dropdown__content-footer
+                span.h3.cancel Очистить
+                span.h3.assept Применить

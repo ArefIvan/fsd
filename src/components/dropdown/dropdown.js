@@ -3,7 +3,7 @@ function catalogItemDropdown(field){
     
     let dropdown = function(el){
 
-        let btn = el.children().children(".field-dropdown__icon")
+        let btn = el.find(".field-dropdown__icon")
         let content = el.children('.field-dropdown__content')
         content.hide();
         btn.on("click",function(){

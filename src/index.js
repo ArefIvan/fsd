@@ -1,8 +1,9 @@
 
 // JS - ./js/index.js
 import './components/range/range'
-import "./components/counter/counter"
-import "./components/dropdown/dropdown"
+// import "./components/counter/counter"
+// import "./components/dropdown/dropdown"
+import "./blocks/dropdown-counter-list/dropdown-counter-list"
 // import "./blocks/dropdown-date/dropdown-date"
 // import "./components/calendar/calendar"
 import "./components/rate/rate"

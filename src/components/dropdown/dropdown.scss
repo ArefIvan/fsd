@@ -6,8 +6,7 @@
         display: flex;
         justify-content: space-between ;
         height: 42px;
-        line-height: 42px; 
-        
+        line-height: 42px;         
     }
 
     &__title{
@@ -57,18 +56,19 @@
     } 
     &--expand &__content{
         border-top: 1px solid #{$primary-color--50};
-        padding: 7px 7px 14px 14px;
-        height: auto;
+        
     }
     &__content{
+        border-top: 1px solid #{$primary-color--50};
         display: flex;
-        flex-wrap: wrap;        
-        border:0;
-        height: 0px;
+        flex-wrap: wrap; 
+               
+        
+        // height: 0px;
         width: 100%;
-        padding: 0;   
+        padding: 7px 7px 14px 14px;  
         box-sizing: border-box;
-        overflow: hidden;
+        // overflow: hidden;
         
     }
     &__content-footer{

@@ -1,28 +1,23 @@
-import $ from 'jquery';
- 
-function catalogItemCounter(field){
-			
-    let fieldCount = function(el) {
-        
+   let counter = function(el) {
+        console.log
         let 
             // Мин. значение
-            min = el.data('min'),            
+            min = el.data("min"),            
             // Макс. значение
             max = el.data('max'), 
             // Кнопка уменьшения кол-ва
             dec = el.prev('.dec'), 
             // Кнопка увеличения кол-ва
             inc = el.next('.inc');
-            
-        function init(el) {
+            console.log(min)
+       
            
-            if(!el.attr('disabled')){
-                dec.on('click', decrement);
-                inc.on('click', increment);
-                el.on("input",checkInp);
-                el.on("change",checkChange);
-                
-            }
+            
+            dec.on('click', decrement);
+            inc.on('click', increment);
+            el.on("input",checkInp);
+            el.on("change",checkChange);
+
             if(el[0].value<=min){
                 el[0].value=min;
                 dec.prop("disabled",true);
@@ -102,16 +97,9 @@ function catalogItemCounter(field){
                 }
             };
             
-        }
+        
 
-        el.each(function() {
-            init($(this));
-        });
+
     };
-
-    $(field).each(function(){
-        fieldCount($(this));
-    });
-}
-
-catalogItemCounter('.counter__count');
+export default counter
+ 

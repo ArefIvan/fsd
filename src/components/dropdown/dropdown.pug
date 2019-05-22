@@ -22,14 +22,15 @@ mixin dropDateRange()
             button(type="reset").h3.cancel Очистить
             button(type="submit").h3.assept Применить           
 
-mixin dropdown(title)
-    .field-dropdown 
+mixin dropdown(title,footer=true)
+    .field-dropdown&attributes(attributes)
         .field-dropdown__header
             .field-dropdown__title= title
             title
             i.material-icons.field-dropdown__icon
         .field-dropdown__content
             block
-            .field-dropdown__content-footer
-                span.h3.cancel Очистить
-                span.h3.assept Применить
+            if footer
+                .field-dropdown__content-footer
+                    span.h3.cancel Очистить
+                    span.h3.assept Применить

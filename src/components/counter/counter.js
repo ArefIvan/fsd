@@ -6,26 +6,31 @@ function catalogItemCounter(field){
         
         let 
             // Мин. значение
-            min = el.data('min'),
-            
+            min = el.data('min'),            
             // Макс. значение
             max = el.data('max'), 
-
             // Кнопка уменьшения кол-ва
             dec = el.prev('.dec'), 
-
             // Кнопка увеличения кол-ва
             inc = el.next('.inc');
             
-
-
         function init(el) {
            
             if(!el.attr('disabled')){
                 dec.on('click', decrement);
                 inc.on('click', increment);
                 el.on("input",checkInp);
-                el.on("change",checkChange)
+                el.on("change",checkChange);
+                
+            }
+            if(el[0].value<=min){
+                el[0].value=min;
+                dec.prop("disabled",true);
+
+            }
+            if(el[0].value>=max){
+                el[0].value=max;
+                inc.prop("disabled",true)
             }
 
             function checkInp(){

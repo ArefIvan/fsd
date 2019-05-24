@@ -6,6 +6,8 @@ include components/dropdown/dropdown.pug
 include components/counter/counter.pug
 include components/radiobutton/radiobutton.pug
 include components/toggle/toggle.pug
+include components/likeButton/likeButton.pug
+include components/rate/rate.pug
 
 
 doctype html
@@ -19,7 +21,8 @@ html
                     +text-field("email")
                 +form-elem("dropdown","default")
                    include blocks/dropdown-counter-list/dropdown-counter-list.pug
-                    
+                +form-elem("filter date dropdown")
+                    include blocks/dropdown-date/dropdown-date-range.pug            
                         
                             
                     
@@ -33,7 +36,12 @@ html
                         +radiobutton(["Мужчина","Женщина"],"sex")
                     +form-elem("toggle")
                         +toggle("offers","Получать спецпредложения")
-                            
+                    +form-elem("like button")(class="form-element--like")
+                        +like("like",2)
+                        +like("like",12)
+                    +form-elem("rate button")
+                        +rate(5,3)
+                        +rate(5,0,"room-39")
             section.column
                  form(action="",method='get' name= "")
                     +range("range-slider","range",0,15000,1000,5000,10000)

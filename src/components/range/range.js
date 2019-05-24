@@ -1,6 +1,6 @@
 import $ from 'jquery';
 
-range($(".range-slide"))
+// range($(".range-slide"))
     
     
 function range(elem){
@@ -51,4 +51,4 @@ function range(elem){
         }
     })
 ;} 
-export default range
+export default {range}

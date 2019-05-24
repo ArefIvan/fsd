@@ -19,9 +19,11 @@
     }
     &__datewrap{
         display: flex;
+        width: 50%;
+
     }
     &__date{
-        width:12em;
+        width: 40%;
         padding-left:10px;     
         height: 100%;
         border-radius: 4px;

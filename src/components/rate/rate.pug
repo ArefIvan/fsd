@@ -1,9 +1,8 @@
-mixin rate(item,rate,input,name,id)
-    if input
-        -id = (id)?id:name
-        label(for=id)    
-            .rate(data-rating=rate)
-                input.rate__input(type="text" id=id name=name )
+mixin rate(item,rate,name)
+    if name
+        label    
+            .rate.rate--input(data-rating=rate)
+                input.rate__input(type="text" name=name )
                 - let count = 0
                 while count < item   
                     i.material-icons.rate__item.rate__item--star-border

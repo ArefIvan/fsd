@@ -20,4 +20,11 @@
             }
         }
     }
+    &--like{
+         .form-element__content{
+             .like{
+                margin-top: 10px;
+            }
+        }
+    }
 }

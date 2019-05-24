@@ -1,6 +1,6 @@
-.like
-    label(for='like')   
-        input(type="checkbox", name="like" ,class="like__input"  id="like")
+mixin like(name,count)
+    label.like   
+        input.like__input(type="checkbox", name=name)
         .like__wrapper
             span.material-icons.like__icon
-            span.like__count 12
+            span.like__count= count

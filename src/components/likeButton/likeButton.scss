@@ -1,12 +1,11 @@
 .like{ 
-    font-family: $mainFont;
-    width: 38px;
-    
+   display:block;
+    max-width: 38px;
     &__wrapper{
         
         position: relative; 
         height: 18px;
-        width: 100%;
+        // width: 38px;
         border: 0px solid transparent;
         border-radius: 10px;
         text-align: right;
@@ -28,8 +27,9 @@
     &__count{
         position: absolute;
         font-size: 10px;
-        top:calc(50%-6px);
-        right: 10px;
+        top:50%;
+        right: 1em;
+        transform: translateY(-50%)
     }
     &__icon{
         position: absolute;

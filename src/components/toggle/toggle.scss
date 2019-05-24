@@ -1,11 +1,14 @@
-.toggle{     
-    position: relative;
-    box-sizing: border-box;
-    height: 20px;
-    width: 40px;
-    border: 1px solid #{$primary-color--25};
-    border-radius: 10px;
-       
+.toggle{  
+    display: flex;
+    &__switch{
+        position: relative;
+        box-sizing: border-box;
+        margin:auto 0;
+        height: 20px;
+        width: 40px;
+        border: 1px solid #{$primary-color--25};
+        border-radius: 10px;
+    }    
     &__icon{
         width: 12px;
         height: 12px;
@@ -20,7 +23,7 @@
         height: 0;
         width: 0;
         position: absolute;           
-        &:checked+.toggle{
+        &:checked~.toggle__switch{
                 border-color:$purple-color;                
         
              .toggle__icon{
@@ -28,5 +31,10 @@
             left: 22px;
             }
         }
-}
+    }
+    &__title{
+        columns: $primary-color--75;
+        padding-left: 10px;
+
+    }
 }

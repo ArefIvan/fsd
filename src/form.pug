@@ -4,6 +4,8 @@ include components/checkbox/checkbox.pug
 include components/range/range.pug
 include components/dropdown/dropdown.pug
 include components/counter/counter.pug
+include components/radiobutton/radiobutton.pug
+include components/toggle/toggle.pug
 
 
 doctype html
@@ -27,6 +29,10 @@ html
                         +checkbox("smoking","Можно курить")
                         +checkbox("pets","Можно с питомцами")
                         +checkbox("guests","Можно пригласить гостей (до 10 человек)")
+                    +form-elem("radio button")(class="form-element--radiobutton")
+                        +radiobutton(["Мужчина","Женщина"],"sex")
+                    +form-elem("toggle")
+                        +toggle("offers","Получать спецпредложения")
                             
             section.column
                  form(action="",method='get' name= "")

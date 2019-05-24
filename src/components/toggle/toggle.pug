@@ -1,5 +1,6 @@
-label(for='toggle')   
-    input(type="checkbox", name="" ,class="toggle__input"  id="toggle")
-    .toggle
-        .toggle__icon
-    
+mixin toggle(name,title)
+    label.toggle
+        input.toggle__input(type="checkbox", name=name )
+        .toggle__switch
+            .toggle__icon
+        .toggle__title= title

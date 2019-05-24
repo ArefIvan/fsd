@@ -9,7 +9,7 @@
             dec = el.prev('.dec'), 
             // Кнопка увеличения кол-ва
             inc = el.next('.inc');
-            console.log(min)
+            
        
            
             

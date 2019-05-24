@@ -1,4 +1,5 @@
-mixin counter(title,name,min='0',max='10' ,value='0')
+mixin counter(title,name,min='0',max='10' ,value)
+    - value = value?value:min
     .counter
         .h3.counter__title= title
         .counter__wrap

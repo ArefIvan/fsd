@@ -2,6 +2,7 @@ import counter from  "../../components/counter/counter";
 import "../../components/dropdown/dropdown";
 
 
+
 let dropCountList = $(".dropdown--counter-plus")
 
 let counts = dropCountList.find(".counter__count")

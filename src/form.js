@@ -16,33 +16,25 @@ catalogItemRange(".range-slide")
 
 function catalogItemRate(elem){
     let rateEl= document.querySelectorAll(elem)
-    let rateForm = rating.rate
-    
-    rateEl.forEach(function(item){
-        console.log(item)
+    let rateForm = rating.rate    
+    rateEl.forEach(function(item){      
         rateForm(item);
     });
 }
 catalogItemRate(".rate")
 
 function catalogItemGetRate(elem){
-    let rateEl= document.querySelectorAll(elem)
-    
+    let rateEl= document.querySelectorAll(elem)    
     let getRateForm = rating.getRate
-    rateEl.forEach(function(item){
-        console.log(item)
+    rateEl.forEach(function(item){      
         getRateForm(item);
     });
 }
 catalogItemGetRate(".rate--input")
 function catalogItemDropdownDate(field){
-    console.log(1)
     let dropdownDatefilter=dropdate.dropdownDatefilter;
     let dateFormatShort = dropdate.dateFormatShort;
-
-    let fieldsEl = document.querySelectorAll(field)
-  
-  
+    let fieldsEl = document.querySelectorAll(field);
     fieldsEl.forEach(item =>{
         dropdownDatefilter(item)
     })

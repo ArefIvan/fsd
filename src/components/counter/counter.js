@@ -1,5 +1,5 @@
    let counter = function(el) {
-        console.log
+        
         let 
             // Мин. значение
             min = el.data("min"),            

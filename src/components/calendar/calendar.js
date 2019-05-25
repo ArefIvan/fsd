@@ -81,13 +81,13 @@
 
           
           if(selectedDay1 == ''){ 
-            console.log(2)
+           
             from=e.target
             from.classList.add("selected")
             selectedDay1 = new Date(title.dataset.year,title.dataset.month,day.innerHTML);
             
           }else{
-            console.log(1)
+            
               if(day.innerHTML == selectedDay1.getDate()
               &&title.dataset.month==selectedDay1.getMonth()
               &&title.dataset.year==selectedDay1.getFullYear()){
@@ -101,9 +101,8 @@
                     selectedDay1='';
                     
                   }else{
-                      console.log(1)
-                      from.classList.remove("selected",'selected-1');
                       
+                      from.classList.remove("selected",'selected-1');
                       from=to;
                       if(from){
                       from.classList.remove("selected-2")

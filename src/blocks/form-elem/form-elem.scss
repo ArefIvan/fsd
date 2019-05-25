@@ -20,11 +20,16 @@
             }
         }
     }
+    &__button{
+        display: flex;
+        justify-content: space-evenly;
+        margin: 20px auto;
+    }
     &--like{
-         .form-element__content{
+        //  display: flex;
              .like{
                 margin-top: 10px;
             }
-        }
+        
     }
 }

@@ -17,36 +17,7 @@
         text-align: left;
          
     }
-    &__datewrap{
-        display: flex;
-        width: 50%;
-
-    }
-    &__date{
-        flex-basis: 40%;
-        overflow: hidden;
-        padding-left:10px;     
-        height: 100%;
-        border-radius: 4px;
-        @include  placeholder{
-            color: $primary-color--50;
-            font-family: $mainFont;               
-            };
-            &:hover,&:focus{                  
-                height: 100%;
-            }
-            &:hover{
-                @include  placeholder{               
-                    color: $primary-color--75;
-                    font-family: $mainFont;    
-                }
-            }
-            &:focus{
-                @include  placeholder{             
-                    color: transparent;
-                }
-            }     
-    }
+   
     &__icon{
         margin:auto 10px;
         &::before{

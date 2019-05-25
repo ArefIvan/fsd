@@ -1,0 +1,62 @@
+$fontColor:white;
+$buttonHeight:40px;
+$buttonBorder:2px;
+.button{  
+    display: block;
+    width: 140px;
+    text-decoration: none;
+    height: $buttonHeight;
+    line-height: $buttonHeight;
+    position: relative;
+    text-align: center;
+    border:0px solid transparent;
+    border-radius:$buttonHeight/2;
+    color:$fontColor;
+   
+
+
+  
+      &::before{
+          content:"";
+          position: absolute;
+          z-index: -1;
+          height: $buttonHeight + $buttonBorder*2;
+          width:calc(100% + #{$buttonBorder}*2);
+          border:0px solid transparent;
+          border-radius: ($buttonHeight + $buttonBorder*2)/2;
+          left:-($buttonBorder);
+          top:-($buttonBorder);
+          background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
+
+      }
+//  Modification  
+      &--arrow{
+        .button__icon{
+            position: absolute;
+            vertical-align: middle;
+            text-align: end;
+            right: ($buttonHeight - 24px) /2; //8px;
+            top:50%; 
+            transform: translateY(-50%) ;      
+              &::after{
+                  content: "arrow_forward"
+              }
+        }
+      }
+          &--noborder{
+            height: auto;
+            width: auto;
+            color:$purple-color;
+             &::before{
+               background: none;
+             }
+          }
+          &--border{
+            background: $backgroundColor;
+            color:$purple-color;
+            opacity: 0.5;
+        } 
+    &:disabled{
+      opacity: 0.5;
+    }
+}

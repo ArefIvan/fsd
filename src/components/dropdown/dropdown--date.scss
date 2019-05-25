@@ -1,0 +1,43 @@
+.field-dropdown--date{
+    .field-dropdown{
+   
+        &__datewrap{
+                display: flex;
+                width: 50%;
+                padding-left:10px; 
+
+            }
+            &__date{  
+                    
+                height: 100%;
+                border-radius: 4px;
+                @include  placeholder{
+                    color: $primary-color--50;
+                    font-family: $mainFont;               
+                    };
+                    &:hover,&:focus{                  
+                        height: 100%;
+                    }
+                    &:hover{
+                        @include  placeholder{               
+                            color: $primary-color--75;
+                            font-family: $mainFont;    
+                        }
+                    }
+                    &:focus{
+                        @include  placeholder{             
+                            color: transparent;
+                        }
+                    }     
+            }
+    }
+}
+.field-dropdown--date-filter{
+    
+        &__input{
+            height: 0;
+            width: 0;
+            opacity: 0;
+        }
+    
+}

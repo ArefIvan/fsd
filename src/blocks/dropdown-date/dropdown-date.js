@@ -9,6 +9,10 @@ export function dropdownDatefilter(el){
     let now = new Date();
     let dateOne = el.querySelector(".field-dropdown__date--one"); //поле даты 
     let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
+    let inpDate1 = el.querySelector(".field-dropdown__date--one + .field-dropdown--date-filter__input")
+    let inpDate2 = el.querySelector(".field-dropdown__date--two + .field-dropdown--date-filter__input")
+    
+
     let calendar= el.querySelector('.calendar'); //календарь
     // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
     cal(calendar);
@@ -21,19 +25,24 @@ export function dropdownDatefilter(el){
             valueOne = dateFormatShort(valueOne)
             
             dateOne.innerHTML=valueOne;
+            inpDate1.value=valueOne;
         }
         else{
             valueOne = ""
             dateOne.innerHTML = valueOne
+            inpDate1.value=valueOne;
         }
         if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){
             
             valueTwo = dateFormatShort(valueTwo);
             dateTwo.innerHTML=valueTwo;
+            inpDate2.value=valueTwo;
+            
         }
         else{
             valueTwo = "";
             dateTwo.innerHTML = valueTwo;
+            inpDate2.value=valueTwo;
         }
         
        

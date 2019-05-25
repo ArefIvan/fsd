@@ -8,6 +8,7 @@ include components/radiobutton/radiobutton.pug
 include components/toggle/toggle.pug
 include components/likeButton/likeButton.pug
 include components/rate/rate.pug
+include components/button/button.pug
 
 
 doctype html
@@ -24,9 +25,10 @@ html
                 
                 +form-elem("dropdown")
                     include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-                +form-elem("filter date dropdown")
-                    include blocks/dropdown-date/dropdown-date-filter.pug            
-                        
+                form(action="", method="get")
+                    +form-elem("filter date dropdown")
+                        include blocks/dropdown-date/dropdown-date-filter.pug            
+                            
                             
                     
             section.column
@@ -53,3 +55,13 @@ html
                  form(action="",method='get' name= "")
                     +form-elem()
                         +range("range-slider","range",3000,16000,100,5000,10000)
+                    +form-elem("buttons")
+                        .form-element__button
+                            +btn("click Me")(class="button--gradient")
+                            +btn("Click Me")(disabled class="button--gradient")
+                        .form-element__button
+                            +btn("click Me")(class="button--border")
+                            +btn("Click Me")(class="button--border" disabled)
+                        .form-element__button
+                            +btn("click Me")
+                            +btn("Click Me")(disabled)        

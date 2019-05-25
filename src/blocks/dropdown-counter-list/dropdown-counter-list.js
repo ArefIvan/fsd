@@ -5,8 +5,9 @@ import "../../components/dropdown/dropdown";
 let dropCountList = $(".dropdown--counter-list")
 
 function countsList(el){
-        let counts = el.find(".counter__count")
+    let counts = el.find(".counter__count")
     let titleDrop = el.find(".field-dropdown__title")
+    
     let dec=el.find(".dec")
     let inc=el.find(".inc")
     let titleCoutner=el.find(".counter__title")

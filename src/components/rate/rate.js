@@ -25,16 +25,13 @@ export function getRate(el){
             }
             item.onclick=(e,rat)=>{
                 rating=i
-            }
-            // item.onclick= ()=>{
-            //     console.log(rat)
-            //     el.dataset.rating=rat+1
-            //     rate(el)
-            // }     
+            }   
         })
    
     el.onmouseout=()=>{
+
         rate(el,rating)
+        el.dataset.rating=rating+1
     }
         
     }

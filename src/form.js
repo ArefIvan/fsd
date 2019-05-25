@@ -1,6 +1,6 @@
 import "./blocks/dropdown-counter-list/dropdown-counter-list";
 import dropdate from "./blocks/dropdown-date/dropdown-date";
-import calendar from "./components/calendar/calendar.js"
+import "./blocks/dropdown-counter-plus/dropdown-counter-plus"
 import rating from "./components/rate/rate";
 import range from './components/range/range';
 

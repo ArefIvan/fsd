@@ -1,0 +1,10 @@
+include ../../components/calendar/calendar
+.field-dropdown.field-dropdown--date-filter
+    .field-dropdown__header
+        .field-dropdown__datewrap
+            span.field-dropdown__date.field-dropdown__date--one(type="text" placeholder="dd.mm" name="")
+            span - 
+            span.field-dropdown__date.field-dropdown__date--two(type="text" placeholder="dd.mm" name="")
+        i.material-icons.field-dropdown__icon
+    .field-dropdown__content 
+        +calendar(true)

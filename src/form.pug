@@ -18,11 +18,11 @@ html
         .wrapper.wrapper--form 
             section.column  
                 +form-elem("text field","default hover/focus")
-                    +text-field("email")
+                    +text-field("email")(class="input-email")
                 +form-elem("dropdown","default")
                    include blocks/dropdown-counter-list/dropdown-counter-list.pug
                 +form-elem("filter date dropdown")
-                    include blocks/dropdown-date/dropdown-date-range.pug            
+                    include blocks/dropdown-date/dropdown-date-filter.pug            
                         
                             
                     
@@ -43,5 +43,7 @@ html
                         +rate(5,3)
                         +rate(5,0,"room-39")
             section.column
+                
                  form(action="",method='get' name= "")
-                    +range("range-slider","range",0,15000,1000,5000,10000)
+                    +form-elem()
+                        +range("range-slider","range",3000,16000,100,5000,10000)

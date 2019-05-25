@@ -1,4 +1,5 @@
-mixin text-field(placeholder)    
+mixin text-field(placeholder,arrow)    
     .field-text
-        input(class= 'field-text__input-text' type="text" placeholder=placeholder)
-        i(class="material-icons field-text__icon ")
+        input(class= 'field-text__input-text' type="text"  placeholder=placeholder)&attributes(attributes)
+        if arrow
+            i(class="material-icons field-text__icon ")

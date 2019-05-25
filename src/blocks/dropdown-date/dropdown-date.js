@@ -6,14 +6,13 @@ let selectDay =calendar.selectDay;
 // dropdown_date
 
 export function dropdownDatefilter(el){
-     
+    let now = new Date();
     let dateOne = el.querySelector(".field-dropdown__date--one"); //поле даты 
     let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
-    console.log(dateOne)
-    let calendar= el.querySelector('.calendar'); //калердарь
+    let calendar= el.querySelector('.calendar'); //календарь
     // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
     cal(calendar);
-
+    dateOne.innerHTML=dateTwo.innerHTML= dateFormatShort(now)
     calendar.onclick = function(){
         let valueOne = this.dataset.selectedDay1
         let valueTwo = this.dataset.selectedDay2
@@ -24,7 +23,8 @@ export function dropdownDatefilter(el){
             dateOne.innerHTML=valueOne;
         }
         else{
-            dateOne.valueOne = ""
+            valueOne = ""
+            dateOne.innerHTML = valueOne
         }
         if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){
             
@@ -32,7 +32,8 @@ export function dropdownDatefilter(el){
             dateTwo.innerHTML=valueTwo;
         }
         else{
-            dateTwo.valueTwo = ""
+            valueTwo = "";
+            dateTwo.innerHTML = valueTwo;
         }
         
        

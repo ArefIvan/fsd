@@ -34,8 +34,8 @@ function range(elem){
             left:(percFrom)?percFrom  + "%":"1%",
             width:((percTo - percFrom)<100)?(percTo - percFrom) + "%":"99%",
         })
-        valueFrom.html(from.value);
-        valueTo.html(to.value)
+        valueFrom.html(from.value+prefix);
+        valueTo.html(to.value+prefix)
         if(this.value==valFrom){                    
             if(valFrom>valTo){
                 from.value = valTo - ((max/100)*2);

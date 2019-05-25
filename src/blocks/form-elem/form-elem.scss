@@ -25,11 +25,12 @@
         justify-content: space-evenly;
         margin: 20px auto;
     }
-    &--like{
-        //  display: flex;
-             .like{
-                margin-top: 10px;
-            }
+    &__like{
         
-    }
+         display: flex;
+             .like{
+                margin:0 10px;
+            }
+     }
+    
 }

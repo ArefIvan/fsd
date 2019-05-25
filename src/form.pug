@@ -41,9 +41,10 @@ html
                         +radiobutton(["Мужчина","Женщина"],"sex")
                     +form-elem("toggle")
                         +toggle("offers","Получать спецпредложения")
-                    +form-elem("like button")(class="form-element--like")
-                        +like("like",2)
-                        +like("like",12)
+                    +form-elem("like button")
+                        .form-element__like
+                            +like("like",2)
+                            +like("like",12)
                     +form-elem("rate button")
                         +rate(5,3)
                         +rate(5,0,"room-39")

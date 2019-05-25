@@ -1,15 +1,14 @@
 .like{ 
-   display:block;
-    max-width: 38px;
     &__wrapper{        
         position: relative; 
         height: 18px;
-        // width: 38px;
+        min-width: 38px;
         border: 0px solid transparent;
-        border-radius: 10px;
+        border-radius: 9px;
         text-align: right;
         color:$primary-color--25;
         background-color: white;
+        line-height: 18px;
             &::before{
                 content:"";
                 position: absolute;
@@ -23,12 +22,9 @@
                 background: $primary-color--25 ;
             }
     }   
-    &__count{
-        position: absolute;
-        font-size: 10px;
-        top:50%;
-        right: 1em;
-        transform: translateY(-50%)
+    &__count{    
+        font-size: 10px;  
+        padding-right: .75em;
     }
     &__icon{
         position: absolute;
@@ -36,9 +32,7 @@
         top:calc(50%-5px);
         left: 5px;
         &:after{
-
-            content:"favorite_border";
-            
+            content:"favorite_border";           
         }
     }
     &__input{

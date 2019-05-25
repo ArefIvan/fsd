@@ -1,12 +1,9 @@
 .checkbox{
-    
-    position: relative;
-   
-    box-sizing: border-box;
-    min-height: 20px;
-    min-width: 20px;
-    border: 1px solid #{$primary-color--25};
-    border-radius: 4px;
+    max-width: 240px;
+        display: flex;
+        align-items:flex-start;
+        margin:10px;
+
         
     &__icon{
         width: 5px;
@@ -28,7 +25,7 @@
         height: 0;
         width: 0;
         position: absolute;           
-        &:checked~.checkbox{
+        &:checked~.checkbox__check{
                 border-color:$purple-color;                
         
             & .checkbox__icon{
@@ -37,13 +34,28 @@
         }
     
     }
-    &__title{
+    &__check{
+        position: relative;
+        box-sizing: border-box;
+        min-height: 20px;
+        min-width: 20px;
+        border: 1px solid #{$primary-color--25};
+        border-radius: 4px; 
+    }
+    &__titles{
         padding-left: 10px;
+    }
+    &__title{
+        
         color:$primary-color--50
     }
-    &__label{
-        display: flex;
-        align-items:flex-start;
-        margin:10px;
+    &__subtitle{
+        color:$primary-color--50;
+        font-size: 0.75rem;
+        line-height: 117%;
+    }
+    &--rich &__title{
+        font-weight:bold;
+        color: $primary-color--75; 
     }
 }

@@ -11,7 +11,6 @@ let dropCountPlus = $(".dropdown--counter-plus")
     let dec=el.find(".dec")
     let inc=el.find(".inc")
 
-    getTitleDrop()
 
 
     counts.each(function(i){   

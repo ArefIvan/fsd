@@ -1,8 +1,11 @@
-mixin checkbox(name,title)
-    
-    label.checkbox__label
-        input.checkbox__input(type="checkbox", name=name)
-        .checkbox
-            .checkbox__icon
-        .checkbox__title= title 
-            block  
+mixin checkbox(name,title,subtitle)
+    .checkbox&attributes(attributes)
+        label.checkbox__label
+            input.checkbox__input(type="checkbox", name=name)
+            .checkbox__check
+                .checkbox__icon
+        .checkbox__titles        
+            .checkbox__title= title
+            if subtitle
+                .checkbox__subtitle=  subtitle
+            

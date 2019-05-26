@@ -9,6 +9,7 @@ include components/toggle/toggle.pug
 include components/likeButton/likeButton.pug
 include components/rate/rate.pug
 include components/button/button.pug
+include components/pagination/pagination.pug
 
 
 doctype html
@@ -27,7 +28,9 @@ html
                     include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
-                        include blocks/dropdown-date/dropdown-date-filter.pug            
+                        include blocks/dropdown-date/dropdown-date-filter.pug
+                    +form-elem("pagination")
+                        +pagination()              
                             
                             
                     
@@ -65,4 +68,4 @@ html
                             +btn("Click Me")(class="button--border" disabled)
                         .form-element__button
                             +btn("click Me")
-                            +btn("Click Me")(disabled)        
+                            +btn("Click Me")(disabled)

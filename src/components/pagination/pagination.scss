@@ -1,16 +1,21 @@
 .pagination{
+    a{
+        color:inherit;
+        text-decoration: none;
+    }
     display: inline-block;
-    &__items{
+    
+    &__items,&__list{
         display: flex;
     }
-    &__item{
+    &__item,&__btn,&__separator{
         width: 40px;
         height: 40px;
         text-align: center;
         line-height: 40px;
         color:$primary-color--50;
 
-        &--select{
+        &--current{
             color:white;
             background: $primary-gradient;
             border-radius:50%;

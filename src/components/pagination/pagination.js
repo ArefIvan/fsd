@@ -3,7 +3,7 @@
  * javascript page navigation
  * * * * * * * * * * * * * * * * */
 
-var Pagination = {
+ let Pagination = {
 
     code: '',
 
@@ -12,11 +12,11 @@ var Pagination = {
     // --------------------
 
     // converting initialize data
-    Extend: function(data) {
-        data = data || {};
-        Pagination.size = data.size || 300;
-        Pagination.page = data.page || 1;
-        Pagination.step = data.step || 1;
+    Extend: function(e) {
+        
+        Pagination.size = +(e.dataset.size) || 100;
+        Pagination.page = +(e.dataset.page) || 1;
+        Pagination.step = +(e.dataset.step) || 1;
     },
 
     // add pages by number (from [s] to [f])
@@ -112,10 +112,12 @@ var Pagination = {
     Start: function() {
         
         if (Pagination.size < Pagination.step * 2 + 6) {
+
             
             Pagination.Add(1, Pagination.size + 1);
         }
         else if (Pagination.page < Pagination.step * 2 + 1) {
+            console.log(Pagination.size)
             Pagination.Add(1, Pagination.step * 2 + 2);
             Pagination.Last();
         }
@@ -125,6 +127,7 @@ var Pagination = {
         }
         else {
             // Pagination.First();
+            console.log(Pagination.size)
             Pagination.Add(Pagination.page - Pagination.step, Pagination.page + Pagination.step + 1);
             Pagination.Last();
         }
@@ -159,25 +162,25 @@ var Pagination = {
     },
 
     // init
-    Init: function(e, data) {
-        Pagination.Extend(data);
+    Init: function(e) {
+        Pagination.Extend(e);
         Pagination.Create(e);
         Pagination.Start();
     }
 };
 
-
+export default Pagination
 
 /* * * * * * * * * * * * * * * * *
 * Initialization
 * * * * * * * * * * * * * * * * */
 
-var init = function() {
-    Pagination.Init(document.querySelector('.pagination__list'), {
-        size: 15, // pages size
-        page: 1,  // selected page
-        step: 1  // pages before and after current
-    });
-};
+// var init = function() {
+//     Pagination.Init(document.querySelector('.pagination__list'), {
+//         size: 15, // pages size
+//         page: 1,  // selected page
+//         step: 1  // pages before and after current
+//     });
+// };
 
-document.addEventListener('DOMContentLoaded', init, false);
+// document.addEventListener('DOMContentLoaded', init, false);

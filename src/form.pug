@@ -28,12 +28,7 @@ html
                     include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
-                        include blocks/dropdown-date/dropdown-date-filter.pug
-                    +form-elem("pagination")
-                        +pagination()              
-                            
-                            
-                    
+                        include blocks/dropdown-date/dropdown-date-filter.pug        
             section.column
                 form(action="",method='get' name= "")
                     +form-elem("checkbox button")
@@ -69,3 +64,7 @@ html
                         .form-element__button
                             +btn("click Me")
                             +btn("Click Me")(disabled)
+                    +form-elem("pagination")
+                        +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
+                    +form-elem("pagination")
+                        +pagination([16,2,3],"Ещё какой-то заголовок")

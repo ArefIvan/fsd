@@ -1,7 +1,8 @@
-mixin pagination()    
+mixin pagination(data,title)
+    -data=data||["","",""]  
     .pagination
-        .pagination__list
-        .pagination__title 1 – 12 из 100+ вариантов аренды
+        .pagination__list(data-size=data[0],data-page=data[1],data-step=data[2])
+        .pagination__title= title
 
 //- ul.pagination__items
 //-     .pagination__item.pagination__item--prev.material-icons 
@@ -10,3 +11,4 @@ mixin pagination()
 //-     li.pagination__item.pagination__item--separator ...
 //-     li.pagination__item 15
 //-     .pagination__item.pagination__item--next.material-icons
+ 1 – 12 из 100+ вариантов аренды

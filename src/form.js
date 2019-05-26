@@ -4,9 +4,15 @@ import "./blocks/dropdown-counter-plus/dropdown-counter-plus"
 import rating from "./components/rate/rate";
 import range from './components/range/range';
 import like from "./components/likeButton/likeButton"
-import "./components/pagination/pagination"
+import Pagination from "./components/pagination/pagination"
 
-
+function catalogItemPagination(elem){
+    let paginationEl= document.querySelectorAll(elem)
+    paginationEl.forEach(function(item){
+        Pagination.Init(item)
+    })
+}
+catalogItemPagination(".pagination__list")
 
 function catalogItemRange(elem){   
     let rangeForm = range.range

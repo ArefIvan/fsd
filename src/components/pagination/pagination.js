@@ -3,37 +3,39 @@
  * javascript page navigation
  * * * * * * * * * * * * * * * * */
 
- let Pagination = {
+ let  Pagination = function(){
+     
+ 
 
-    code: '',
+    this.code = '',
 
     // --------------------
     // Utility
     // --------------------
 
     // converting initialize data
-    Extend: function(e) {
+    this.Extend= function(e) {
         
-        Pagination.size = +(e.dataset.size) || 100;
-        Pagination.page = +(e.dataset.page) || 1;
-        Pagination.step = +(e.dataset.step) || 1;
+        this.size = +(e.dataset.size) || 100;
+        this.page = +(e.dataset.page) || 1;
+        this.step = +(e.dataset.step) || 1;
     },
 
     // add pages by number (from [s] to [f])
-    Add: function(s, f) {
+    this.Add = function(s, f) {
         for (var i = s; i < f; i++) {
-            Pagination.code += '<li class=\"pagination__item\"><a href=\"#\">' + i + '</a></li>';
+            this.code += '<li class=\"pagination__item\"><a href=\"#\">' + i + '</a></li>';
         }
     },
 
     // add last page with separator
-    Last: function() {
-        Pagination.code += '<i class=\"pagination__separator\">...</i><li class=\"pagination__item\"><a href=\"#\">' + Pagination.size + '</a></li>';
+    this.Last = function() {
+        this.code += '<i class=\"pagination__separator\">...</i><li class=\"pagination__item\"><a href=\"#\">' + this.size + '</a></li>';
     },
 
     // add first page with separator
-    First: function() {
-        Pagination.code += '<li class=\"pagination__item\"><a href=\"#\">1</a></li><i class=\"pagination__separator\">...</i>';
+    this.First = function() {
+        this.code += '<li class=\"pagination__item\"><a href=\"#\">1</a></li><i class=\"pagination__separator\">...</i>';
     },
 
 
@@ -43,28 +45,28 @@
     // --------------------
 
     // change page
-    Click: function() {
-        Pagination.page = +this.innerHTML;
-        Pagination.Start();
+    this.Click = (event)=> {
+        this.page = +event.target.innerHTML;
+        this.Start();
     },
 
     // previous page
-    Prev: function() {
+    this.Prev = ()=> {
 
-        Pagination.page--;
-        if (Pagination.page < 1) {
-            Pagination.page = 1;
+        this.page--;
+        if (this.page < 1) {
+            this.page = 1;
         }
-        Pagination.Start();
+        this.Start();
     },
 
     // next page
-    Next: function() {
-        Pagination.page++;
-        if (Pagination.page > Pagination.size) {
-            Pagination.page = Pagination.size;
+    this.Next = ()=> {
+        this.page++;
+        if (this.page > this.size) {
+            this.page = this.size;
         }
-        Pagination.Start();
+        this.Start();
     },
 
 
@@ -74,64 +76,63 @@
     // --------------------
 
     // binding pages
-    Bind: function() {
+    this.Bind = function() {
         
-        let a = Pagination.e.querySelectorAll('.pagination__item a');
-        let itemPag = Pagination.e.querySelectorAll('.pagination__item');
-        if(Pagination.page==1){
-            Pagination.btns[0].style.opacity="0"
+        let a = this.e.querySelectorAll('.pagination__item a');
+        let itemPag = this.e.querySelectorAll('.pagination__item');
+        console.log(a);
+        console.log(itemPag);
+        if(this.page==1){
+            this.btns[0].style.opacity="0"
         }else{
-            Pagination.btns[0].style.opacity="1"
+            this.btns[0].style.opacity="1"
         }
-        if(Pagination.page==Pagination.size){
-            Pagination.btns[1].style.opacity="0"
+        if(this.page==this.size){
+            this.btns[1].style.opacity="0"
         }else{
-            Pagination.btns[1].style.opacity="1"
+            this.btns[1].style.opacity="1"
         }
 
         a.forEach((item,i) => {
 
-            if(+item.innerHTML== Pagination.page){
+            if(+item.innerHTML== this.page){
 
                 itemPag[i].classList.add('pagination__item--current');
             }
-            item.addEventListener('click', Pagination.Click, false);
+            item.addEventListener('click', this.Click, false);
             
         });
 
     },
 
     // write pagination
-    Finish: function() {
-        Pagination.e.innerHTML = Pagination.code;
-        Pagination.code = '';
-        Pagination.Bind();
+    this.Finish = function() {
+        this.e.innerHTML = this.code;
+        this.code = '';
+        this.Bind();
     },
 
     // find pagination type
-    Start: function() {
-        
-        if (Pagination.size < Pagination.step * 2 + 6) {
+    this.Start = function() {
+        if (this.size < this.step * 2 + 6) {
 
             
-            Pagination.Add(1, Pagination.size + 1);
+            this.Add(1, this.size + 1);
         }
-        else if (Pagination.page < Pagination.step * 2 + 1) {
-            console.log(Pagination.size)
-            Pagination.Add(1, Pagination.step * 2 + 2);
-            Pagination.Last();
+        else if (this.page < this.step * 2 + 1) {
+            this.Add(1, this.step * 2 + 2);
+            this.Last();
         }
-        else if (Pagination.page > Pagination.size - Pagination.step * 2) {
-            Pagination.First();
-            Pagination.Add(Pagination.size - Pagination.step * 2 , Pagination.size + 1);
+        else if (this.page > this.size - this.step * 2) {
+            this.First();
+            this.Add(this.size - this.step * 2 , this.size + 1);
         }
         else {
             // Pagination.First();
-            console.log(Pagination.size)
-            Pagination.Add(Pagination.page - Pagination.step, Pagination.page + Pagination.step + 1);
-            Pagination.Last();
+            this.Add(this.page - this.step, this.page + this.step + 1);
+            this.Last();
         }
-        Pagination.Finish();
+        this.Finish();
     },
 
 
@@ -141,13 +142,13 @@
     // --------------------
 
     // binding buttons
-    Buttons: function(nav) {
-        nav[0].addEventListener('click', Pagination.Prev, false);
-        nav[1].addEventListener('click', Pagination.Next, false);
+    this.Buttons = function(nav) {
+        nav[0].addEventListener('click', this.Prev, false);
+        nav[1].addEventListener('click', this.Next, false);
     },
 
     // create skeleton
-    Create: function(e) {
+    this.Create = function(e) {
 
         var html = [
             '<div class=\"pagination__btn pagination__btn--prev material-icons\"></div>', // previous button
@@ -156,18 +157,21 @@
         ];
 
         e.innerHTML = html.join('');
-        Pagination.e = e.querySelector('.pagination__items');
-        Pagination.btns= e.querySelectorAll('.pagination__btn');
-        Pagination.Buttons(Pagination.btns);
+        this.e = e.querySelector('.pagination__items');
+        this.btns= e.querySelectorAll('.pagination__btn');
+        this.Buttons(this.btns);
     },
 
     // init
-    Init: function(e) {
-        Pagination.Extend(e);
-        Pagination.Create(e);
-        Pagination.Start();
-    }
+    this.Init = function(e) {
+       
+        this.Extend(e);
+        this.Create(e);
+        this.Start();
+     }
+    
 };
+
 
 export default Pagination
 

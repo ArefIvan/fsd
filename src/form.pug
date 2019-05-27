@@ -18,7 +18,11 @@ html
         title forms
     body.main.main--form
         .wrapper.wrapper--form 
-            section.column  
+            section.column
+                +form-elem("pagination")
+                    +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
+                +form-elem("pagination")
+                    +pagination([16,4,4],"Ещё какой-то заголовок")  
                 +form-elem("text field","default hover/focus")
                     +text-field("email")(class="input-email")
                 +form-elem("dropdown","default")
@@ -64,7 +68,3 @@ html
                         .form-element__button
                             +btn("click Me")
                             +btn("Click Me")(disabled)
-                    +form-elem("pagination")
-                        +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
-                    +form-elem("pagination")
-                        +pagination([16,2,3],"Ещё какой-то заголовок")

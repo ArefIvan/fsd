@@ -8,8 +8,11 @@ import Pagination from "./components/pagination/pagination"
 
 function catalogItemPagination(elem){
     let paginationEl= document.querySelectorAll(elem)
-    paginationEl.forEach(function(item){
-        Pagination.Init(item)
+    let paginations={}
+    paginationEl.forEach((item,i)=>{
+        paginations[i]=new Pagination
+        paginations[i].Init(item)
+        
     })
 }
 catalogItemPagination(".pagination__list")

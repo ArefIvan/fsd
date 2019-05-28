@@ -1,0 +1,28 @@
+.bullet{
+    &__item{
+        padding:0 0 12px 10px;
+        line-height: 171%;
+        color:$primary-color--75;
+        display: flex;
+        
+        &::before{
+
+            display: block;
+            content: "\25CF";
+            padding-right: 0.35em;
+            color:$primary-color--25;
+            font-size: 1.8em;
+            line-height:0.8em;
+            
+            
+            // height: .75rem;
+            // width: .75rem;
+            // border-radius: 50%;
+            // background-color: $primary-color--25;/
+            // top:50%;
+            // transform: translate( -1.5rem, -50%)
+
+
+        }
+    }
+}

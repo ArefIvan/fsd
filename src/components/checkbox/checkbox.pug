@@ -1,11 +1,16 @@
-mixin checkbox(name,title,subtitle)
+mixin checkbox(name,title,check)
+    -let strtitle=(typeof title == "string")?title:title[0]
+    -let subtitle=(typeof title == "string")?false:title[1]
     .checkbox&attributes(attributes)
         label.checkbox__label
-            input.checkbox__input(type="checkbox", name=name)
+            input.checkbox__input(type="checkbox",
+                                  name=name,
+                                  checked = check
+                                   )
             .checkbox__check
                 .checkbox__icon
         .checkbox__titles        
-            .checkbox__title= title
+            .checkbox__title= strtitle
             if subtitle
                 .checkbox__subtitle=  subtitle
             

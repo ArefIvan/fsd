@@ -10,6 +10,7 @@ include components/likeButton/likeButton.pug
 include components/rate/rate.pug
 include components/button/button.pug
 include components/pagination/pagination.pug
+include components/bulletList/bulletList.pug
 
 
 doctype html
@@ -28,7 +29,19 @@ html
                     include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
-                        include blocks/dropdown-date/dropdown-date-filter.pug        
+                        include blocks/dropdown-date/dropdown-date-filter.pug 
+                    +form-elem()(class="form-element__expCheckList") 
+                        +dropdown("expandable checkbox list",false)
+                            +checkbox("breackfast","завтрак")
+                            +checkbox("table","Письменный стол",true)
+                            +checkbox("table","Стул для кормления",true)      
+                            +checkbox("table","Кроватка",true)    
+                            +checkbox("tv","Телевизор")      
+                            +checkbox("tv2","Телевизор")      
+                            +checkbox("table","Шампунь")
+                            
+                            
+
             section.column
                 form(action="",method='get' name= "")
                     +form-elem("checkbox button")
@@ -47,8 +60,8 @@ html
                         +rate(5,3)
                         +rate(5,0,"room-39")
                     +form-elem("rich checkbox buttons")
-                        +checkbox("corridor","Широкий коридор","Ширина коридора в номере не менее 91 см")(class='checkbox--rich')
-                        +checkbox("assistent","Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера.")(class='checkbox--rich')
+                        +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
+                        +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
             section.column
                 
                  form(action="",method='get' name= "")
@@ -68,4 +81,7 @@ html
                     +form-elem("pagination")
                         +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
                     +form-elem("pagination")
-                        +pagination([16,4,4],"Pagination длинее")  
+                        +pagination([16,4,4],"Pagination длинее") 
+                    +form-elem("bullet list")(class="form-element--bullet")
+                        -let bulletListItems = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00 "]
+                        +bulletList(bulletListItems) 

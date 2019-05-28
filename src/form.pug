@@ -30,18 +30,20 @@ html
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
                         include blocks/dropdown-date/dropdown-date-filter.pug 
+                    +form-elem("subscription text field")
+                        +text-field("e-mail",true)
                     +form-elem()(class="form-element__expCheckList") 
                         +dropdown("expandable checkbox list",false)
-                            +checkbox("breackfast","завтрак")
-                            +checkbox("table","Письменный стол",true)
-                            +checkbox("table","Стул для кормления",true)      
-                            +checkbox("table","Кроватка",true)    
-                            +checkbox("tv","Телевизор")      
+                            +checkbox("breackfast","Завтрак")
+                            +checkbox("desk","Письменный стол",true)
+                            +checkbox("feeding chair","Стул для кормления",true)      
+                            +checkbox("child's bed","Кроватка",true)    
+                            +checkbox("tv","Телевизор") 
+                            +checkbox("shampoo2","Шампунь")     
                             +checkbox("tv2","Телевизор")      
-                            +checkbox("table","Шампунь")
-                            
-                            
-
+                            +checkbox("shampoo","Шампунь")
+                    +form-elem()
+                        include components/avatar/avatar.pug
             section.column
                 form(action="",method='get' name= "")
                     +form-elem("checkbox button")

@@ -3,6 +3,7 @@ $fontColor--50:#ffffff80;
 $buttonHeight:40px;
 $buttonBorder:2px;
 .button{
+
     color:$purple-color;
     text-decoration: none;
     text-align: center;
@@ -10,8 +11,13 @@ $buttonBorder:2px;
     &:disabled &__title{
         opacity: 0.5;
     }
+    &__link{
+        text-decoration: none;
+        color:inherit;
+    }
     &--border,&--gradient{
-        min-width: 140px;
+        width: 100%;
+        // min-width: 140px;
         position: relative;
         border:0px solid transparent;
         border-radius:$buttonHeight/2;
@@ -42,5 +48,18 @@ $buttonBorder:2px;
     }
     &--gradient{
         color:$fontColor;
+    }
+    &--arrow{
+        .button__icon{
+            position: absolute;
+            vertical-align: middle;
+            text-align: end;
+            right: ($buttonHeight - 24px) /2; //8px;
+            top:50%; 
+            transform: translateY(-50%) ;      
+              &::after{
+                  content: "arrow_forward"
+              }
+        }
     }
 }

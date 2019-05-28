@@ -1,6 +1,11 @@
-mixin btn(title)
+mixin btn(title,href)
     button.button.h3&attributes(attributes)
-        span.button__title= title
-        i(class='material-icons button__icon')
-        .button__border
- 
+        if href
+            a.button__link(href=href)
+                span.button__title= title
+                i(class='material-icons button__icon')
+                .button__border
+        else
+             span.button__title= title
+                i(class='material-icons button__icon')
+                .button__border

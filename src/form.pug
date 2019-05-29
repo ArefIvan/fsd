@@ -14,13 +14,12 @@ include components/bulletList/bulletList.pug
 
 
 doctype html
-html
+html.html
     head
         title forms
     body.main.main--form
         .wrapper.wrapper--form 
             section.column
-                .img-svg
                 +form-elem("text field","default hover/focus")
                     +text-field("email")(class="input-email")
                 +form-elem("dropdown","default")

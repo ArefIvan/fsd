@@ -1,7 +1,7 @@
 include /components/button/button.pug
 -let linkFormElem = "form.html"
 doctype html
-html
+html.html
   head
     title test
   body.main
@@ -9,6 +9,7 @@ html
       nav.nav-test
         .nav-test__item
           +btn("form element",linkFormElem)(class="button--gradient button--arrow")
+        a(href=linkFormElem) form
           //- include /img/svg/smile.pug
           //- include /img/svg/house.pug
           //- include /img/svg/logo.pug

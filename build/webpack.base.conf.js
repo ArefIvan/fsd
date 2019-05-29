@@ -36,15 +36,20 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: `${PATHS.assets}img/[name].[ext]`
+        name: `${PATHS.assets}img/[name].[ext]`,
+        // exclude:`${PATHS.assets}fonts/`
       }
     },
+  //  { 
+  //     test:/\.$/,
+  //     loader:'svg-inline-loader'
+  //   },
  
     {
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+      test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
       loader: 'file-loader',
       options: {
-        
+        // exclude:`${PATHS.assets}img/`,
         name: `${PATHS.assets}fonts/[name].[ext]`,
         // limit: 1000
       }
@@ -114,7 +119,7 @@ module.exports = {
       filename: './form.html'
     }),
     new CopyWebpackPlugin([
-     // { from: `${PATHS.src}/**/`, to: `${PATHS.assets}img` },
+    //  { from: `${PATHS.src}/**/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },
     ])
   ],

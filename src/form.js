@@ -3,9 +3,13 @@ import dropdate from "./blocks/dropdown-date/dropdown-date";
 import "./blocks/dropdown-counter-plus/dropdown-counter-plus"
 import rating from "./components/rate/rate";
 import range from './components/range/range';
-import like from "./components/likeButton/likeButton"
-import Pagination from "./components/pagination/pagination"
+import like from "./components/likeButton/likeButton";
+import Pagination from "./components/pagination/pagination";
+import svg from "./img/1.svg";
+console.log(svg)
 
+let svgImg = document.querySelector(".img-svg")
+svgImg.innerHTML= "<img src=\""+svg+"\">"
 function catalogItemPagination(elem){
     let paginationEl= document.querySelectorAll(elem)
     let paginations={}

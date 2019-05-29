@@ -1,24 +1,29 @@
 .checkbox{
-    max-width: 240px;
+    // max-width: 240px;
         display: flex;
         align-items:flex-start;
-        margin:10px;
-
+        // margin:10px;
+    &__check{
+        position: relative;
+        box-sizing: border-box;
+        @include size(rem(20px));
+        border: #{rem(1px)} solid #{$primary-color--25};
+        border-radius: rem(4px); 
+    }
         
     &__icon{
-        width: 5px;
-        height: 7px;
-        border: 2px solid transparent;
+        width: rem(5px);
+        height: rem(7px);
+        border: rem(2px) solid transparent;
         border-image: $primary-gradient ;
         border-image-slice: 1;
         border-top: 0;
         border-left:0;
         position: absolute;
-        top:calc(50%-4.5px);
-        left:calc(50%-2.5px);
-        transform: rotate(45deg);
-        opacity: 0;
-                    
+        bottom:50%;
+        right:50%;
+        transform:translate(50%,50%) rotate(45deg)  ;
+        opacity: 0;                   
     }
 
     &__input{
@@ -34,16 +39,9 @@
         }
     
     }
-    &__check{
-        position: relative;
-        box-sizing: border-box;
-        min-height: 20px;
-        min-width: 20px;
-        border: 1px solid #{$primary-color--25};
-        border-radius: 4px; 
-    }
+
     &__titles{
-        padding-left: 10px;
+        padding-left: rem(10px);
     }
     &__title{
         
@@ -51,7 +49,7 @@
     }
     &__subtitle{
         color:$primary-color--50;
-        font-size: 0.75rem;
+        font-size: rem(10px);
         line-height: 117%;
     }
     &--rich &__title{

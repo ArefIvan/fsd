@@ -1,6 +1,6 @@
 .bullet{
     &__item{
-        padding:0 0 12px 10px;
+        padding:0 0 rem(11px) rem(10px);
         line-height: 171%;
         color:$primary-color--75;
         display: flex;
@@ -9,20 +9,11 @@
 
             display: block;
             content: "\25CF";
-            padding-right: 0.35em;
+            padding-right: rem(7px);
             color:$primary-color--25;
-            font-size: 1.8em;
-            line-height:0.8em;
+            font-size: 1.8rem;
+            line-height:1.3rem;
             
-            
-            // height: .75rem;
-            // width: .75rem;
-            // border-radius: 50%;
-            // background-color: $primary-color--25;/
-            // top:50%;
-            // transform: translate( -1.5rem, -50%)
-
-
         }
     }
 }

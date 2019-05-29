@@ -1,7 +1,6 @@
 $fontColor:white;
 $fontColor--50:#ffffff80;
-$buttonHeight:40px;
-$buttonBorder:2px;
+
 .button{
 
     color:$purple-color;
@@ -20,19 +19,19 @@ $buttonBorder:2px;
         // min-width: 140px;
         position: relative;
         border:0px solid transparent;
-        border-radius:$buttonHeight/2;
-        height: $buttonHeight;
-        line-height: $buttonHeight;
+        border-radius:rem(40px)/2;
+        height: rem(40px);
+        line-height: rem(40px);
         &::before{
             content:"";
             position: absolute;
             z-index: -1;
-            height: $buttonHeight + $buttonBorder*2;
-            width:calc(100% + #{$buttonBorder}*2);
+            height:calc( #{rem(40px)} + (#{rem(2px)}*2));
+            width:calc(100% + #{rem(2px)}*2);
             border:0px solid transparent;
-            border-radius: ($buttonHeight + $buttonBorder*2)/2;
-            left:-($buttonBorder);
-            top:-($buttonBorder);
+            border-radius: (rem(40px) + rem(2px)*2)/2;
+            left:-(rem(2px));
+            top:-(rem(2px));
             background: linear-gradient(to bottom,$purple-color, #8ba3f9 );
         }
         &:disabled{
@@ -54,7 +53,7 @@ $buttonBorder:2px;
             position: absolute;
             vertical-align: middle;
             text-align: end;
-            right: ($buttonHeight - 24px) /2; //8px;
+            right:calc( (#{rem(40px)} - #{rem(24px)}) /2);
             top:50%; 
             transform: translateY(-50%) ;      
               &::after{

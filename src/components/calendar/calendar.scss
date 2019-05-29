@@ -1,10 +1,10 @@
 .calendar{
-    width: 320px;
-    line-height: 40px !important;
+    width: 100%;
+    line-height: rem(40px) !important;
     text-align: center;
-    border-radius: 4px; 
+    border-radius: rem(4px); 
     // border: 1px solid #{$primary-color--25};
-    padding: 20px;
+    
    
     &__header{
         
@@ -28,19 +28,18 @@
         }
     }
     &__days-week{
-        font-size: 12px;
+        font-size: rem(12px);
         font-weight: 700;
-        height: 40px;
-        line-height: 40px;
+        height: rem(40px);
+        line-height: rem(40px);
         color:$purple-color !important ;
     }
     &__table{
         margin : 30px auto 20px;
     }
     &__day{
-        width: 40px;
-        height: 40px;
-        font-size: 12px;
+        @include size(rem(40));
+        font-size: rem(12px);
         color:$primary-color--50;
 
          

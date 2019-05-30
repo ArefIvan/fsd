@@ -1,4 +1,4 @@
-mixin dropdownDateOne(footer=true)   
+mixin dropdownDateOne(footer=true)
     .field-dropdown.field-dropdown--date
         .field-dropdown__header
             input.field-dropdown__date(type="text" placeholder="dd:mm:YYYY")
@@ -9,6 +9,9 @@ mixin dropdownDateOne(footer=true)
             .field-dropdown__content-footer
                 span.h3.cancel Очистить
                 span.h3.assept Применить
+
+
+
 
 mixin dropDateRange()
     .field-dropdown.field-dropdown--date
@@ -26,7 +29,6 @@ mixin dropdown(title,footer=true)
     .field-dropdown&attributes(attributes)
         .field-dropdown__header
             .field-dropdown__title= title
-            title
             i.material-icons.field-dropdown__icon
         .field-dropdown__content
             block

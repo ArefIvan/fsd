@@ -50,9 +50,19 @@ function catalogItemDropdownDate(field){
     fieldsEl.forEach(item =>{
         dropdownDatefilter(item)
     })
-
 }
 catalogItemDropdownDate(".field-dropdown--date-filter")
+
+function catalogItemDropdownTwo(field){
+    let dropdownDateTwo=dropdate.dropdownDateTwo;
+    let dateFormatFull = dropdate.dateFormatFull;
+    let fieldsEl = document.querySelectorAll(field);
+    fieldsEl.forEach(item =>{
+        dropdownDateTwo(item)
+    })
+
+}
+catalogItemDropdownTwo(".field-dropdown--date--two")
 function catalogItemLike(elem){
 let likeEl = document.querySelectorAll(elem);
 

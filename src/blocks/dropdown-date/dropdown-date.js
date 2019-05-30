@@ -43,36 +43,78 @@ export function dropdownDatefilter(el){
             valueTwo = "";
             dateTwo.innerHTML = valueTwo;
             inpDate2.value=valueTwo;
+        }       
+    }
+   
+}; 
+export function dropdownDateTwo(el){
+    let now = new Date();
+    let dateOne = el.querySelector(".field-dropdown__date--one"); //поле даты 
+    let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
+    let calendar= el.querySelector('.calendar'); //календарь
+    // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
+    cal(calendar);
+    calendar.onclick = function(){
+        let valueOne = this.dataset.selectedDay1
+        let valueTwo = this.dataset.selectedDay2
+        if(valueOne!==''&&valueOne!==undefined){
+            
+            valueOne = dateFormatFull(valueOne)
+            dateOne.value=valueOne;
+        }
+        else{
+            valueOne.value = ""
+            dateOne.innerHTML = valueOne
+            inpDate1.value=valueOne;
+        }
+        if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){
+            
+            valueTwo = dateFormatFull(valueTwo);
+            // dateTwo.innerHTML=valueTwo;
+            dateTwo.value=valueTwo;
+            
+        }
+        else{
+            valueTwo = "";
+            dateTwo.value = valueTwo;
+            // inpDate2.value=valueTwo;
         }
         
        
         
     }
 
-    dateOne.onchange = function(){
-        let value = this.value;          
-        let valueStr;
-        let now = new Date()
-        if(isValidDate(value)){     
-           value=value.split('.')         
-            value = new Date(value[2],(value[1]-1),value[0])            
-            if(value<now){
-                value = now
-            }   
-            calendar.dataset.selectedDay1=value;
-            
-            valueStr = dateFormat(value);
-            this.value=valueStr
-            dateOne.parentNode.classList.remove('field-dropdown__error')
-            getContentCal(calendar,value.getFullYear(),value.getMonth())
-            selectDay(calendar)
-        }else{
-            date.parentNode.classList.add('field-dropdown__error')
-        }
-    }
-    
-    
+    dateOne.addEventListener("change",(e)=>{changeDate(e,calendar)})
+    dateTwo.addEventListener("change",(e)=>{
+        changeDate(e,calendar)
+    })     
 }; 
+let changeDate =(e,calendar)=>{
+    console.log(calendar)
+    let value = e.target.value;          
+    let valueStr;
+    let now = new Date()
+    if(isValidDate(value)){     
+       value=value.split('.')         
+        value = new Date(value[2],(value[1]-1),value[0])            
+        if(value<now){
+            value = now
+        }
+        if(e.target.classList.contains("field-dropdown__date--one")){   
+            calendar.dataset.selectedDay1=value; 
+        }
+        if(e.target.classList.contains("field-dropdown__date--two")){
+            calendar.dataset.selectedDay2=value;
+        }          
+        valueStr = dateFormatFull(value);
+        e.target.value=valueStr
+        e.target.parentNode.classList.remove('field-dropdown__error')
+        getContentCal(calendar,value.getFullYear(),value.getMonth())
+        selectDay(calendar)
+    }else{
+        e.target.parentNode.classList.add('field-dropdown__error')
+    }
+}
 export function dateFormatFull(str){
     let date =new Date(str)
     let day= date.getDate();
@@ -119,4 +161,4 @@ export function isValidDate(dateString){
     return day > 0 && day <= monthLength[month - 1];
 };
 
-export default {dropdownDatefilter,dateFormatFull,dateFormatShort,isValidDate}
+export default {dropdownDatefilter, dropdownDateTwo ,dateFormatFull,dateFormatShort,isValidDate,changeDate}

@@ -29,6 +29,8 @@ html.html
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
                         include blocks/dropdown-date/dropdown-date-filter.pug 
+                    +form-elem()
+                        include blocks/dropdown-date/dropdown-date-two.pug
                     +form-elem("subscription text field")
                         +text-field("e-mail",true)
                     +form-elem()(class="form-element__expCheckList") 

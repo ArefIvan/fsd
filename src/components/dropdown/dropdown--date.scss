@@ -4,14 +4,16 @@
         &__datewrap{
                 display: flex;
                 width: 50%;
-                padding-left:10px; 
+                padding-left:rem(10px); 
 
             }
             &__date{  
-                    
+                padding-left:rem(10px);                    
                 height: 100%;
-                border-radius: 4px;
+                border-radius: rem(4px);
+                color: $primary-color--75;
                 @include  placeholder{
+
                     color: $primary-color--50;
                     font-family: $mainFont;               
                     };
@@ -33,11 +35,45 @@
     }
 }
 .field-dropdown--date-filter{
-    
+    .field-dropdown{
+        &__date{
+            padding:0;
+        }  
+    }  
         &__input{
             height: 0;
             width: 0;
             opacity: 0;
         }
     
+}
+.field-dropdown--date--two{
+    border:0;
+    position: relative;
+    .field-dropdown{
+        &__headers{
+            display: flex;
+            justify-content: space-between ;
+        }
+        &__header{
+            @extend .field-dropdown;
+            width:rem(150px);
+            
+
+        }
+        &__date{
+            
+            width: calc(100%-#{rem(30px)})
+        }
+        &__content{
+            
+            border: 1px solid #{$primary-color--25};
+            border-radius: rem(4px); 
+            position: absolute;
+            right: 0;
+            top:rem(72px);
+            background-color: white;
+            z-index: 100;
+        }
+    }
 }

@@ -37,7 +37,7 @@
     }else{
       selectedDay2=="none";
     }
-    let days = calContent.querySelectorAll('.future-day');
+    let days = calContent.querySelectorAll('.active-day');
     let today = calContent.querySelector('.today');
     
     days.forEach(day => { 
@@ -168,7 +168,7 @@
   export function rangeDate(el,day1,day2){
     let title = el.querySelector(".calendar__title");
     let calContent = el.querySelector(".calendar__content")
-    let days=calContent.querySelectorAll('.future-day');
+    let days=calContent.querySelectorAll('.active-day');
     let daysNextMouth = calContent.querySelectorAll(".nextMonth");
     let daysPrevMouth = calContent.querySelectorAll(".prevMonth");
     let from = (day1>day2)?day2:day1;
@@ -245,7 +245,7 @@
       }
       for(let  i = 1; i <= Dlast; i++) {
             if (i == new Date().getDate() && D.getFullYear() == new Date().getFullYear() && D.getMonth() == new Date().getMonth()) { // если i = 
-              content += '<td class="calendar__day today">' + i;
+              content += '<td class="calendar__day today active-day">' + i;
             }else{
           
               if(i > new Date().getDate() 
@@ -253,7 +253,7 @@
                 && D.getMonth() == new Date().getMonth()
                 ||D.getFullYear() > new Date().getFullYear()
                 ||D.getMonth() > new Date().getMonth()){
-              content += '<td class="calendar__day future-day">' + i;
+              content += '<td class="calendar__day active-day">' + i;
               }
               else{content += '<td class="calendar__day">' + i;
               }

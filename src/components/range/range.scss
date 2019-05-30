@@ -1,7 +1,7 @@
 .range{
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 100%;
     line-height: 100%;
     
     &__title{
@@ -17,20 +17,20 @@
 
     &__input-wrapper{
     position: relative;
-    margin: 20px;
-    height: 20px;
+    margin: rem(20px);
+    height: rem(20px);
     width: 100%;
     }
     &__input{
         color:transparent;
         position: absolute;
-        top:5px;
+        top:rem(5px);
         width: 100%;
-        height: 4px;
+        height: rem(4px);
         pointer-events: none;
         outline:none;
         -webkit-appearance: none;
-        border-radius:3px;
+        border-radius:rem(3px);
         border:1px solid #{$primary-color--25};
         @include sliderThumb{
             pointer-events: all;
@@ -38,10 +38,8 @@
             z-index: 2;
             outline: 0; 
             -webkit-appearance: none; 
-            height: 12px; 
-            width: 12px; 
-           
-            border-radius: 6px; 
+            @include size(rem(12));
+            border-radius: rem(6); 
             background: $second-gradient;
             border: 1px solid white;
         }
@@ -49,13 +47,13 @@
     &__bar{
         display: block;
         position: absolute;
-        top:4px;
-        height: 6px;
-        border-radius:5px;
+        top:rem(4px);
+        height: rem(6px);
+        border-radius:rem(5px);
         z-index: 1;
         width: 0;
         left:0;
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        background: $second-gradient;
 
     }
 

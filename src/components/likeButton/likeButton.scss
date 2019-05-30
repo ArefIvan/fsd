@@ -1,36 +1,37 @@
 .like{ 
     &__wrapper{        
         position: relative; 
-        height: 18px;
-        min-width: 38px;
+        height: rem(18px);
+        min-width: rem(38px);
         border: 0px solid transparent;
-        border-radius: 9px;
+        border-radius: rem(9px);
         text-align: right;
         color:$primary-color--25;
         background-color: white;
-        line-height: 18px;
+        line-height: rem(18px);
             &::before{
                 content:"";
                 position: absolute;
                 z-index: -1;
-                height: 20px;
-                width:40px;
+                height: rem(20px);
+                width:rem(40px);
                 border:0px solid transparent;
-                border-radius: 10px;
-                top:-1px;
-                right: -1px;
+                border-radius: rem(10px);
+                top:rem(-1px);
+                right:rem(-1px);
                 background: $primary-color--25 ;
             }
     }   
     &__count{    
-        font-size: 10px;  
-        padding-right: .75em;
+        font-size: rem(10px);  
+        padding-right: rem(10px);
     }
     &__icon{
         position: absolute;
-        font-size: 10px !important;
-        top:calc(50%-5px);
-        left: 5px;
+        font-size: rem(10px) !important;
+        top:50%;
+        transform: translateY(-50%);
+        left: rem(5px);
         &:after{
             content:"favorite_border";           
         }

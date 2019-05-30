@@ -80,8 +80,6 @@
         
         let a = this.e.querySelectorAll('.pagination__item a');
         let itemPag = this.e.querySelectorAll('.pagination__item');
-        console.log(a);
-        console.log(itemPag);
         if(this.page==1){
             this.btns[0].style.opacity="0"
         }else{

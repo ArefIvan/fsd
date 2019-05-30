@@ -14,10 +14,10 @@
         justify-content: center;
     }
     &__item,&__btn,&__separator{
-        min-width: 40px;
-        height: 40px;
+        min-width: rem(40px);
+        height: rem(40px);
         text-align: center;
-        line-height: 40px;
+        line-height: rem(40px);
         color:$primary-color--50;
 
         &--current{
@@ -34,8 +34,8 @@
                     content: "arrow_forward";
                     position: absolute;
                     top:50%;
-                    right:(40px-24px)/2;
-                    transform: translateY(-50%)
+                    left:50%;
+                    transform: translate(-50%,-50%)
                 }
             
         }
@@ -48,8 +48,8 @@
                     content: "arrow_back";
                     position: absolute;
                     top:50%;
-                    right:(40px-24px)/2;
-                    transform: translateY(-50%)
+                    left:50%;
+                    transform: translate(-50%,-50%)
                 }
             
         }
@@ -57,7 +57,7 @@
         
     }
     &__title{
-        font-size: 12px;
+        font-size: rem(12px);
         text-align: center;
         color:$primary-color--75;
     }

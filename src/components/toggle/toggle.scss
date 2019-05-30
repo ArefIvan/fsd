@@ -4,19 +4,19 @@
         position: relative;
         box-sizing: border-box;
         margin:auto 0;
-        height: 20px;
-        width: 40px;
+        height: rem(20px);
+        width: rem(40px);
         border: 1px solid #{$primary-color--25};
-        border-radius: 10px;
+        border-radius: rem(10px);
     }    
     &__icon{
-        width: 12px;
-        height: 12px;
+        @include size(rem(12));
         background: $primary-color--25;
         border-radius: 50%;
         position: absolute;
-        top:calc(50%-6px);
-        left: 4px;           
+        top:50%;
+        left: rem(4px);
+        transform: translateY(-50%)           
     }
     
     &__input{
@@ -24,17 +24,16 @@
         width: 0;
         position: absolute;           
         &:checked~.toggle__switch{
-                border-color:$purple-color;                
-        
+                border-color:$purple-color;                        
              .toggle__icon{
-            background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
-            left: 22px;
+            background: $primary-gradient ;
+            left: rem(22px);
             }
         }
     }
     &__title{
         columns: $primary-color--75;
-        padding-left: 10px;
+        padding-left: rem(10px);
 
     }
 }

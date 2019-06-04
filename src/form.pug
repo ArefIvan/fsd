@@ -11,7 +11,7 @@ include components/rate/rate.pug
 include components/button/button.pug
 include components/pagination/pagination.pug
 include components/bulletList/bulletList.pug
-
+include components/avatar/avatar.pug
 
 doctype html
 html.html
@@ -42,8 +42,12 @@ html.html
                         +checkbox("shampoo2","Шампунь")     
                         +checkbox("tv2","Телевизор")      
                         +checkbox("shampoo","Шампунь")
-                +form-elem()
-                    include components/avatar/avatar.pug
+                .form__advantage
+                    .form__advantage__content
+                        +avatar("assets/img/smile.svg","Комфорт","Шумопоглощающие стены")
+                .form__advantage
+                    .form__advantage__content
+                        +avatar("assets/img/svg/house.svg","Удобство","Окно в каждой спальне")
             section.column
                 form(action="",method='get' name= "")
                     +form-elem("checkbox button")
@@ -64,6 +68,8 @@ html.html
                     +form-elem("rich checkbox buttons")
                         +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
                         +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
+            .form__review
+                +avatar("assets/img/avatar_murad.jpg","Мурад Сарафанов"," 5 дней назад")
             section.column
                 
                  form(action="",method='get' name= "")

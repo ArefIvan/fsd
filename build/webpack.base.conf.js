@@ -119,7 +119,7 @@ module.exports = {
       filename: './form.html'
     }),
     new CopyWebpackPlugin([
-    //  { from: `${PATHS.src}/**/`, to: `${PATHS.assets}img` },
+     { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },
     ])
   ],

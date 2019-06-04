@@ -10,3 +10,18 @@
     width: 30%;
     min-width: 386px;
 }
+.form{
+    &__advantage{
+        display: flex;
+
+        // justify-content: center;
+        height: 100px;
+        &__content{
+            margin:10px 33px;
+            display: flex;
+            align-items: center;   
+            border-bottom:1px solid  #{$primary-color--25};
+
+        }
+    }
+}

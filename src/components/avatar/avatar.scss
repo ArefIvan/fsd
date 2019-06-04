@@ -2,6 +2,19 @@
     display:flex;
     align-items: flex-start;
     &__img{
-        width: rem(40px);
+        @include size(rem(48));
+        display: flex;
+         img{
+            margin:auto;
+        }
+        
+    }
+
+    &__titles{
+        padding-left: rem(10);
+        color: $primary-color--75;
+    }
+    &__title{
+        font-weight: bold;
     }
 }

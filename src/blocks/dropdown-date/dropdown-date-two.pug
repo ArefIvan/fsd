@@ -4,15 +4,15 @@ include ../../components/dropdown/dropdown
     .field-dropdown__headers
         .field-dropdown__wrap
             .form-element__header
-                    .form-element__title.h3 dropdown date          
+                .form-element__title.h3 dropdown date          
             .field-dropdown__header
-                input.field-dropdown__date.field-dropdown__date--one(type="text" placeholder="dd:mm:YYYY")
+                input.field-dropdown__date.field-dropdown__date--one(type="text" name="date1" placeholder="dd:mm:YYYY")
                 i.material-icons.field-dropdown__icon
         .field-dropdown__wrap
             .form-element__header
                     .form-element__title.h3 dropdown date  
             .field-dropdown__header
-                input.field-dropdown__date.field-dropdown__date--two(type="text" placeholder="dd:mm:YYYY")
+                input.field-dropdown__date.field-dropdown__date--two(type="text" name="date2" placeholder="dd:mm:YYYY")
                 i.material-icons.field-dropdown__icon
     .field-dropdown__content 
         +calendar(true)

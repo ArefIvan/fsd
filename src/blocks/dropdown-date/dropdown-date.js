@@ -12,12 +12,28 @@ export function dropdownDatefilter(el){
     let inpDate1 = el.querySelector(".field-dropdown__date--one + .field-dropdown--date-filter__input")
     let inpDate2 = el.querySelector(".field-dropdown__date--two + .field-dropdown--date-filter__input")
     let calendar= el.querySelector('.calendar'); //календарь
-    // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
+    let cancel = el.querySelector(".cancel")
+    let assept = el.querySelector(".assept")
+    // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть 
     cal(calendar);
+    cancel.style.opacity=assept.style.opacity=0;
     dateOne.innerHTML=dateTwo.innerHTML= dateFormatShort(now)
+    cancel.onclick = function(){
+        calendar.dataset.selectedDay1=calendar.dataset.selectedDay2="";
+        dateOne.innerHTML="";
+        dateTwo.innerHTML="";
+        cancel.style.opacity=0
+        cal(calendar)
+    }
     calendar.onclick = function(){
+
         let valueOne = this.dataset.selectedDay1
         let valueTwo = this.dataset.selectedDay2
+    // показываем/скрываем кнопки принять очистить
+        if(valueOne||valueTwo)cancel.style.opacity=1
+            else cancel.style.opacity=0
+        if(valueOne&&valueTwo)assept.style.opacity=1
+            else{assept.style.opacity=0}
         if(valueOne!==''&&valueOne!==undefined){
             
             valueOne = dateFormatShort(valueOne)

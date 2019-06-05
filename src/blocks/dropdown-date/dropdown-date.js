@@ -11,8 +11,6 @@ export function dropdownDatefilter(el){
     let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
     let inpDate1 = el.querySelector(".field-dropdown__date--one + .field-dropdown--date-filter__input")
     let inpDate2 = el.querySelector(".field-dropdown__date--two + .field-dropdown--date-filter__input")
-    
-
     let calendar= el.querySelector('.calendar'); //календарь
     // calendar.dataset.selectedDay2='none'; // для выбора диапазона дат стереть
     cal(calendar);
@@ -48,7 +46,6 @@ export function dropdownDatefilter(el){
    
 }; 
 export function dropdownDateTwo(el){
-    let now = new Date();
     let dateOne = el.querySelector(".field-dropdown__date--one"); //поле даты 
     let dateTwo = el.querySelector(".field-dropdown__date--two"); //поле даты 
     let calendar= el.querySelector('.calendar'); //календарь
@@ -67,21 +64,16 @@ export function dropdownDateTwo(el){
             dateOne.innerHTML = valueOne
             inpDate1.value=valueOne;
         }
-        if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){
-            
+        if(valueTwo!==''&&valueTwo!==undefined&&valueTwo!=="none"){           
             valueTwo = dateFormatFull(valueTwo);
             // dateTwo.innerHTML=valueTwo;
             dateTwo.value=valueTwo;
-            
-        }
+                    }
         else{
             valueTwo = "";
             dateTwo.value = valueTwo;
             // inpDate2.value=valueTwo;
-        }
-        
-       
-        
+        }        
     }
 
     dateOne.addEventListener("change",(e)=>{changeDate(e,calendar)})
@@ -160,5 +152,6 @@ export function isValidDate(dateString){
     // проверка дня 
     return day > 0 && day <= monthLength[month - 1];
 };
+
 
 export default {dropdownDatefilter, dropdownDateTwo ,dateFormatFull,dateFormatShort,isValidDate,changeDate}

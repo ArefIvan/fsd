@@ -1,27 +1,22 @@
 // function catalogItemCalendar(calendars){
 //   let calendarsEl = document.querySelectorAll(calendars);
   
-
   document.querySelector(".calendar")
   let calendar = function(el) {
     
-    let prevBtn = el.querySelector(".calendar__arrow--prev");
-    let nextBtn = el.querySelector(".calendar__arrow--next");
-     let title = el.querySelector(".calendar__title");
-    // let calContent = el.querySelector(".calendar__content");
-    
+    let prevBtn = el.querySelector(".calendar__arrow--prev");//кнопка назад
+    let nextBtn = el.querySelector(".calendar__arrow--next");//кнопка вперед
+    let title = el.querySelector(".calendar__title");//месяц-год
+    let input = el.querySelectorAll("input")
     prevBtn.onclick = function() {
       getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)-1);
       selectDay(el)
       
     }
-    // переключатель плюс месяц
     nextBtn.onclick = function() {
       getContentCal(el,title.dataset.year, parseFloat(title.dataset.month)+1);
       selectDay(el)
     }
-    
- 
    getContentCal(el,new Date().getFullYear(), new Date().getMonth());
    selectDay(el)
   };

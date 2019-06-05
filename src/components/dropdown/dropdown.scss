@@ -8,14 +8,12 @@
         height: rem(42px);
         line-height: rem(42px);         
     }
-
     &__title{
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;     
         padding-left:rem(15px);   
-        text-align: left;
-         
+        text-align: left;        
     }
    
     &__icon{
@@ -35,27 +33,24 @@
     &__content{
         border-top: 1px solid #{$primary-color--50};
         display: flex;
-        flex-wrap: wrap; 
-               
-        
-        // height: 0px;
+        flex-wrap: wrap;    
         width: 100%;
         padding: #{rem(7px)} #{rem(7px)} #{rem(14px)} #{rem(14px)};  
         box-sizing: border-box;
-        // overflow: hidden;
-        
     }
-    &__content-footer{
+    &__footer{
         margin-top: rem(20px);
         width: 100%;
         align-self:flex-end;
         display: flex;
         justify-content: space-between;
          .cancel{
+            transition: opacity 600ms;
             background-color: inherit;
             color:$primary-color--50;
         }
          .assept{
+            transition: opacity 600ms;
              color:$purple-color;
              background-color: inherit;
          }

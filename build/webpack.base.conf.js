@@ -32,14 +32,14 @@ module.exports = {
       loader: 'babel-loader',
       exclude: '/node_modules/'
     }, 
-  //  {
-  //     test: /\.(png|jpg|gif|svg)$/,
-  //     loader: 'file-loader',
-  //     options: {
-  //       name: `${PATHS.assets}img/[name].[ext]`,
-  //       // exclude:`${PATHS.assets}fonts/`
-  //     }
-  //   },
+   {
+      test: /\.(png|jpg|gif|svg)$/,
+      loader: 'file-loader',
+      options: {
+        name: `${PATHS.assets}img/[name].[ext]`,
+        // exclude:`${PATHS.assets}fonts/`
+      }
+    },
   //  { 
   //     test:/\.$/,
   //     loader:'svg-inline-loader'
@@ -119,7 +119,7 @@ module.exports = {
       filename: './form.html'
     }),
     new CopyWebpackPlugin([
-     { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
+    //  { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },
     ])
   ],

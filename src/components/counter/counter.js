@@ -9,10 +9,7 @@
             dec = el.prev('.dec'), 
             // Кнопка увеличения кол-ва
             inc = el.next('.inc');
-            
-       
-           
-            
+
             dec.on('click', decrement);
             inc.on('click', increment);
             el.on("input",checkInp);
@@ -21,7 +18,6 @@
             if(el[0].value<=min){
                 el[0].value=min;
                 dec.prop("disabled",true);
-
             }
             if(el[0].value>=max){
                 el[0].value=max;
@@ -64,9 +60,10 @@
                  }  
             }
             // Уменьшим значение
-            function decrement() {
+            function decrement(e) {
                 let value = parseInt(el[0].value);
-                        
+                    e.preventDefault()
+                    
                     value--;
                     if(value < max){
                         inc.prop("disabled",false)
@@ -81,7 +78,8 @@
             };
 
             // Увеличим значение
-            function increment() {
+            function increment(e) {
+                e.preventDefault()
                 let value = parseInt(el[0].value);
                     
                 value++;

@@ -34,5 +34,5 @@ mixin dropdown(title,footer=true)
             block
             if footer
                 .field-dropdown__footer
-                    span.h3.cancel Очистить
-                    span.h3.assept Применить
+                    button(type="reset").h3.cancel Очистить
+                    button(type="submit").h3.assept Применить

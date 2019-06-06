@@ -25,10 +25,12 @@ html.html
             section.column
                 +form-elem("text field","default hover/focus")
                     +text-field("email")(class="input-email")
-                +form-elem("dropdown","default")(class="form-element__counter")
-                   include blocks/dropdown-counter-list/dropdown-counter-list.pug                
-                +form-elem("dropdown")(class="form-element__counter")
-                    include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+                form(action="", method="get")
+                    +form-elem("dropdown","default")(class="form-element__counter")
+                        include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                form(action="", method="get")                
+                    +form-elem("dropdown")(class="form-element__counter")
+                        include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
                 form(action="", method="get")
                     +form-elem("filter date dropdown")
                         include blocks/dropdown-date/dropdown-date-filter.pug 

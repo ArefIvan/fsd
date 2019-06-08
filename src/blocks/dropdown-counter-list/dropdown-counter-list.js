@@ -1,6 +1,6 @@
 import counter from  "../../components/counter/counter";
 import "../../components/dropdown/dropdown";
-import { workerData } from "worker_threads";
+
 
 let dist=[
     {word:"спальни",
@@ -52,7 +52,7 @@ function countsList(el){
         let cancelFlag=false;
         counts.each(function(i){
 
-            let str  = this.value + " " + checkExt(titleCoutner[i].innerHTML,this.value)+" ";
+            let str  = this.value + " " + checkExt(titleCoutner[i].innerHTML,this.value,dist)+" ";
 
             titleDropArr.push(str);
             titleDropStr=titleDropArr.join(",");
@@ -77,17 +77,37 @@ function countsList(el){
              }
             }
         }
-        if(str=="спальни"){
-           return ext("спал",["ьня","ьни","ен"])          
+        str=str.split(" ")
+ 
+        
+        for (let i = 0; i < str.length; i++) {
+            let word = str[i]  
+            console.log(word)
+            for (let i = 0; i < dist.length; i++) {
+                // console.log(dist[i].word)
+                if( word== dist[i].word){
+                    // console.log(1)
+                    word = ext(dist[i].root,dist[i].ext)
+                    // console.log(elem)
+                }
+                
+            }
+            str[i]=word
+        console.log(str.join(" "))
         }
-        if(str=="кровати"){
-            return ext("кроват",["ь","и","ей"])
-        }
-        if(str=="ванные комнаты"){
+        return str.join(" ")
+
+        // if(str=="спальни"){
+        //    return ext("спал",["ьня","ьни","ен"])          
+        // }
+        // if(str=="кровати"){
+        //     return ext("кроват",["ь","и","ей"])
+        // }
+        // if(str=="ванные комнаты"){
             
-          return ext("ванн",["ая","ых","ых"]) + " " + ext("комнат",["а","ы",""])
+        //   return ext("ванн",["ая","ых","ых"]) + " " + ext("комнат",["а","ы",""])
           
-        }
+        // }
                 
     }
     counts.each(function(){

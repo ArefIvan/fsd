@@ -43,6 +43,11 @@
      background-color: inherit;
  }
 .nav-test{
-    max-width: 300px;
-    margin: 0 auto;
+    // margin: 0 auto;
+    display:flex;
+
+        &__item{
+            width: rem(260);
+            margin:0 auto;
+        }
 }

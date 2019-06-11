@@ -118,6 +118,11 @@ module.exports = {
       template: `${PATHS.src}/form.pug`,
       filename: './form.html'
     }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/cards.pug`,
+      filename: './cards.html'
+    }),
     new CopyWebpackPlugin([
     //  { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },

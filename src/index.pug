@@ -1,18 +1,17 @@
 include /components/button/button.pug
 -let linkFormElem = "form.html"
-doctype html
-html.html
-  head
-    title test
-  body.main
-    .wrapper
-      nav.nav-test
-        .nav-test__item
-          +btn("form element",linkFormElem)(class="button--gradient button--arrow")
-        //- a(href=linkFormElem) form
-          //- include /img/svg/smile.pug
-          //- include /img/svg/house.pug
-          //- include /img/svg/logo.pug
-          //- object(data=require("./img/1.svg"), type="image/svg+xml")
-          //- img(src="assets/img/1.svg", alt="")
-          //- .img-svg= img
+-let linkCards = "cards.html"
+<!DOCTYPE html>
+html.html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title aref
+    body
+      .wrapper
+        nav.nav-test
+          .nav-test__item
+            +btn("form element",linkFormElem)(class="button--gradient button--arrow")
+          .nav-test__item
+            +btn("cards",linkCards)(class="button--gradient button--arrow")

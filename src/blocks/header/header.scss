@@ -4,16 +4,9 @@
     justify-content: space-between;
     padding:0 rem(140);
 
-    &__logotype,&__nav, &__nav__items, &__auth{
+    &__nav, &__nav__items, &__auth{
         display: flex;
         margin:auto 0;
-    }
-    &__logotype{
-        
-        &__companyName{
-            margin:auto rem(12); 
-        }
-
     }
     &__nav{
         &__item{

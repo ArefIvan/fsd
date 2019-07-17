@@ -5,7 +5,8 @@
 @import "utils/reset.scss";
 @import "utils/components.scss";
 @import "form-element.scss";
-//src\components\button\button.scss
+@import "utils/blocks.scss";
+
 
 
 .html{
@@ -15,7 +16,7 @@
     font-size: $mainFontSize
 }
 .wrapper{
-    max-width: 1200px;
+    max-width: 1440px;
     margin: 20px auto;
 }
 

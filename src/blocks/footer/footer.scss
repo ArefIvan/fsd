@@ -1,0 +1,16 @@
+.footer{
+    padding: rem(100) rem(440);
+    text-align: center;
+     &__socialIcon, .logotype{
+        display: inline-flex;
+        margin: 0 auto;
+    }
+    .logotype{
+        margin-bottom: rem(20);
+    }
+    &__socialIcon{
+        margin-top:rem(25);
+        margin-bottom: rem(10)
+    }
+
+}

@@ -1,0 +1,94 @@
+.header{
+    display: flex;
+    height: rem(70);
+    justify-content: space-between;
+    padding:0 rem(140);
+
+    &__logotype,&__nav, &__nav__items, &__auth{
+        display: flex;
+        margin:auto 0;
+    }
+    &__logotype{
+        
+        &__companyName{
+            margin:auto rem(12); 
+        }
+
+    }
+    &__nav{
+        &__item{
+            margin-right:rem(30);
+            color:$primary-color--50;
+            &--active{
+                color:$primary-color--75;
+                font-weight: bold;
+            }
+        }
+        a{
+            color: inherit;
+        }
+    }
+    &__auth{
+        .button:first-child{
+            margin-right: rem(20);
+        }
+    }
+    &__userName{
+        margin:auto 0;
+        padding-left: rem(30px);
+        color:$primary-color--50;
+        border-left: 1px solid rgba(31, 32, 65, 0.1)
+    }
+    .submenu{
+        
+        position: relative;
+        
+        &::after{
+            // position: absolute;
+            // font-family: "Material Icons";
+            // content:"expand_more";
+            // top:0;
+            // right: 0;
+            // transform:translateX(100%) translateY(5%)
+            content:"";
+            border:solid 1.5px #{$primary-color--50};
+            @include size(rem(7));
+            position: absolute;
+            right: 0;
+            top:0;
+            border-top: 0;
+            border-left:0;
+            transform: translate(200%,100%) rotate(45deg)  ;
+          
+
+        }
+        &:hover .submenu__items{
+            max-height: 300px;
+        }
+        &__items{
+            
+            position:absolute;
+            overflow: hidden;
+            top: 100%;
+            left:calc(100%+#{rem(7)});
+            transition: max-height .5s;
+            max-height: 0px;
+            
+            
+        }
+    }
+
+    .button__title{
+        padding: 0 rem(20);
+    }
+    
+}
+@keyframes submenu{
+
+    1%{
+        opacity:1;
+    }
+    100%{
+        height: 100%;
+    }
+}

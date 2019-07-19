@@ -1,14 +1,13 @@
 -let twitter = require("../../img/svg/twitter.svg")
 -let facebook = require("../../img/svg/facebook.svg")
 -let instagram = require("../../img/svg/instagram.svg")
--let logo = require("../../img/svg/logo.svg")
 footer.footer
     include ../../components/logotype/logotype.pug
     .footer__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
     .footer__socialIcon
-        a(href="#")
+        a.footer__socialIcon__link(href="#")
             img(src=twitter, alt="twitter")
-        a(href="#")
+        a.footer__socialIcon__link(href="#")
             img(src=facebook, alt="facebook")
-        a(href="#")
+        a.footer__socialIcon__link(href="#")
             img(src=instagram, alt="instagram")

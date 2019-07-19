@@ -66,6 +66,9 @@
             left:calc(100%+#{rem(7)});
             transition: max-height .5s;
             max-height: 0px;
+            z-index: 100;
+            background-color: white;
+            padding: rem(3) rem(5);
             
             
         }

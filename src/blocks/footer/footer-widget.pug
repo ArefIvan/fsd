@@ -1,0 +1,57 @@
+-let twitter = require("./img/svg/twitter.svg");
+-let facebook = require("./img/svg/facebook.svg");
+-let instagram = require("./img/svg/instagram.svg");
+include ../../components/text-field/text-field.pug
+footer.footerWidget
+    .footerWidget__items
+        .footerWidget__item
+            include ../../components/logotype/logotype.pug
+            .footerWidget__item__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        .footerWidget__item
+            .footerWidget__item__title Navigation
+                ul.footerWidget__item__nav 
+                    li.footerWidget__item__nav__link
+                        a(href="#") About us
+                    li.footerWidget__item__nav__link
+                        a(href="#") News
+                    li.footerWidget__item__nav__link
+                        a(href="#") Support
+                    li.footerWidget__item__nav__link
+                        a(href="#") Products
+        .footerWidget__item
+            .footerWidget__item__title About us
+                ul.footerWidget__item__nav 
+                    li.footerWidget__item__nav__link
+                        a(href="#") Who we are
+                    li.footerWidget__item__nav__link
+                        a(href="#") Our team
+                    li.footerWidget__item__nav__link
+                        a(href="#") Careers
+                    li.footerWidget__item__nav__link
+                        a(href="#") Investors
+        .footerWidget__item
+            .footerWidget__item__title Support
+                ul.footerWidget__item__nav 
+                    li.footerWidget__item__nav__link
+                        a(href="#") Documentation
+                    li.footerWidget__item__nav__link
+                        a(href="#") Community
+                    li.footerWidget__item__nav__link
+                        a(href="#") Get in Touch
+        .footerWidget__item
+             .footerWidget__item__title Subscribe to our newsletter
+             .footerWidget__item__text Receive our latest news and promotions in your inbox!
+             +text-field("e-mail",true)
+
+
+    .footerWidget__footer
+        .footerWidget__footer__copyrigth  Copyright &copy; 2018 Toxin UI Kit. All rights reserved.
+        .footerWidget__socialIcon
+            a.footerWidget__socialIcon__link(href="#")
+                img(src=twitter, alt="twitter")
+            a.footerWidget__socialIcon__link(href="#")
+                img(src=facebook, alt="facebook")
+            a.footerWidget__socialIcon__link(href="#")
+                img(src=instagram, alt="instagram")
+           
+        

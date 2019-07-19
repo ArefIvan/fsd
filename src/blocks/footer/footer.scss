@@ -10,7 +10,25 @@
     }
     &__socialIcon{
         margin-top:rem(25);
-        margin-bottom: rem(10)
+        margin-bottom: rem(10);
+        &__link:not(:last-child){
+            margin-right: rem(20);
+        }
     }
 
+}
+.footerWidget{
+    display: flex;
+    flex-direction: column;
+    &__items{
+        display: flex;
+        padding:rem(100) rem(140);
+
+
+    }
+    &__item{
+        &:not(:last-child){
+            margin-right:rem(20) 
+        }
+    }
 }

@@ -23,87 +23,90 @@ html.html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title forms
     body.main.main--form
-        .wrapper.wrapper--form 
-            section.column
-                +form-elem("text field","default hover/focus")
-                    +text-field("email")(class="input-email")
-                form(action="", method="get")
-                    +form-elem("dropdown","default")(class="form-element__counter")
-                        include blocks/dropdown-counter-list/dropdown-counter-list.pug
-                form(action="", method="get")                
-                    +form-elem("dropdown")(class="form-element__counter")
-                        include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-                form(action="", method="get")
-                    +form-elem("filter date dropdown")
-                        include blocks/dropdown-date/dropdown-date-filter.pug 
-                form(action="", method="get")
-                    +form-elem()
-                        include blocks/dropdown-date/dropdown-date-two.pug
-                +form-elem("subscription text field")
-                    +text-field("e-mail",true)
-                +form-elem()(class="form-element__expCheckList") 
-                    +dropdown("expandable checkbox list",false)
-                        +checkbox("breackfast","Завтрак")
-                        +checkbox("desk","Письменный стол",true)
-                        +checkbox("feeding chair","Стул для кормления",true)      
-                        +checkbox("child's bed","Кроватка",true)    
-                        +checkbox("tv","Телевизор") 
-                        +checkbox("shampoo2","Шампунь")     
-                        +checkbox("tv2","Телевизор")      
-                        +checkbox("shampoo","Шампунь")
-            section.column
-                form(action="",method='get' name= "")
-                    +form-elem("checkbox button")
-                        +checkbox("smoking","Можно курить")
-                        +checkbox("pets","Можно с питомцами")
-                        +checkbox("guests","Можно пригласить гостей (до 10 человек)")
-                    +form-elem("radio button")(class="form-element--radiobutton")
-                        +radiobutton(["Мужчина","Женщина"],"sex")
-                    +form-elem("toggle")
-                        +toggle("offers","Получать спецпредложения")
-                    +form-elem("like button")
-                        .form-element__like
-                            +like("like",2)
-                            +like("like",12)
-                    +form-elem("rate button")
-                        +rate(5,3)
-                        +rate(5,0,"room-39")
-                    +form-elem("rich checkbox buttons")
-                        +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
-                        +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
-            section.column                
-                 form(action="",method='get' name= "")
-                    +form-elem()
-                        +range("range-slider","range",3000,16000,100,5000,10000)
-                    +form-elem("buttons")
-                        .form-element__button
-                            +btn("click Me")(class="button--gradient")
-                            +btn("Click Me")(disabled class="button--gradient")
-                        .form-element__button
-                            +btn("click Me")(class="button--border")
-                            +btn("Click Me")(class="button--border" disabled)
-                        .form-element__button
-                            +btn("click Me")
-                            +btn("Click Me")(disabled)
-                        +btn("перейти к оплате")(class="button--gradient button--arrow")
-                    +form-elem("pagination")
-                        +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
-                    +form-elem("pagination")
-                        +pagination([16,4,4],"Pagination длинее") 
-                    +form-elem("bullet list")(class="form-element--bullet")
-                        -let bulletListItems = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00 "]
-                        +bulletList(bulletListItems) 
-            setion.column
-                .form__advantage
-                    .form__advantage__content
-                        +avatar(smile,"Комфорт","Шумопоглощающие стены")
-                .form__advantage
-                    .form__advantage__content
-                        +avatar(house,"Удобство","Окно в каждой спальне")
-            .form__review
-                .form__review__up
-                    +avatar(avMurad,"Мурад Сарафанов"," 5 дней назад")
-                .form__review__down
-                    .form__review__like
-                        +like("review",12)
-                    .form__review__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur quos eaque et, dignissimos minima recusandae fugiat alias. Mollitia, iure? Ipsa provident nisi minus aliquid maxime fugiat ut quo! Obcaecati!
+        .wrapper
+            include /blocks/header/header.pug 
+            .wrapper--form
+                section.column
+                    +form-elem("text field","default hover/focus")
+                        +text-field("email")(class="input-email")
+                    form(action="", method="get")
+                        +form-elem("dropdown","default")(class="form-element__counter")
+                            include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                    form(action="", method="get")                
+                        +form-elem("dropdown")(class="form-element__counter")
+                            include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+                    form(action="", method="get")
+                        +form-elem("filter date dropdown")
+                            include blocks/dropdown-date/dropdown-date-filter.pug 
+                    form(action="", method="get")
+                        +form-elem()
+                            include blocks/dropdown-date/dropdown-date-two.pug
+                    +form-elem("subscription text field")
+                        +text-field("e-mail",true)
+                    +form-elem()(class="form-element__expCheckList") 
+                        +dropdown("expandable checkbox list",false)
+                            +checkbox("breackfast","Завтрак")
+                            +checkbox("desk","Письменный стол",true)
+                            +checkbox("feeding chair","Стул для кормления",true)      
+                            +checkbox("child's bed","Кроватка",true)    
+                            +checkbox("tv","Телевизор") 
+                            +checkbox("shampoo2","Шампунь")     
+                            +checkbox("tv2","Телевизор")      
+                            +checkbox("shampoo","Шампунь")
+                section.column
+                    form(action="",method='get' name= "")
+                        +form-elem("checkbox button")
+                            +checkbox("smoking","Можно курить")
+                            +checkbox("pets","Можно с питомцами")
+                            +checkbox("guests","Можно пригласить гостей (до 10 человек)")
+                        +form-elem("radio button")(class="form-element--radiobutton")
+                            +radiobutton(["Мужчина","Женщина"],"sex")
+                        +form-elem("toggle")
+                            +toggle("offers","Получать спецпредложения")
+                        +form-elem("like button")
+                            .form-element__like
+                                +like("like",2)
+                                +like("like",12)
+                        +form-elem("rate button")
+                            +rate(5,3)
+                            +rate(5,0,"room-39")
+                        +form-elem("rich checkbox buttons")
+                            +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
+                            +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
+                section.column                
+                    form(action="",method='get' name= "")
+                        +form-elem()
+                            +range("range-slider","range",3000,16000,100,5000,10000)
+                        +form-elem("buttons")
+                            .form-element__button
+                                +btn("click Me")(class="button--gradient")
+                                +btn("Click Me")(disabled class="button--gradient")
+                            .form-element__button
+                                +btn("click Me")(class="button--border")
+                                +btn("Click Me")(class="button--border" disabled)
+                            .form-element__button
+                                +btn("click Me")
+                                +btn("Click Me")(disabled)
+                            +btn("перейти к оплате")(class="button--gradient button--arrow")
+                        +form-elem("pagination")
+                            +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
+                        +form-elem("pagination")
+                            +pagination([16,4,4],"Pagination длинее") 
+                        +form-elem("bullet list")(class="form-element--bullet")
+                            -let bulletListItems = ["Нельзя с питомцами","Без вечеринок и мероприятий","Время прибытия — после 13:00, а выезд до 12:00 "]
+                            +bulletList(bulletListItems) 
+                section.column
+                    .form__advantage
+                        .form__advantage__content
+                            +avatar(smile,"Комфорт","Шумопоглощающие стены")
+                    .form__advantage
+                        .form__advantage__content
+                            +avatar(house,"Удобство","Окно в каждой спальне")
+                .form__review
+                    .form__review__up
+                        +avatar(avMurad,"Мурад Сарафанов"," 5 дней назад")
+                    .form__review__down
+                        .form__review__like
+                            +like("review",12)
+                        .form__review__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur quos eaque et, dignissimos minima recusandae fugiat alias. Mollitia, iure? Ipsa provident nisi minus aliquid maxime fugiat ut quo! Obcaecati!
+            include /blocks/footer/footer-widget

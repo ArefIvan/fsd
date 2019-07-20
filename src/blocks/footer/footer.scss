@@ -20,15 +20,41 @@
 .footerWidget{
     display: flex;
     flex-direction: column;
-    &__items{
+    &__blocks{
         display: flex;
+        justify-content: space-between;
         padding:rem(100) rem(140);
 
 
     }
-    &__item{
+    &__block{
+        max-width: 25%;
         &:not(:last-child){
             margin-right:rem(20) 
+        }
+        &__title{
+            font-weight: bold;
+        }
+        &__item{
+            margin-top:rem(20);         
+        }
+        &__nav{
+            color:$primary-color--50;
+            a{
+                color:inherit;
+            }
+        }
+    }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        padding: rem(25) rem(140);
+        border-top:1px solid $primary-color--50;
+       
+    }
+    &__socialIcon{
+        &__link:not(:last-child){
+            margin-right: rem(20);
         }
     }
 }

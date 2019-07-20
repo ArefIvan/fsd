@@ -3,45 +3,46 @@
 -let instagram = require("./img/svg/instagram.svg");
 include ../../components/text-field/text-field.pug
 footer.footerWidget
-    .footerWidget__items
-        .footerWidget__item
+    .footerWidget__blocks
+        .footerWidget__block
             include ../../components/logotype/logotype.pug
-            .footerWidget__item__text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-        .footerWidget__item
-            .footerWidget__item__title Navigation
-                ul.footerWidget__item__nav 
-                    li.footerWidget__item__nav__link
-                        a(href="#") About us
-                    li.footerWidget__item__nav__link
-                        a(href="#") News
-                    li.footerWidget__item__nav__link
-                        a(href="#") Support
-                    li.footerWidget__item__nav__link
-                        a(href="#") Products
-        .footerWidget__item
-            .footerWidget__item__title About us
-                ul.footerWidget__item__nav 
-                    li.footerWidget__item__nav__link
-                        a(href="#") Who we are
-                    li.footerWidget__item__nav__link
-                        a(href="#") Our team
-                    li.footerWidget__item__nav__link
-                        a(href="#") Careers
-                    li.footerWidget__item__nav__link
-                        a(href="#") Investors
-        .footerWidget__item
-            .footerWidget__item__title Support
-                ul.footerWidget__item__nav 
-                    li.footerWidget__item__nav__link
-                        a(href="#") Documentation
-                    li.footerWidget__item__nav__link
-                        a(href="#") Community
-                    li.footerWidget__item__nav__link
-                        a(href="#") Get in Touch
-        .footerWidget__item
-             .footerWidget__item__title Subscribe to our newsletter
-             .footerWidget__item__text Receive our latest news and promotions in your inbox!
-             +text-field("e-mail",true)
+            .footerWidget__block__text.footerWidget__block__item Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        .footerWidget__block
+            .footerWidget__block__title Navigation
+            ul.footerWidget__block__nav 
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") About us
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") News
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Support
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Products
+        .footerWidget__block
+            .footerWidget__block__title About us
+            ul.footerWidget__block__nav 
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Who we are
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Our team
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Careers
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Investors
+        .footerWidget__block
+            .footerWidget__block__title Support
+            ul.footerWidget__block__nav 
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Documentation
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Community
+                li.footerWidget__block__nav__link.footerWidget__block__item
+                    a(href="#") Get in Touch
+        .footerWidget__block
+             .footerWidget__block__title Subscribe to our newsletter
+             .footerWidget__block__text.footerWidget__block__item Receive our latest news and promotions in your inbox!
+             form.footerWidget__block__item(action="", method="get")
+                +text-field("e-mail","e-mail",true)
 
 
     .footerWidget__footer

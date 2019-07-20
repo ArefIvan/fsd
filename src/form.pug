@@ -28,7 +28,7 @@ html.html(lang="ru")
             .wrapper--form
                 section.column
                     +form-elem("text field","default hover/focus")
-                        +text-field("email")(class="input-email")
+                        +text-field("email","")(class="input-email")
                     form(action="", method="get")
                         +form-elem("dropdown","default")(class="form-element__counter")
                             include blocks/dropdown-counter-list/dropdown-counter-list.pug
@@ -42,7 +42,7 @@ html.html(lang="ru")
                         +form-elem()
                             include blocks/dropdown-date/dropdown-date-two.pug
                     +form-elem("subscription text field")
-                        +text-field("e-mail",true)
+                        +text-field("e-mail","e-mail",true)
                     +form-elem()(class="form-element__expCheckList") 
                         +dropdown("expandable checkbox list",false)
                             +checkbox("breackfast","Завтрак")

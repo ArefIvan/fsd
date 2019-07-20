@@ -1,24 +1,10 @@
+include ../../components/calendar/calendar
 .field-dropdown.field-dropdown--date
     .field-dropdown__header
         input.field-dropdown__date.field-dropdown__date--one(type="text" placeholder="dd.mm.yyyy" name="")
         i.material-icons.field-dropdown__icon
     .field-dropdown__content 
-        .calendar
-            .calendar__header
-                .material-icons.calendar__arrow.calendar__arrow--prev
-                .calendar__title.h2
-                .material-icons.calendar__arrow.calendar__arrow--next 
-            table.calendar__table
-                thead        
-                    tr.calendar__days-week
-                        td Пн
-                        td Вт
-                        td Ср
-                        td Чт
-                        td Пт
-                        td Сб
-                        td Вс
-                tbody.calendar__content
+        +calendar(true)   
         .field-dropdown__content-footer
             button(type="reset").h3.cancel Очистить
             button(type="submit").h3.assept Применить

@@ -1,0 +1,26 @@
+include ../../../components/text-field/text-field
+include ../../../components/radiobutton/radiobutton
+include ../../../blocks/form-elem/form-elem.pug
+include ../../../components/toggle/toggle
+include ../../../components/button/button.pug
+
+
+.card.registration
+     form(action="", method="get")
+        .card__title.h1 Регистрация аккаунта
+        .card__item
+            +text-field("Имя","firstName")
+            +text-field("Фамилия","surname")
+            +radiobutton(["Мужчина","Женщина"],"sex")
+        .card__item
+            +form-elem("дата рождения")
+                +text-field("ДД.ММ.ГГГГ","dateOfBirth")
+        .card__item
+            +form-elem("данные для входа в сервис")
+                +text-field("email","e-mail")
+                +text-field("Пароль","password")(type="password")
+                +toggle("offers","Получать спецпредложения")
+        .card__item
+             +btn("Перейти к оплате")(class="button--gradient button--arrow")
+
+

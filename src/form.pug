@@ -12,6 +12,7 @@ include components/button/button.pug
 include components/pagination/pagination.pug
 include components/bulletList/bulletList.pug
 include components/avatar/avatar.pug
+include blocks/dropdown-date/dropdown-date-two.pug
 -let smile= require("./img/smile.svg")
 -let house= require("./img/svg/house.svg")
 -let avMurad = require("./img/avatar_murad.jpg")
@@ -40,7 +41,7 @@ html.html(lang="ru")
                             include blocks/dropdown-date/dropdown-date-filter.pug 
                     form(action="", method="get")
                         +form-elem()
-                            include blocks/dropdown-date/dropdown-date-two.pug
+                            +dateTwo(["date1","date2"],["date dropdown","date dropdown"])
                     +form-elem("subscription text field")
                         +text-field("e-mail","e-mail",true)
                     +form-elem()(class="form-element__expCheckList") 

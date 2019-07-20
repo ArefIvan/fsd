@@ -3,6 +3,9 @@
     max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
+    .form-element{
+        margin: rem(20) rem(33);
+    }
 
 }
 .column{

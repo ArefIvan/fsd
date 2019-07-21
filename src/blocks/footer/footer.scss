@@ -1,5 +1,5 @@
 .footer{
-    padding: rem(100) rem(440);
+    padding: rem(100) 0;
     text-align: center;
      &__socialIcon, .logotype{
         display: inline-flex;
@@ -8,12 +8,17 @@
     .logotype{
         margin-bottom: rem(20);
     }
+    &__text{
+        width: rem(560);
+        margin: 0 auto;
+    }
     &__socialIcon{
         margin-top:rem(25);
         margin-bottom: rem(10);
         &__link:not(:last-child){
             margin-right: rem(20);
         }
+
     }
 
 }
@@ -52,9 +57,7 @@
         border-top:1px solid $primary-color--50;
        
     }
-    &__socialIcon{
-        &__link:not(:last-child){
-            margin-right: rem(20);
-        }
-    }
+    // &__socialIcon{
+
+    // }
 }

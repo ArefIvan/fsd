@@ -1,9 +1,12 @@
 .logotype{
     display: flex;
     &__logo{
+        @include size(rem(40));
         margin:auto 0;
     }
     &__companyName{
-        margin:auto rem(12); 
+        margin:auto rem(12);
+        min-width: rem(54); 
+        min-height: rem(14);
     }
 }

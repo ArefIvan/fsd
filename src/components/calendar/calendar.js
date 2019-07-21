@@ -1,7 +1,7 @@
 // function catalogItemCalendar(calendars){
 //   let calendarsEl = document.querySelectorAll(calendars);
   
-  document.querySelector(".calendar")
+  // document.querySelector(".calendar")
   let calendar = function(el) {
     
     let prevBtn = el.querySelector(".calendar__arrow--prev");//кнопка назад
@@ -284,7 +284,7 @@
     }   
   export default {calendar,selectDay,rangeDate,getContentCal};
 
-  calendar(document.querySelector(".calendar"))
+  // calendar(document.querySelector(".calendar"))
   // calendarsEl.forEach(item => {calendar(item)
     
 //   });

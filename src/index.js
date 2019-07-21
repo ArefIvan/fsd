@@ -1,6 +1,7 @@
 
 // JS - ./js/index.js
 import "./form"
+import "./cards"
 // import './components/range/range'
 // import "./components/counter/counter"
 // import "./components/dropdown/dropdown"

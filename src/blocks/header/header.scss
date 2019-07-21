@@ -1,16 +1,30 @@
 .header{
     display: flex;
-    height: rem(70);
+    min-height: rem(70);
     justify-content: space-between;
-    padding:0 rem(140);
-
-    &__nav, &__nav__items, &__auth{
+    padding:rem(20) rem(140);
+    @media screen and (max-width: $desktopWidth) {
+        padding:rem(20) rem(70);
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+      }      
+    &__nav{
         display: flex;
         margin:auto 0;
-    }
-    &__nav{
+        @media screen and (max-width: $desktopWidth){
+            order:-1;
+            flex-basis: 100%;
+            padding-bottom:rem(15);
+        }
+
+        &__items{
+            display: flex;
+            margin:0 auto;
+        }
         &__item{
+            
             margin-right:rem(30);
+
             color:$primary-color--50;
             &--active{
                 color:$primary-color--75;
@@ -22,11 +36,17 @@
         }
     }
     &__auth{
+        line-height: rem(70);
         .button:first-child{
             margin-right: rem(20);
         }
     }
-    &__userName{
+    &__userName{ 
+        @media screen and (max-width: $desktopWidth){
+            border-left: 0;
+            border-top: 1px solid rgba(31, 32, 65, 0.1);
+            padding: rem(5) rem(10);
+        }      
         margin:auto 0;
         padding-left: rem(30px);
         color:$primary-color--50;
@@ -79,7 +99,10 @@
             border-radius: rem(4);
         }
     }
-
+    .button{      
+        display: inline-block;
+        width: auto;
+    }
     .button__title{
         padding: 0 rem(20);
     }

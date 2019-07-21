@@ -4,7 +4,13 @@
     border-radius: rem(4);
     box-shadow: 0 0 rem(25) rgba(0, 0, 0, 0.2);
     padding: rem(40) rem(30) rem(30);
-    & form>*:not(:last-child){
-     margin-bottom: rem(20);   
+    &__item:not(:last-child){
+        margin-bottom: rem(20); 
+        &>*:not(:last-child){
+            margin-bottom: rem(10)
+        }
+    }
+    &__footer{
+        margin-top:rem(30);      
     }
 }

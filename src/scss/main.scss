@@ -4,8 +4,9 @@
 @import "utils/fonts";
 @import "utils/reset.scss";
 @import "utils/components.scss";
-@import "form-element.scss";
 @import "utils/blocks.scss";
+@import "form-element.scss";
+@import "cards.scss";
 
 
 
@@ -18,6 +19,11 @@
 .wrapper{
     max-width: 1440px;
     margin: 20px auto;
+}
+.wrapper-singleform{
+    .card{
+        margin: rem(20) auto;
+    }
 }
 
 .h1{
@@ -45,10 +51,10 @@
  }
 .nav-test{
     // margin: 0 auto;
-    display:flex;
+    // display:flex;
 
         &__item{
             width: rem(260);
-            margin:0 auto;
+            margin:rem(30) auto;
         }
 }

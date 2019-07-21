@@ -1,10 +1,15 @@
 include ../../../blocks/dropdown-date/dropdown-date-two.pug
 include ../../../blocks/form-elem/form-elem.pug
 include ../../../components/button/button.pug
-.card.roomselect
+.card.card-roomselect
      form(action="", method="get")
-        .card__title.h1 Найдём номера под ваши пожелания   
-        +dateTwo(["date-arrival","date-departure"],["прибытие","выезд"])
-        +form-elem("Гости")
-            include ../../../blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-        +btn("Подобрать номер")(class="button--gradient button--arrow")
+        .card__item
+            .card__title.h1 Найдём номера под ваши пожелания
+        .card__item   
+            +dateTwo(["date-arrival","date-departure"],["прибытие","выезд"])
+        .card__item
+            +form-elem("Гости")
+                include ../../../blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+        .card__footer
+            +btn("Подобрать номер")(class="button--gradient button--arrow")
+        

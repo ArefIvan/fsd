@@ -1,5 +1,5 @@
 include ../../components/button/button.pug
--let auth = true;
+-let auth = false;
 
 -let companyName= require("./img/svg/TOXIN.svg");
 //- -let smile= require("./img/smile.svg")
@@ -12,28 +12,24 @@ header.header
             li.header__nav__item.header__nav__item--active
                 a(href="./index.html") Home
             li.header__nav__item
-                a(href="./form.html") About Us
-            li.header__nav__item.submenu Services 
+                a(href="#") About Us
+            li.header__nav__item.submenu Элементы
                 ul.submenu__items
                     li.submenu__item
-                        a(href="") lorem
+                        a(href="./form.html") Элементы форм
                     li.submenu__item 
-                        a(href="") lorem
+                        a(href="./cards.html") Карточки
                     li.submenu__item 
-                        a(href="") lorem
-                    li.submenu__item 
-                        a(href="") lorem
-                    li.submenu__item 
-                        a(href="") lorem
+                        a(href="#") lorem
             li.header__nav__item
-                a(href="./cards.html") Careers
+                a(href="#") Careers
             li.header__nav__item
-                a(href="") News
+                a(href="#") News
             li.header__nav__item
-                a(href="") Documetation
+                a(href="#S") Documetation
     if auth
         .header__userName Cosmin Negoita
     else
         .header__auth
-            +btn("login","#")(class="button--border")
-            +btn("registration","#")(class="button--gradient")
+            +btn("login","./login.html")(class="button--border")
+            +btn("registration","./registration.html")(class="button--gradient")

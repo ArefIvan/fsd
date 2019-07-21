@@ -1,0 +1,14 @@
+include ../../../components/text-field/text-field
+include ../../../components/button/button.pug
+.card.card-login
+    form(action="", method="get")
+        .card__item
+            .card__title.h1 Войти
+        .card__item
+            +text-field("Email","e-mail")
+            +text-field("Пароль","password")(type="password")
+        .card__item
+             +btn("Перейти к оплате")(class="button--gradient button--arrow")
+    .card__footer
+        .card__footer__text Нет аккаунта в Toxin?
+        +btn("Создать","./registration.html")(class="button--border")

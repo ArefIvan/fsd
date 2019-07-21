@@ -67,10 +67,16 @@
             transition: max-height .5s;
             max-height: 0px;
             z-index: 100;
+            // background-color: white;
+            
+            
+            
+        }
+        &__item{
+            margin-top: rem(3);
+            padding: rem(2) rem(7);
             background-color: white;
-            padding: rem(3) rem(5);
-            
-            
+            border-radius: rem(4);
         }
     }
 

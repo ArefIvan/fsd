@@ -123,6 +123,16 @@ module.exports = {
       template: `${PATHS.src}/cards.pug`,
       filename: './cards.html'
     }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/registration-page.pug`,
+      filename: './registration.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/login-page.pug`,
+      filename: './login.html'
+    }),
     new CopyWebpackPlugin([
     //  { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },

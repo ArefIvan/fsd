@@ -15,6 +15,15 @@
     color:$primary-color--75;
     line-height: $mainLineHeight;
     font-size: $mainFontSize;
+    @media screen and (max-width: $desktopWidth) {
+        font-size: 12px;
+  }
+  @media screen and (max-width: $tableWidth) {
+        font-size: 11px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+        font-size: 10px;
+  }
 }
 .wrapper{
     max-width: 1440px;

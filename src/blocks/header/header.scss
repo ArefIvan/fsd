@@ -6,15 +6,23 @@
     @media screen and (max-width: $desktopWidth) {
         padding:rem(20) rem(70);
         flex-wrap: wrap;
-        justify-content: space-evenly;
+        justify-content: space-around;
       }      
+    @media screen and (max-width: $tableWidth ){
+        align-items: flex-start;
+        justify-content: space-between;
+    }
     &__nav{
         display: flex;
         margin:auto 0;
+        flex-grow: 1;
         @media screen and (max-width: $desktopWidth){
             order:-1;
             flex-basis: 100%;
             padding-bottom:rem(15);
+        }
+        @media screen and (max-width: $tableWidth ){
+            display: none;
         }
 
         &__items{
@@ -34,6 +42,7 @@
         a{
             color: inherit;
         }
+
     }
     &__auth{
         line-height: rem(70);
@@ -43,14 +52,65 @@
     }
     &__userName{ 
         @media screen and (max-width: $desktopWidth){
-            border-left: 0;
-            border-top: 1px solid rgba(31, 32, 65, 0.1);
-            padding: rem(5) rem(10);
         }      
-        margin:auto 0;
+        margin: 0;
         padding-left: rem(30px);
         color:$primary-color--50;
         border-left: 1px solid rgba(31, 32, 65, 0.1)
+    }
+
+    &__phonemenu{
+
+        display:none;
+        margin:auto 0;
+        position: relative;
+        flex-grow: 1;
+
+        @media screen and (max-width: $tableWidth ){
+            display: block;
+            order:-1;
+        }
+        &__gamb{
+            height: 40px;
+            transition: height  .5s;
+            overflow: hidden;
+        }
+        &__input{
+            position: absolute;
+            top:0;
+            left:0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+                &:checked~.header__phonemenu__gamb{
+                   height: 0;
+                }
+                &:checked~.header__phonemenu__nav{
+                    max-height: 300px;
+                    opacity: 1;
+                    position: relative;
+                    border:1px solid $primary-color--25;
+                }
+        }
+        &__nav{
+           
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition-property:opacity,max-height;
+            transition-duration: .5s;
+            border:1px solid $primary-color--25;
+            
+            &__close{
+                @include size(rem(15));
+                border:1px solid black;
+                position: absolute;
+                z-index: 100; 
+                top:0;
+                right: 0;
+            }
+        }
+
     }
     .submenu{
         
@@ -93,9 +153,10 @@
             
         }
         &__item{
-            margin-top: rem(3);
+            margin: rem(3) rem(5);
             padding: rem(2) rem(7);
             background-color: white;
+            box-shadow: 0 0 rem(3) rgba(0, 0, 0, 0.2);
             border-radius: rem(4);
         }
     }

@@ -1,13 +1,42 @@
 include ../../components/button/button.pug
--let auth = false;
-//- -let auth = true;
+-let menu = require("./img/svg/menu.svg")
+//- -let auth = false;
+-let auth = true;
 
 -let companyName= require("./img/svg/TOXIN.svg");
 //- -let smile= require("./img/smile.svg")
 
 header.header
     include ../../components/logotype/logotype.pug
-        
+    .header__phonemenu
+        input.header__phonemenu__input#menu(type="checkbox", name="menu")
+        .header__phonemenu__gamb
+            img(src=menu, alt="menu")
+        .header__phonemenu__nav
+            label.header__phonemenu__nav__close(for="menu")               
+            if auth
+                .header__phonemenu__nav__item.header__phonemenu__userName Cosmin Negoita
+            ul.header__phonemenu__nav__items
+                li.header__phonemenu__nav__item
+                    a(href="") Home
+                li.header__phonemenu__nav__item
+                    a(href="") About Us
+                li.header__phonemenu__nav__item  Элементы
+                    ul.header_phonemenu__submenu
+                        li.header_phonemenu__submenu__item
+                            a(href="") Элементы форм
+                        li.header_phonemenu__submenu__item
+                            a(href="") Карточки
+                        li.header_phonemenu__submenu__item
+                            a(href="") lorem
+                li.header__phonemenu__nav__item
+                    a(href="") Careers
+                li.header__phonemenu__nav__item
+                    a(href="") News
+                li.header__phonemenu__nav__item
+                    a(href="") Documetation
+
+           
     nav.header__nav
         ul.header__nav__items
             li.header__nav__item.header__nav__item--active
@@ -28,9 +57,9 @@ header.header
                 a(href="#") News
             li.header__nav__item
                 a(href="#S") Documetation
-    if auth
-        .header__userName Cosmin Negoita
-    else
+        if auth
+            .header__userName Cosmin Negoita
+    if !auth
         .header__auth
             +btn("login","./login.html")(class="button--border")
             +btn("registration","./registration.html")(class="button--gradient")

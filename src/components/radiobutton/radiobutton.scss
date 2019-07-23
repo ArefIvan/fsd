@@ -30,7 +30,8 @@
     &__input{
         height: 0;
         width: 0;
-        position: absolute;           
+        position: absolute;  
+        visibility: hidden;            
         &:checked~.radiobutton__btn{
                 border-color:$purple-color;                
         

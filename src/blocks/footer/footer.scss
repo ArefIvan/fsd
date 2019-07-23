@@ -29,6 +29,13 @@
         display: flex;
         justify-content: space-between;
         padding:rem(100) rem(140);
+        @media screen and (max-width: $desktopWidth){
+            padding: rem(70) rem(100)
+        }
+        @media screen and (max-width: $tableWidth ){
+            padding: rem(30);
+        }
+
 
 
     }
@@ -55,6 +62,12 @@
         justify-content: space-between;
         padding: rem(25) rem(140);
         border-top:1px solid $primary-color--50;
+        @media screen and (max-width: $desktopWidth){
+            padding: rem(20) rem(100)
+        }
+        @media screen and (max-width: $tableWidth ){
+            padding: rem(15);
+        }
        
     }
     // &__socialIcon{

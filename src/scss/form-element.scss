@@ -10,8 +10,16 @@
 }
 .column{
     width: 30%;
-    min-width: 386px;
+    min-width: rem(386);
     margin: 0 auto;
+    @media screen and (max-width: $desktopWidth){
+        width: 50%;
+        
+    }
+    @media screen and (max-width: $tableWidth ){
+        width: 100%;
+        min-width: 0;
+    }
 }
 .form{
     &__advantage{
@@ -28,7 +36,11 @@
         }
     }
     &__review{
+        @media screen and (max-width: $desktopWidth){
+            margin: rem(20) rem(33);
+        }
         width: 60%;
+
         &__down{
             display: flex;
             margin-top: rem(10)

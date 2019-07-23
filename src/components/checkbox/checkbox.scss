@@ -29,7 +29,8 @@
     &__input{
         height: 0;
         width: 0;
-        position: absolute;           
+        position: absolute;
+        visibility: hidden;           
         &:checked~.checkbox__check{
                 border-color:$purple-color;                
         

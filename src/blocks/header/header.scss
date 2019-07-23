@@ -46,6 +46,9 @@
     }
     &__auth{
         line-height: rem(70);
+        @media screen and (max-width: $tableWidth ){
+            display: none;
+        }
         .button:first-child{
             margin-right: rem(20);
         }
@@ -70,6 +73,10 @@
             display: block;
             order:-1;
         }
+
+        a{
+            color:inherit;
+        }
         &__gamb{
             height: 40px;
             transition: height  .5s;
@@ -82,10 +89,12 @@
             opacity: 0;
             width: 100%;
             height: 100%;
+            // visibility: hidden;   
                 &:checked~.header__phonemenu__gamb{
                    height: 0;
                 }
                 &:checked~.header__phonemenu__nav{
+                    display: block;
                     max-height: 300px;
                     opacity: 1;
                     position: relative;
@@ -93,21 +102,58 @@
                 }
         }
         &__nav{
-           
+            display: none;
+            flex-wrap: wrap;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             transition-property:opacity,max-height;
             transition-duration: .5s;
             border:1px solid $primary-color--25;
-            
+            margin-right: rem(10);
+
+            &__item{
+                padding: 2px 20px;
+                border-bottom: 1px solid $primary-color--25;
+                
+                // border-radius: 4px;
+              
+            }
             &__close{
-                @include size(rem(15));
-                border:1px solid black;
-                position: absolute;
-                z-index: 100; 
-                top:0;
-                right: 0;
+                position: relative;
+                margin: rem(8) rem(3) rem(3) rem(10);
+                @include size(14px);
+                &::after,&::before{
+                    content: "";
+                    position: absolute;
+                    width: calc(100%);
+                    left:0; 
+                    height: rem(2);
+                    background-color: $primary-color--50;
+                }  
+                &::after{
+                    transform:  rotate(45deg);
+                }
+                &::before{
+                    transform:  rotate(-45deg);
+                }
+            }
+        }
+        &__auth , &__userName{
+            margin-top:rem(4);
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+
+        }
+        &__auth>*:not(:last-child){
+            padding-right: 10px;
+        }
+        &__submenu{
+            &__item{
+                
+                padding-bottom: 2px;
+                padding-left: 9px;
             }
         }
 

@@ -1,7 +1,16 @@
 include /components/calendar/calendar.pug
 include /blocks/cards/card-room/card-room
--let imgs =[require("./img/rooms/1.jpg"),require("./img/rooms/2.jpg"),require("./img/rooms/3.jpg"),require("./img/rooms/4.jpg")]
--let room888 ={imgs:imgs,number:"888",price:"9900",category:"люкс",rateRoom:"5",review:"145"};
+-let imgs888 =[require("./img/rooms/room800/800_1.jpg"),
+-              require("./img/rooms/room800/800_2.jpg"),
+-              require("./img/rooms/room800/800_3.jpg"),
+-              require("./img/rooms/room800/800_4.jpg")];
+-let imgs840 = [require("./img/rooms/room840/840_1.jpg"),
+-              require("./img/rooms/room840/840_2.jpg"),
+-              require("./img/rooms/room840/840_3.jpg"),
+-              require("./img/rooms/room840/840_4.jpg"),
+-              require("./img/rooms/room840/840_5.jpg")];
+- let room888 ={imgs:imgs888,number:"888",price:"9 900",category:"люкс",rateRoom:"5",review:"145"};
+- let room840 ={imgs:imgs840,number:"840",price:"9 300",rateRoom:"4",review:"65"};
 <!DOCTYPE html>
 html.html(lang="ru")
     head
@@ -23,3 +32,4 @@ html.html(lang="ru")
                     .card.card-calendar
                         +calendar()
                     +cardRoom(room888)
+                    +cardRoom(room840)

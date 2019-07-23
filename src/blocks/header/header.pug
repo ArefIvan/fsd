@@ -1,73 +1,68 @@
 include ../../components/button/button.pug
 -let menu = require("./img/svg/menu.svg")
--let auth = false;
-//- -let auth = true;
-
 -let companyName= require("./img/svg/TOXIN.svg");
-//- -let smile= require("./img/smile.svg")
+include ../../components/logotype/logotype.pug
+mixin header(auth)
+    header.header
+        +logotype("./index.html")
+        .header__phonemenu
+            input.header__phonemenu__input#menu(type="checkbox", name="menu")
+            .header__phonemenu__gamb
+                img(src=menu, alt="menu")
+            .header__phonemenu__nav
+                            
+                if auth
+                    .header__phonemenu__userName Cosmin Negoita
+                        label.header__phonemenu__nav__close(for="menu")  
+                else
+                    .header__phonemenu__auth
+                        a(href="./registration.html") Зарегистрироваться
+                        a(href="./login.html") Войти
+                        label.header__phonemenu__nav__close(for="menu")  
+                ul.header__phonemenu__nav__items
+                    li.header__phonemenu__nav__item
+                        a(href="./index.html") Home
+                    li.header__phonemenu__nav__item
+                        a(href="") About Us
+                    li.header__phonemenu__nav__item  Элементы
+                        ul.header_phonemenu__submenu
+                            li.header__phonemenu__submenu__item
+                                a(href="./form.html") Элементы форм
+                            li.header__phonemenu__submenu__item
+                                a(href="./cards.html") Карточки
+                            li.header__phonemenu__submenu__item
+                                a(href="") lorem
+                    li.header__phonemenu__nav__item
+                        a(href="") Careers
+                    li.header__phonemenu__nav__item
+                        a(href="") News
+                    li.header__phonemenu__nav__item
+                        a(href="") Documetation
 
-header.header
-    include ../../components/logotype/logotype.pug
-    .header__phonemenu
-        input.header__phonemenu__input#menu(type="checkbox", name="menu")
-        .header__phonemenu__gamb
-            img(src=menu, alt="menu")
-        .header__phonemenu__nav
-                         
-            if auth
-                .header__phonemenu__userName Cosmin Negoita
-                    label.header__phonemenu__nav__close(for="menu")  
-            else
-                .header__phonemenu__auth
-                    //- +btn("login","./login.html")(class="button--border")
-                    //- +btn("registration","./registration.html")(class="button--gradient")
-                    a(href="./registration.html") Зарегистрироваться
-                    a(href="./login.html") Войти
-                    label.header__phonemenu__nav__close(for="menu")  
-            ul.header__phonemenu__nav__items
-                li.header__phonemenu__nav__item
+            
+        nav.header__nav
+            ul.header__nav__items
+                li.header__nav__item.header__nav__item--active
                     a(href="./index.html") Home
-                li.header__phonemenu__nav__item
-                    a(href="") About Us
-                li.header__phonemenu__nav__item  Элементы
-                    ul.header_phonemenu__submenu
-                        li.header__phonemenu__submenu__item
+                li.header__nav__item
+                    a(href="#") About Us
+                li.header__nav__item.submenu Элементы
+                    ul.submenu__items
+                        li.submenu__item
                             a(href="./form.html") Элементы форм
-                        li.header__phonemenu__submenu__item
+                        li.submenu__item 
                             a(href="./cards.html") Карточки
-                        li.header__phonemenu__submenu__item
-                            a(href="") lorem
-                li.header__phonemenu__nav__item
-                    a(href="") Careers
-                li.header__phonemenu__nav__item
-                    a(href="") News
-                li.header__phonemenu__nav__item
-                    a(href="") Documetation
-
-           
-    nav.header__nav
-        ul.header__nav__items
-            li.header__nav__item.header__nav__item--active
-                a(href="./index.html") Home
-            li.header__nav__item
-                a(href="#") About Us
-            li.header__nav__item.submenu Элементы
-                ul.submenu__items
-                    li.submenu__item
-                        a(href="./form.html") Элементы форм
-                    li.submenu__item 
-                        a(href="./cards.html") Карточки
-                    li.submenu__item 
-                        a(href="#") lorem
-            li.header__nav__item
-                a(href="#") Careers
-            li.header__nav__item
-                a(href="#") News
-            li.header__nav__item
-                a(href="#") Documetation
-        if auth
-            .header__userName Cosmin Negoita
-    if !auth
-        .header__auth
-            +btn("login","./login.html")(class="button--border")
-            +btn("registration","./registration.html")(class="button--gradient")
+                        li.submenu__item 
+                            a(href="#") lorem
+                li.header__nav__item
+                    a(href="#") Careers
+                li.header__nav__item
+                    a(href="#") News
+                li.header__nav__item
+                    a(href="#") Documetation
+            if auth
+                .header__userName Cosmin Negoita
+        if !auth
+            .header__auth
+                +btn("login","./login.html")(class="button--border")
+                +btn("registration","./registration.html")(class="button--gradient")

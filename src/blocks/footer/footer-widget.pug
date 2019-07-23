@@ -2,10 +2,11 @@
 -let facebook = require("./img/svg/facebook.svg");
 -let instagram = require("./img/svg/instagram.svg");
 include ../../components/text-field/text-field.pug
+include ../../components/logotype/logotype.pug
 footer.footerWidget
     .footerWidget__blocks
         .footerWidget__block
-            include ../../components/logotype/logotype.pug
+            +logotype()
             .footerWidget__block__text.footerWidget__block__item Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
         .footerWidget__block
             .footerWidget__block__title Navigation

@@ -1,3 +1,4 @@
+include /blocks/header/header.pug 
 include /components/calendar/calendar.pug
 include /blocks/cards/card-room/card-room
 -let imgs888 =[require("./img/rooms/room800/800_1.jpg"),
@@ -20,7 +21,7 @@ html.html(lang="ru")
         title cards
     body.main
         .wrapper
-            include /blocks/header/header.pug 
+            +header() 
             .wrapper-cards   
                 section.column    
                     include /blocks/cards/roomselect/roomselect

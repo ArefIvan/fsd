@@ -13,6 +13,7 @@ include components/pagination/pagination.pug
 include components/bulletList/bulletList.pug
 include components/avatar/avatar.pug
 include blocks/dropdown-date/dropdown-date-two.pug
+include /blocks/header/header.pug 
 -let smile= require("./img/smile.svg")
 -let house= require("./img/svg/house.svg")
 -let avMurad = require("./img/avatar_murad.jpg")
@@ -25,7 +26,7 @@ html.html(lang="ru")
         title forms
     body.main.main--form
         .wrapper
-            include /blocks/header/header.pug 
+            +header(true)
             .wrapper--form
                 section.column
                     +form-elem("text field","default hover/focus")

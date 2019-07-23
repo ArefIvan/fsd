@@ -1,5 +1,9 @@
 .logotype{
     display: flex;
+    &__link{
+        display:flex;
+    }
+
     &__logo{
         @include size(rem(40));
         margin:auto 0;

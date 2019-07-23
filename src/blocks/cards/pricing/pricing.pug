@@ -1,43 +1,38 @@
 include ../../../blocks/dropdown-date/dropdown-date-two.pug
 include ../../../blocks/form-elem/form-elem.pug
 include ../../../components/button/button.pug
+include ../../../components/roomprice/roomprice.pug
 .card.pricing
     .card__item
-        .roomprice
-            .roomprice__number 
-                span.roomprice__simb № 
-                span.roomprice__number--big 888 
-                span.roomprice__category люкс
-            .roomprice__price
-                span.roomprice__sum 9900&#x20bd; 
-                span.roomprice__day в сутки
-    .card__item   
-        +dateTwo(["date-arrival","date-departure"],["прибытие","выезд"])
-    .card__item
-        +form-elem("Гости")
-            include ../../../blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-    .card__item
-        .pricing__item
-            .pricing__descr 9900 &#x20bd; x 4 суток
-            .pricing__price 39 960 &#x20bd;
-        .pricing__item
-            .pricing__descr  Сбор за услуги: скидка 2 179 &#x20bd;
-            .pricing__hint 
-                .pricing__hint__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolore quibusdam?
-            .pricing__price 0 &#x20bd;
-        .pricing__item
-            .pricing__descr Сбор за дополнительные услуги
-            .pricing__hint 
-                .pricing__hint__text Voluptatum, dolore quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            .pricing__price 300 &#x20bd;
-    .card__footer
+        +roomprice("888","9 900")
+    form(action="", method="get")
+        .card__item   
+            +dateTwo(["date-arrival","date-departure"],["прибытие","выезд"])
         .card__item
-            .pricing__total.h2
-                .pricing__total__text итого 
-                .pricing__total__dotted 
-                .pricing__total__sum 38 081
-                    span.pricing__total__current &#x20bd;
+            +form-elem("Гости")
+                include ../../../blocks/dropdown-counter-plus/dropdown-counter-plus.pug
         .card__item
-            +btn("Забронировать")(class="button--gradient button--arrow")
+            .pricing__item
+                .pricing__descr 9900 &#x20bd; x 4 суток
+                .pricing__price 39 960 &#x20bd;
+            .pricing__item
+                .pricing__descr  Сбор за услуги: скидка 2 179 &#x20bd;
+                .pricing__hint 
+                    .pricing__hint__text Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, dolore quibusdam?
+                .pricing__price 0 &#x20bd;
+            .pricing__item
+                .pricing__descr Сбор за дополнительные услуги
+                .pricing__hint 
+                    .pricing__hint__text Voluptatum, dolore quibusdam? Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                .pricing__price 300 &#x20bd;
+        .card__footer
+            .card__item
+                .pricing__total.h2
+                    .pricing__total__text итого 
+                    .pricing__total__dotted 
+                    .pricing__total__sum 38 081
+                        span.pricing__total__current &#x20bd;
+            .card__item
+                +btn("Забронировать")(class="button--gradient button--arrow")
         
 

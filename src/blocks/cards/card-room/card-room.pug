@@ -1,0 +1,15 @@
+include ../../../components/roomprice/roomprice.pug
+include ../../../components/rate/rate.pug
+mixin cardRoom(imgs,roomprice,rate,review)
+    .card.card-room
+        .card__item.card-room__slider.owl-carousel
+            each val,index in imgs
+                .card-room__slider__item
+                    img(src=val, alt="")
+        .card__item.card-room__description  
+            +roomprice(roomprice[0],roomprice[1]) 
+            .card-room__footer 
+                +rate(rate[0],rate[1])
+                .card-room__review
+                    span.card-room__review__num=review + " " 
+                    | отзывов

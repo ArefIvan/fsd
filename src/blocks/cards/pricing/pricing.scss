@@ -54,29 +54,3 @@
             }
     }
 }
-.roomprice{
-    display: flex;
-    justify-content: space-between;
-    &__number, &__price{
-        margin:auto 0;
-    }
-    &__number{
-       &--big{
-           font-size: 19px;
-           font-weight: bold;
-       }
-    }
-    &__simb{
-        // font-family: $headersFont;
-        font-weight: bold;
-        
-    }
-    &__category{
-        color:$purple-color;
-    }
-    &__sum{
-        font-weight: bold;
-    }
-
-
-}

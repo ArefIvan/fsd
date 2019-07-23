@@ -1,0 +1,64 @@
+.card-room{
+    overflow: hidden;
+    padding: 0;
+    &__slider{
+        .owl-dots{
+            position: absolute;
+            bottom: rem(15);
+            right: rem(15);
+        }
+        .owl-dot{
+            @include size(rem(10));
+            border:1px solid white !important;
+            border-radius:50%;
+            margin-left:rem(5);
+        }
+        .active{
+            background-color: white !important;
+        }
+        .owl-nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            span{
+                opacity: 0;
+            }
+            .owl-prev ,.owl-next{
+                @include size(rem(45));
+                &:before{
+                    color:white;
+                    font-family: Material Icons;
+                    font-size: 24px;
+                }
+                
+            }
+            .owl-prev::before{             
+                content: "chevron_left";
+            }
+            .owl-next::before{
+
+            
+                content:"chevron_right";
+            }
+        }
+
+    }
+    &__description{
+        padding: 0 rem(20) rem(20) rem(20)
+    }
+    &__footer{
+        display: flex;
+        justify-content: space-between;
+        margin-top:rem(10);
+        padding-top:rem(10); 
+        border-top: 1px solid $primary-color--10
+    }
+    &__review__num{
+        font-weight: bold;
+    }
+}

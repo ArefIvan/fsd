@@ -1,4 +1,5 @@
 import calendar from "./components/calendar/calendar.js"
+import "./blocks/cards/card-room/card-room"
 
     let getContentCal= calendar.getContentCal; 
     let cal = calendar.calendar;

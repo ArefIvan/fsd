@@ -17,6 +17,9 @@
     }
     &__category{
         color:$purple-color;
+        text-transform: uppercase;
+        font-weight: bold;
+
     }
     &__sum{
         font-weight: bold;

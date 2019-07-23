@@ -1,9 +1,10 @@
-mixin roomprice(number,price)
+mixin roomprice(number,price,category)
     .roomprice
         .roomprice__number 
             span.roomprice__simb № 
             span.roomprice__number--big=number+" "
-            span.roomprice__category люкс
+            if category
+                span.roomprice__category=category
         .roomprice__price
             span.roomprice__sum=price 
                 |&#8381; 

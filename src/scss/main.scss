@@ -41,17 +41,21 @@
 
 .h1{
     font: bold 24px/30px  #{$headersFont} ;
+    color:$primary-color;
     
  }
 .h2{
     font: bold 19px/24px  #{$headersFont} ;
-    
+    color:$primary-color;
 }
 .h3{
     font: bold 12px  #{$mainFont} ;
     
     text-transform: uppercase;
 
+}
+.bold{
+    font-weight: bold;
 }
 
 .cancel{

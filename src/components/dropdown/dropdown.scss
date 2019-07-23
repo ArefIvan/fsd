@@ -17,7 +17,8 @@
     }
    
     &__icon{
-        margin:auto rem(10px);
+        margin:auto 0;
+        margin-right: rem(10);
         &::before{
             content:"expand_more";
         }

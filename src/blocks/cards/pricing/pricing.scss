@@ -1,0 +1,82 @@
+.pricing{
+    &__item{
+        display:flex;
+        // justify-content: space-between;
+        
+    }
+    &__price{
+        flex-grow: 1;
+        text-align: right;
+    }
+    &__total{
+        display: flex;
+        line-height: 100% !important; 
+        &__dotted{
+            flex-grow: 1;
+            border-bottom: 1px dotted $primary-color--25;
+        }
+        &__current{
+            font-family: $mainFont;
+        }
+        
+    }
+    &__hint{
+        @include size(rem(20));
+        border:1px solid $primary-color--25;
+        border-radius:50%;
+        position: relative;
+        margin-left: rem(5);
+            &::after{
+                content: "i";
+                position: absolute;
+                top:50%;
+                transform: translate(-50%,-50%);
+                left:50%;
+                color:$primary-color--25;
+            }
+        &:hover &__text{
+            visibility: visible;
+
+        }
+            &__text{
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                border:1px solid $primary-color--25;
+                border-radius: 4px;
+                box-shadow: 0 0 rem(4) rgba(0, 0, 0, 0.2); 
+                background-color: white;
+                z-index: 120;
+                padding: rem(10);
+                visibility: hidden;
+                font-size: rem(11);
+                min-width: rem(200);
+            }
+    }
+}
+.roomprice{
+    display: flex;
+    justify-content: space-between;
+    &__number, &__price{
+        margin:auto 0;
+    }
+    &__number{
+       &--big{
+           font-size: 19px;
+           font-weight: bold;
+       }
+    }
+    &__simb{
+        // font-family: $headersFont;
+        font-weight: bold;
+        
+    }
+    &__category{
+        color:$purple-color;
+    }
+    &__sum{
+        font-weight: bold;
+    }
+
+
+}

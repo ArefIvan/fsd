@@ -1,7 +1,12 @@
 .footer{
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
     padding: rem(100) 0;
     text-align: center;
+
     background-color: white;
+    max-width: $maxWidth;
+    margin: 0 auto;
+    
      &__socialIcon, .logotype{
         display: inline-flex;
         margin: 0 auto;
@@ -27,6 +32,9 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+    max-width: $maxWidth;
+    margin: 0 auto;
     &__blocks{
         display: flex;
         justify-content: space-between;

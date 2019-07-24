@@ -25,8 +25,8 @@ html.html(lang="ru")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title forms
     body.main.main--form
-        .wrapper
-            +header(true)
+        +header(true)
+        .wrapper    
             .wrapper--form
                 section.column
                     +form-elem("text field","default hover/focus")
@@ -111,4 +111,4 @@ html.html(lang="ru")
                         .form__review__like
                             +like("review",12)
                         .form__review__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aspernatur quos eaque et, dignissimos minima recusandae fugiat alias. Mollitia, iure? Ipsa provident nisi minus aliquid maxime fugiat ut quo! Obcaecati!
-            include /blocks/footer/footer-widget
+        include /blocks/footer/footer-widget

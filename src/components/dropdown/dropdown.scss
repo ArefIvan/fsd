@@ -1,4 +1,5 @@
-.field-dropdown{    
+.field-dropdown{ 
+    position: relative;   
     border-radius: rem(4px); 
     color: $primary-color--75;
     border: 1px solid #{$primary-color--25};
@@ -25,17 +26,25 @@
         
     }
     &--expand{
-        border-color:$primary-color--50;        
+        border-color:$primary-color--50;
+        border-bottom: 0;
+        border-radius:rem(4) rem(4) 0 0        
     } 
     &--expand &__content{
         border-top: 1px solid #{$primary-color--50};
         
     }
     &__content{
-        border-top: 1px solid #{$primary-color--50};
+        background-color: white;
+        position: absolute;
+        top:rem(42px);
+        border: 1px solid #{$primary-color--50};
+        border-radius: 0 0 rem(4) rem(4);
+        margin: 0 -1px;
+        z-index: 100;
         display: flex;
         flex-wrap: wrap;    
-        width: 100%;
+        width: calc(100% + 2px);
         padding: #{rem(7px)} #{rem(7px)} #{rem(14px)} #{rem(14px)};  
         box-sizing: border-box;
     }

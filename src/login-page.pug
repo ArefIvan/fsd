@@ -1,5 +1,4 @@
--let linkFormElem = "form.html"
--let linkCards = "cards.html"
+include /blocks/header/header.pug
 <!DOCTYPE html>
 html.html(lang="ru")
     head
@@ -9,6 +8,7 @@ html.html(lang="ru")
         title aref
     body
       .wrapper.wrapper-singleform
-        //- include /blocks/header/header.pug
-        //- include /blocks/cards/login/login.pug
-        //- include /blocks/footer/footer
+        +header()
+        include /blocks/cards/login/login.pug
+        include /blocks/footer/footer-widget
+        

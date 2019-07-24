@@ -2,6 +2,9 @@
     text-decoration: none;
     text-align: center;
     display: block;
+    &:disabled{
+        opacity: 0.5;
+    }
 
     &__link{
         text-decoration: none;
@@ -22,6 +25,19 @@
                 height: rem(40);
             }
     }
+    &--header{
+        width: 100%;
+        height: rem(34px);
+        padding:rem(2) ;
+        border-radius:rem(34px)/2;
+        background: linear-gradient(to bottom,$purple-color, #8ba3f9 );
+            .button__body{              
+                border-radius: rem(30)/2;
+                height: rem(30);
+                line-height: rem(34px);
+            }
+    }
+    
     &--border{
         .button__body{
             background-color: white;

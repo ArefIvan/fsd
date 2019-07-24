@@ -1,8 +1,6 @@
 include /components/button/button.pug
 include /blocks/header/header.pug
 
--let linkFormElem = "form.html"
--let linkCards = "cards.html"
 <!DOCTYPE html>
 html.html(lang="ru")
     head
@@ -13,6 +11,8 @@ html.html(lang="ru")
     body.body.body--landing
         +header()
         .wrapper.wrapper--landing
-            include /blocks/cards/roomselect/roomselect
+            main.main--landing
+                include /blocks/cards/roomselect/roomselect
+                .main--landing__footer Лучшие номера для вашей работы, отдыха и просто вдохновения 
 
         include /blocks/footer/footer-widget

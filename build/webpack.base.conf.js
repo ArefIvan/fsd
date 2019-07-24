@@ -33,10 +33,11 @@ module.exports = {
       exclude: '/node_modules/'
     }, 
    {
-      test: /\.(png|jpg|gif|svg)$/,
+      test: /\.(png|jpg|gif|svg|woff(2)?|ttf|eot)$/,
       loader: 'file-loader',
       options: {
-        name: `${PATHS.assets}img/[name].[ext]`,
+        name: `${PATHS.assets}[path][name].[ext]`,
+        context:"src",
         // exclude:`${PATHS.assets}fonts/`
       }
     },
@@ -45,15 +46,15 @@ module.exports = {
   //     loader:'svg-inline-loader'
   //   },
  
-    {
-      test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file-loader',
-      options: {
-        // exclude:`${PATHS.assets}img/`,
-        name: `${PATHS.assets}fonts/[name].[ext]`,
-        // limit: 1000
-      }
-    },
+    // {
+    //   test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+    //   loader: 'file-loader',
+    //   options: {
+    //     // exclude:`${PATHS.assets}img/`,
+    //     name: `${PATHS.assets}fonts/[name].[ext]`,
+    //     // limit: 1000
+    //   }
+    // },
     {
       test: /\.scss$/,
       use: [
@@ -132,6 +133,11 @@ module.exports = {
       hash: false,
       template: `${PATHS.src}/login-page.pug`,
       filename: './login.html'
+    }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/roomsearch.pug`,
+      filename: './roomsearch.html'
     }),
     new CopyWebpackPlugin([
     //  { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },

@@ -2,8 +2,10 @@
     display: flex;
     min-height: rem(70);
     justify-content: space-between;
-    padding:rem(20) rem(140);
-    background-color: white;
+    padding:rem(15) rem(140);
+    max-width: $maxWidth;
+    margin: 0 auto;
+   
     @media screen and (max-width: $desktopWidth) {
         padding:rem(20) rem(70);
         flex-wrap: wrap;
@@ -12,6 +14,11 @@
     @media screen and (max-width: $tableWidth ){
         align-items: flex-start;
         justify-content: space-between;
+    }
+    &__wrapper{
+        background-color: white;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+
     }
     &__nav{
         display: flex;
@@ -46,7 +53,7 @@
 
     }
     &__auth{
-        line-height: rem(70);
+        // line-height: rem(70);
         @media screen and (max-width: $tableWidth ){
             display: none;
         }

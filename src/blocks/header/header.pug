@@ -3,73 +3,74 @@ include ../../components/button/button.pug
 -let companyName= require("./img/svg/TOXIN.svg");
 include ../../components/logotype/logotype.pug
 mixin header(auth)
-    header.header
-        +logotype("./index.html")
-        .header__phonemenu
-            input.header__phonemenu__input#menu(type="checkbox", name="menu")
-            .header__phonemenu__gamb
-                img(src=menu, alt="menu")
-            .header__phonemenu__nav
-                            
-                if auth
-                    .header__phonemenu__userName Cosmin Negoita
-                        label.header__phonemenu__nav__close(for="menu")  
-                else
-                    .header__phonemenu__auth
-                        a(href="./registration.html") Зарегистрироваться
-                        a(href="./login.html") Войти
-                        label.header__phonemenu__nav__close(for="menu")  
-                ul.header__phonemenu__nav__items
-                    li.header__phonemenu__nav__item
-                        a(href="./index.html") О нас
-                    li.header__phonemenu__nav__item  Услуги
-                        ul.header_phonemenu__submenu
-                            li.header__phonemenu__submenu__item
+    .header__wrapper
+        header.header
+            +logotype("./index.html")
+            .header__phonemenu
+                input.header__phonemenu__input#menu(type="checkbox", name="menu")
+                .header__phonemenu__gamb
+                    img(src=menu, alt="menu")
+                .header__phonemenu__nav
+                                
+                    if auth
+                        .header__phonemenu__userName Cosmin Negoita
+                            label.header__phonemenu__nav__close(for="menu")  
+                    else
+                        .header__phonemenu__auth
+                            a(href="./registration.html") Зарегистрироваться
+                            a(href="./login.html") Войти
+                            label.header__phonemenu__nav__close(for="menu")  
+                    ul.header__phonemenu__nav__items
+                        li.header__phonemenu__nav__item
+                            a(href="./index.html") О нас
+                        li.header__phonemenu__nav__item  Услуги
+                            ul.header_phonemenu__submenu
+                                li.header__phonemenu__submenu__item
+                                    a(href="./form.html") Элементы форм
+                                li.header__phonemenu__submenu__item
+                                    a(href="./cards.html") Карточки
+                                li.header__phonemenu__submenu__item
+                                    a(href="") Еще что-то
+                        li.header__phonemenu__nav__item
+                            a(href="") Вакансии
+                        li.header__phonemenu__nav__item
+                            a(href="") Новости
+                        li.header__phonemenu__nav__item  Соглашения
+                            ul.header_phonemenu__submenu
+                                li.header__phonemenu__submenu__item
+                                    a(href="./form.html") Элементы форм
+                                li.header__phonemenu__submenu__item
+                                    a(href="./cards.html") Карточки
+                                li.header__phonemenu__submenu__item
+                                    a(href="./roomsearch.html") Найти номер      
+            nav.header__nav
+                ul.header__nav__items
+                    li.header__nav__item.header__nav__item--active
+                        a(href="№") О нас
+                    li.header__nav__item.submenu Услуги
+                        ul.submenu__items
+                            li.submenu__item
                                 a(href="./form.html") Элементы форм
-                            li.header__phonemenu__submenu__item
+                            li.submenu__item 
                                 a(href="./cards.html") Карточки
-                            li.header__phonemenu__submenu__item
-                                a(href="") Еще что-то
-                    li.header__phonemenu__nav__item
-                        a(href="") Вакансии
-                    li.header__phonemenu__nav__item
-                        a(href="") Новости
-                    li.header__phonemenu__nav__item  Соглашения
-                        ul.header_phonemenu__submenu
-                            li.header__phonemenu__submenu__item
+                            li.submenu__item 
+                                a(href="#") Еще что то
+                    li.header__nav__item
+                        a(href="#") Вакансии
+                    li.header__nav__item
+                        a(href="#") Новости
+                    li.header__nav__item.submenu Соглашения
+                        ul.submenu__items
+                            li.submenu__item
                                 a(href="./form.html") Элементы форм
-                            li.header__phonemenu__submenu__item
+                            li.submenu__item 
                                 a(href="./cards.html") Карточки
-                            li.header__phonemenu__submenu__item
-                                a(href="") Еще что-то       
-        nav.header__nav
-            ul.header__nav__items
-                li.header__nav__item.header__nav__item--active
-                    a(href="№") О нас
-                li.header__nav__item.submenu Услуги
-                    ul.submenu__items
-                        li.submenu__item
-                            a(href="./form.html") Элементы форм
-                        li.submenu__item 
-                            a(href="./cards.html") Карточки
-                        li.submenu__item 
-                            a(href="#") Еще что то
-                li.header__nav__item
-                    a(href="#") Вакансии
-                li.header__nav__item
-                    a(href="#") Новости
-                li.header__nav__item.submenu Соглашения
-                    ul.submenu__items
-                        li.submenu__item
-                            a(href="./form.html") Элементы форм
-                        li.submenu__item 
-                            a(href="./cards.html") Карточки
-                        li.submenu__item 
-                            a(href="#") Еще что то
+                            li.submenu__item 
+                                a(href="#") Еще что то
 
-            if auth
-                .header__userName Cosmin Negoita
-        if !auth
-            .header__auth
-                +btn("login","./login.html")(class="button--border")
-                +btn("registration","./registration.html")(class="button--gradient")
+                if auth
+                    .header__userName Cosmin Negoita
+            if !auth
+                .header__auth
+                    +btn("Войти","./login.html")(class="button--border button--header")
+                    +btn("Зарегистрироваться","./registration.html")(class="button--gradient button--header")

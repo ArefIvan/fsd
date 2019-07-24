@@ -1,0 +1,17 @@
+.dropdown--counter-plus{
+    position: relative;
+    .field-dropdown__content{
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        left:0;
+        top:rem(40);
+
+        border: 1px solid #{$primary-color--25};
+        border-radius: 0 0 rem(4px) rem(4);
+
+        z-index: 100;
+
+
+    }
+}

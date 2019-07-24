@@ -26,21 +26,39 @@
   }
 }
 .body{
-    &--landing {
-        background:url("../img/landing/image3.png"), no-repeat;
-        background-size: 100%;
-       
+    // &--landing {
+     
+    // }
+.main{
+    &--landing{
         
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: rem(70) rem(150) rem(10);
+        background:url("../img/landing/image3.jpg")  no-repeat;
+        background-size: auto 100%;
+        &__footer{
+            width: rem(300);
+            align-self:flex-end; 
+            text-align: right;
+            color:$primary-color--75;
+        }
     }
+}
     
 }
 .wrapper{
     max-width: 1440px;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh-#{rem(70)});
     margin: 0 auto;
-   
+    &--landing{
+        min-height: 900px;
+        height: 1px; // чтобы сработал height:100% потомка
+    
+    }
 }
 .wrapper-singleform{
     .card{

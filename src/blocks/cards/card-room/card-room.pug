@@ -1,5 +1,12 @@
 include ../../../components/roomprice/roomprice.pug
 include ../../../components/rate/rate.pug
+-let getImgs= function(room,count){
+-  let arr=[],i=0
+-   while (i<count){
+-      arr.push(require("./img/rooms/room"+room+"/img_"+i+".jpg"))
+-      i++}
+-   return arr 
+-}
 mixin cardRoom(room)
     .card.card-room
         .card__item.card-room__slider.owl-carousel

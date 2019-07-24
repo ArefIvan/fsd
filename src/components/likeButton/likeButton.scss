@@ -1,26 +1,22 @@
 .like{ 
-    &__wrapper{        
+    &__wrap{
+    height: rem(20px);
+    width:rem(40px);
+    // border:0px solid transparent;
+    border-radius: rem(10px);
+    background: $primary-color--25 ;
+    padding:rem(1);
+}
+    &__content{        
         position: relative; 
         height: rem(18px);
-        width: rem(38px);
-        border: 0px solid transparent;
+        width: rem(38px);     
         border-radius: rem(9px);
         text-align: right;
         color:$primary-color--25;
         background-color: white;
         line-height: rem(18px);
-            &::before{
-                content:"";
-                position: absolute;
-                z-index: -1;
-                height: rem(20px);
-                width:rem(40px);
-                border:0px solid transparent;
-                border-radius: rem(10px);
-                top:rem(-1px);
-                right:rem(-1px);
-                background: $primary-color--25 ;
-            }
+           
     }   
     &__count{    
         font-size: rem(10px);  
@@ -41,14 +37,14 @@
         width: 0;
         position: absolute;
         visibility: hidden;   
-        &:checked+.like__wrapper{
-            color:$purple-color;
-            &::before{
+        &:checked+.like__wrap{         
             background: linear-gradient(to bottom,$purple-color, #8ba3f9 ) ;
+            .like__content{
+                color:$purple-color; 
             }
            .like__icon{
                &::after{
-                   content: "favorite";
+                   content: "favorite";              
                }
            }
          }

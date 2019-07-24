@@ -1,0 +1,33 @@
+.wrapper--roomsearch{
+    display: flex;
+    padding:rem(30) rem(90);
+    flex-direction: row; 
+}
+.filterroom{
+    width: 30%;
+    padding: 0 rem(25);
+
+    &__item{
+        margin-bottom:rem(30);
+
+        &--input{
+            margin-bottom:rem(20);
+        }
+        &--checkbox{
+            .form-element__header{
+                padding-bottom:rem(15);
+            }
+            .checkbox{
+                padding-bottom: rem(10);
+                    &__subtitle{
+                        padding-top:rem(5);
+                    }
+            }
+        }
+    }
+}
+.rooms{
+    padding: 0 rem(25);
+
+    
+}

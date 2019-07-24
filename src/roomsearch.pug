@@ -1,0 +1,48 @@
+include /components/button/button.pug
+include /blocks/header/header.pug
+include blocks/form-elem/form-elem.pug
+include blocks/dropdown-date/dropdown-date-two.pug
+include components/range/range.pug
+include components/checkbox/checkbox.pug
+include components/avatar/avatar.pug
+
+
+
+<!DOCTYPE html>
+html.html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Найти номер
+    body.body.body--landing
+        +header()
+        .wrapper.wrapper--roomsearch
+            section.filterroom
+                form(action="", method="get")
+                    .filterroom__item.filterroom__item--input
+                        +form-elem("Даты пребывания в отеле")
+                            include blocks/dropdown-date/dropdown-date-filter.pug 
+                    .filterroom__item
+                        +form-elem("Гости")
+                            include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+                    .filterroom__item
+                        +range(["Диапазон цены","Стоимость за сутки пребывания в номере"],"range",3000,16000,100,5000,10000)
+                    .filterroom__item.filterroom__item--checkbox
+                        +form-elem("checkbox button")
+                            +checkbox("smoking","Можно курить")
+                            +checkbox("pets","Можно с питомцами")
+                            +checkbox("guests","Можно пригласить гостей (до 10 человек)")
+                    .filterroom__item.filterroom__item--checkbox
+                        +form-elem("Доступность")
+                            +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
+                            +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
+                    .filterroom__item
+                        +form-elem("Удобства номера")
+                            include blocks/dropdown-counter-list/dropdown-counter-list.pug
+            section.rooms
+                h1.h1 Номера которые мы для вас подобрали
+                
+                
+
+        include /blocks/footer/footer-widget

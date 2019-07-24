@@ -1,11 +1,12 @@
 mixin range(title,name,min=0,max=100,step=1,value1=10,value2=20)
     .range
-        .range__title.h3= title
+        .range__title.h3= title[0]
         .range__values от <span class="range__value-from"></span> до  <span class="range__value-to"></span>
         .range__input-wrapper.range-slide
             span.range__bar
             input(class="range__input" type="range",min=min,max=max step=step name=name+"-from" value=value1)
             input(class="range__input" type="range",min=min,max=max step=step name=name+"-to" value=value2)
+        .range__subtitle= title[1]
 //- .range.range__input-wrapper.range-slide2
 //-     span.range__bar
 //-     input(class="range__input" type="range",min="50",max='250' step="1" name="range" value="23")

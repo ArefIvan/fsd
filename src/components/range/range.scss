@@ -6,8 +6,9 @@
     
     &__title{
         width: 50%;
-
-
+    }
+    &__subtitle{
+        color: $primary-color--50;
     }
     &__values{
         width: 50%;
@@ -17,7 +18,8 @@
 
     &__input-wrapper{
     position: relative;
-    margin: rem(20px);
+    margin-top: rem(20px);
+    margin-bottom:rem(13.5);
     height: rem(20px);
     width: 100%;
     }

@@ -27,7 +27,7 @@
     }
     &--expand{
         border-color:$primary-color--50;
-        border-bottom: 0;
+        border-bottom: 1px solid transparent;
         border-radius:rem(4) rem(4) 0 0        
     } 
     &--expand &__content{

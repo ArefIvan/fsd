@@ -3,6 +3,7 @@ mixin like(name,count)
         input.like__input.like__value(type="text", name=name)
         label.like__label   
             input.like__input(type="checkbox")
-            .like__wrapper
-                .material-icons.like__icon
-                .like__count= count
+            .like__wrap
+                .like__content
+                    .material-icons.like__icon
+                    .like__count= count

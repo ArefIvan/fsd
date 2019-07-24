@@ -38,7 +38,7 @@ module.exports = {
       options: {
         name: `${PATHS.assets}[path][name].[ext]`,
         context:"src",
-        // exclude:`${PATHS.assets}fonts/`
+        exclude:'/node_modules/'
       }
     },
   //  { 

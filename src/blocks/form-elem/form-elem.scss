@@ -11,7 +11,15 @@
         text-transform: uppercase;
         font-size:0.85em;
     }
+    &--toogle, &--like,&--pagination{
+        .form-element__header{
+            padding-bottom: rem(15);
+        }
+    }
     &--radiobutton{
+            .form-element__header{
+                padding-bottom: rem(15);
+            }
          .form-element__content{
             display:flex;
             .radiobutton{
@@ -36,6 +44,9 @@
         }
     }
     &__expCheckList{
+        .form-element__header{
+            padding-bottom: 0;
+        }
         .field-dropdown{
             border:0;
             &__title{
@@ -50,6 +61,16 @@
         }
         .checkbox{
             width: 100%;
+            padding-bottom: rem(10);
+        }
+    }
+    &--checkbox{
+        .form-element__header{
+            padding-bottom:rem(15);
+
+        }
+        .checkbox{
+            padding-bottom: rem(10);
         }
     }
     &__like{

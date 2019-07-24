@@ -1,5 +1,6 @@
 include /components/button/button.pug
 include /blocks/header/header.pug
+
 -let linkFormElem = "form.html"
 -let linkCards = "cards.html"
 <!DOCTYPE html>
@@ -9,12 +10,9 @@ html.html(lang="ru")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title aref
-    body
-      .wrapper
+    body.body.body--landing
         +header()
-        nav.nav-test
-          .nav-test__item
-            +btn("form element",linkFormElem)(class="button--gradient button--arrow")
-          .nav-test__item
-            +btn("cards",linkCards)(class="button--gradient button--arrow")
-        include /blocks/footer/footer
+        .wrapper.wrapper--landing
+            include /blocks/cards/roomselect/roomselect
+
+        include /blocks/footer/footer-widget

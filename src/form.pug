@@ -81,7 +81,7 @@ html.html(lang="ru")
                             +range("range-slider","range",3000,16000,100,5000,10000)
                         +form-elem("buttons")
                             .form-element__button
-                                +btn("click Me")(class="button--gradient")
+                                +btn("click Me","./index.html")(class="button--gradient")
                                 +btn("Click Me")(disabled class="button--gradient")
                             .form-element__button
                                 +btn("click Me")(class="button--border")
@@ -89,7 +89,7 @@ html.html(lang="ru")
                             .form-element__button
                                 +btn("click Me")
                                 +btn("Click Me")(disabled)
-                            +btn("перейти к оплате")(class="button--gradient button--arrow")
+                            +btn("перейти к оплате","./index.html")(class="button--gradient button--arrow")
                         +form-elem("pagination")
                             +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")
                         +form-elem("pagination")

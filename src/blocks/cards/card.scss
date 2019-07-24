@@ -1,9 +1,11 @@
 .card{
+    background-color: white;
     width: rem(380);
     border:1px solid rgba($color: #000000, $alpha: 0.12);
     border-radius: rem(4);
     box-shadow: 0 0 rem(25) rgba(0, 0, 0, 0.2);
     padding: rem(40) rem(30) rem(30);
+    
     &__item:not(:last-child){
         margin-bottom: rem(20); 
         &>*:not(:last-child){

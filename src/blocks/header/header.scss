@@ -3,6 +3,7 @@
     min-height: rem(70);
     justify-content: space-between;
     padding:rem(20) rem(140);
+    background-color: white;
     @media screen and (max-width: $desktopWidth) {
         padding:rem(20) rem(70);
         flex-wrap: wrap;

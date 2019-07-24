@@ -8,11 +8,11 @@ include ../../../components/rate/rate.pug
 -   return arr 
 -}
 mixin cardRoom(room)
-    .card.card-room
+    .card-room
         .card__item.card-room__slider.owl-carousel
             each val,index in room.imgs
                 .card-room__slider__item
-                    img(src=val, alt="")
+                    img.card-room__slider__img(src=val, alt="")
         .card__item.card-room__description  
             +roomprice(room.number,room.price,room.category) 
             .card-room__footer 

@@ -1,6 +1,12 @@
 .card-room{
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     padding: 0;
+    max-width: rem(270);
+    // border:1px solid rgba($color: #000000, $alpha: 0.12);
+    border-radius: rem(4);
+    box-shadow: 0 0 rem(25) rgba(0, 0, 0, 0.2);
     &__slider{
         .owl-dots{
             position: absolute;
@@ -49,6 +55,8 @@
 
     }
     &__description{
+        display: flex;
+        flex-direction: column;
         padding: 0 rem(20) rem(20) rem(20)
     }
     &__footer{

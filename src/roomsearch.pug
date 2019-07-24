@@ -5,8 +5,33 @@ include blocks/dropdown-date/dropdown-date-two.pug
 include components/range/range.pug
 include components/checkbox/checkbox.pug
 include components/avatar/avatar.pug
+include /blocks/cards/card-room/card-room
 
+-let imgs350 = getImgs("350",2)
+-let imgs352 = getImgs("352",4)
+-let imgs444 = getImgs("444",5)
+-let imgs450 = getImgs("450",2)
+-let imgs666 = getImgs("666",3)
+-let imgs678 = getImgs("678",3)
+-let imgs740 = getImgs("740",5)
+-let imgs840 = getImgs("840",5)
+-let imgs856 = getImgs("856",4)
+-let imgs888 = getImgs("888",4)
+-let imgs980 = getImgs("980",2)
+-let imgs982 = getImgs("982",3)
 
+- let room350 ={imgs:imgs350,number:"350",price:"5 000",rateRoom:"3",review:"77"};
+- let room352 ={imgs:imgs352,number:"352",price:"5 000",rateRoom:"3",review:"55"};
+- let room444 ={imgs:imgs444,number:"444",price:"5 000",rateRoom:"3",review:"15"};
+- let room450 ={imgs:imgs450,number:"450",price:"5 300",rateRoom:"4",review:"39"};
+- let room666 ={imgs:imgs666,number:"666",price:"5 000",rateRoom:"5",review:"25"};
+- let room678 ={imgs:imgs678,number:"678",price:"5 500",rateRoom:"5",review:"45"};
+- let room740 ={imgs:imgs740,number:"740",price:"6 000",rateRoom:"4",review:"44"};
+- let room840 ={imgs:imgs840,number:"840",price:"9 900",rateRoom:"4",review:"65"};
+- let room856 ={imgs:imgs856,number:"856",price:"7 300",rateRoom:"5",review:"19"};
+- let room888 ={imgs:imgs888,number:"888",price:"9 900",category:"люкс",rateRoom:"5",review:"145"};
+- let room980 ={imgs:imgs980,number:"980",price:"8 500",category:"люкс",rateRoom:"3",review:"35"};
+- let room982 ={imgs:imgs982,number:"982",price:"5 800",rateRoom:"3",review:"56"};
 
 <!DOCTYPE html>
 html.html(lang="ru")
@@ -19,29 +44,53 @@ html.html(lang="ru")
         +header()
         .wrapper.wrapper--roomsearch
             section.filterroom
-                form(action="", method="get")
-                    .filterroom__item.filterroom__item--input
-                        +form-elem("Даты пребывания в отеле")
-                            include blocks/dropdown-date/dropdown-date-filter.pug 
-                    .filterroom__item
-                        +form-elem("Гости")
-                            include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-                    .filterroom__item
-                        +range(["Диапазон цены","Стоимость за сутки пребывания в номере"],"range",3000,16000,100,5000,10000)
-                    .filterroom__item.filterroom__item--checkbox
-                        +form-elem("checkbox button")
-                            +checkbox("smoking","Можно курить")
-                            +checkbox("pets","Можно с питомцами")
-                            +checkbox("guests","Можно пригласить гостей (до 10 человек)")
-                    .filterroom__item.filterroom__item--checkbox
-                        +form-elem("Доступность")
-                            +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
-                            +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
-                    .filterroom__item
-                        +form-elem("Удобства номера")
-                            include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                .filterroom__item.filterroom__item--input
+                    +form-elem("Даты пребывания в отеле")
+                        include blocks/dropdown-date/dropdown-date-filter.pug 
+                .filterroom__item
+                    +form-elem("Гости")
+                        include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+                .filterroom__item
+                    +range(["Диапазон цены","Стоимость за сутки пребывания в номере"],"range",3000,16000,100,5000,10000)
+                .filterroom__item.filterroom__item--checkbox
+                    +form-elem("checkbox button")
+                        +checkbox("smoking","Можно курить")
+                        +checkbox("pets","Можно с питомцами")
+                        +checkbox("guests","Можно пригласить гостей (до 10 человек)")
+                .filterroom__item.filterroom__item--checkbox
+                    +form-elem("Доступность")
+                        +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
+                        +checkbox("assistent",["Помошник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
+                .filterroom__item
+                    +form-elem("Удобства номера")
+                        include blocks/dropdown-counter-list/dropdown-counter-list.pug
             section.rooms
-                h1.h1 Номера которые мы для вас подобрали
+                h1.h1.rooms__header Номера которые мы для вас подобрали
+                .rooms__items
+                    .rooms__item
+                        +cardRoom(room888)
+                    .rooms__item
+                        +cardRoom(room840)
+                    .rooms__item
+                        +cardRoom(room980)
+                    .rooms__item
+                        +cardRoom(room856)
+                    .rooms__item
+                        +cardRoom(room740)
+                    .rooms__item
+                        +cardRoom(room982)
+                    .rooms__item
+                        +cardRoom(room678)
+                    .rooms__item
+                        +cardRoom(room450)
+                    .rooms__item
+                        +cardRoom(room350)
+                    .rooms__item
+                        +cardRoom(room666)
+                    .rooms__item
+                        +cardRoom(room444)
+                    .rooms__item
+                        +cardRoom(room352)
                 
                 
 

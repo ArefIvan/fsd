@@ -37,14 +37,28 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: rem(70) rem(150) rem(10);
+        // padding: rem(70) rem(150) rem(10);
         background:url("../img/landing/image3.jpg")  no-repeat;
         background-size: auto 100%;
+        // @media screen and (max-width: $tableWidth){
+        //     // padding: rem(70) rem()
+        // }
+        .card{
+            margin:rem(70) rem(150);
+            @media screen and (max-width: $tableWidth){
+                margin:rem(70) auto;
+            }
+        }
         &__footer{
+
             width: rem(300);
+            margin: rem(10) rem(150);
             align-self:flex-end; 
             text-align: right;
             color:$primary-color--75;
+            @media screen and (max-width: $tableWidth){
+                margin:rem(10) auto;
+            }
         }
     }
 }

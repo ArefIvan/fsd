@@ -7,7 +7,7 @@
     max-width: $maxWidth;
     margin: 0 auto;
     
-     &__socialIcon, .logotype{
+     &__socialIcon{
         display: inline-flex;
         margin: 0 auto;
     }
@@ -19,6 +19,7 @@
         margin: 0 auto;
     }
     &__socialIcon{
+        display: inline-flex;
         margin-top:rem(25);
         margin-bottom: rem(10);
         &__link:not(:last-child){
@@ -36,35 +37,78 @@
     max-width: $maxWidth;
     margin: 0 auto;
     &__blocks{
-        display: flex;
+        display: flex;        
         justify-content: space-between;
         padding:rem(100) rem(140);
         @media screen and (max-width: $desktopWidth){
-            padding: rem(70) rem(100)
+            padding: rem(70) rem(100);
+            flex-wrap: wrap;            
+        }
+        @media screen and (max-width: $smDesktopWidth){
+            padding-bottom:rem(10); 
         }
         @media screen and (max-width: $tableWidth ){
             padding: rem(30);
+            padding-bottom:rem(10); 
         }
-
-
-
     }
     &__block{
-        max-width: 25%;
-        &:not(:last-child){
-            margin-right:rem(20) 
+        width: calc(20%-40px);
+        margin-right:rem(40);
+        @media screen and (max-width: $smDesktopWidth){
+            width: calc(30%-40px);
         }
+
         &__title{
             font-weight: bold;
+            
         }
-        &__item{
-            margin-top:rem(20);         
-        }
+        // .logotype{
+            
+        // }
+        &__text{
+            margin-bottom:rem(20);
+            margin-top:rem(20);
+        }      
         &__nav{
             color:$primary-color--50;
+            margin-top:rem(20);
             a{
                 color:inherit;
             }
+            &__link{
+                margin-bottom:rem(20)
+            }
+        }
+
+    }
+    &__logo{
+        width: calc(20%-40px);
+        margin-right:rem(40);
+        @media screen and (max-width: $smDesktopWidth){
+            width: 100%;
+            display:flex;            
+            margin:rem(20) auto rem(5);
+            order:1
+        }
+        @media screen and (max-width: $phoneWidth){
+            margin:rem(5) 
+        }
+    }
+    &__subscribe{
+        width: calc(20%-40px);
+        
+        @media screen and (max-width: $smDesktopWidth){
+            width: 100%;
+            // display:flex;
+            margin:rem(20) auto;
+            .footerWidget__block__text{
+                margin: rem(5) 0;
+            }
+            .field-text{
+                max-width: rem(260);
+            }
+
         }
     }
     &__footer{
@@ -80,7 +124,10 @@
         }
        
     }
-    // &__socialIcon{
+    &__socialIcon{
+        display: inline-flex;
+        
+        // margin: 0 auto;
 
-    // }
+    }
 }

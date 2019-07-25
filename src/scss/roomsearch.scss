@@ -3,8 +3,8 @@
     flex-direction: row; 
 }
 .filterroom{
-    // display: flex;
-    // flex-direction: column;  
+    display: flex;
+    
     padding: 0 rem(20);
 
 
@@ -28,6 +28,12 @@
             }
         }
     }
+    // &__drop{
+    //     width: 10px;
+    //     height: 100%;
+    //     background-color: grey;
+
+    // }
 }
 .rooms{
     padding: 0 rem(25); 

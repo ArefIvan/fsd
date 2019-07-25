@@ -44,26 +44,28 @@ html.html(lang="ru")
         +header()
         .wrapper.wrapper--roomsearch
             section.filterroom
-                .filterroom__item.filterroom__item--input
-                    +form-elem("Даты пребывания в отеле")
-                        include blocks/dropdown-date/dropdown-date-filter.pug 
-                .filterroom__item
-                    +form-elem("Гости")
-                        include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-                .filterroom__item
-                    +range(["Диапазон цены","Стоимость за сутки пребывания в номере"],"range",3000,16000,100,5000,10000)
-                .filterroom__item.filterroom__item--checkbox
-                    +form-elem("checkbox button")
-                        +checkbox("smoking","Можно курить")
-                        +checkbox("pets","Можно с питомцами")
-                        +checkbox("guests","Можно пригласить гостей (до 10 человек)")
-                .filterroom__item.filterroom__item--checkbox
-                    +form-elem("Доступность")
-                        +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
-                        +checkbox("assistent",["Помощник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
-                .filterroom__item
-                    +form-elem("Удобства номера")
-                        include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                .filterroom__items
+                    .filterroom__item.filterroom__item--input
+                        +form-elem("Даты пребывания в отеле")
+                            include blocks/dropdown-date/dropdown-date-filter.pug 
+                    .filterroom__item
+                        +form-elem("Гости")
+                            include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
+                    .filterroom__item
+                        +range(["Диапазон цены","Стоимость за сутки пребывания в номере"],"range",3000,16000,100,5000,10000)
+                    .filterroom__item.filterroom__item--checkbox
+                        +form-elem("checkbox button")
+                            +checkbox("smoking","Можно курить")
+                            +checkbox("pets","Можно с питомцами")
+                            +checkbox("guests","Можно пригласить гостей (до 10 человек)")
+                    .filterroom__item.filterroom__item--checkbox
+                        +form-elem("Доступность")
+                            +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
+                            +checkbox("assistent",["Помощник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
+                    .filterroom__item
+                        +form-elem("Удобства номера")
+                            include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                .filterroom__drop
             section.rooms
                 h1.h1.rooms__header Номера которые мы для вас подобрали
                 .rooms__items

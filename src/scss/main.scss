@@ -73,26 +73,41 @@
         flex-direction: column;
         min-height: 900px;
         height: 1px; // чтобы сработал height:100% потомка
+
+        @media screen and (max-width: $desktopWidth){
+            min-height: 700px;
+        }
+        @media screen and (max-width: $phoneWidth){
+            min-height: 600px;
+        }
     
     }
-}
-.wrapper-singleform{
-    .card{
-        margin: rem(20) auto;
+    &--singleform{
+        min-height: 770px;
+        @media screen and (max-width: $desktopWidth){
+            min-height: 600px;
+        }
+        @media screen and (max-width: $phoneWidth){
+            min-height: 400px;
+        }
+        background:url("../img/landing/reg_back.jpg")  no-repeat;
+        background-size: cover;
+        .card{
+            margin: auto auto;
     }
 }
-
+}
 .h1{
-    font: bold 24px/30px  #{$headersFont} ;
+    font: bold #{rem(24px)}/#{rem(30px)}  #{$headersFont} ;
     color:$primary-color;
     
  }
 .h2{
-    font: bold 19px/24px  #{$headersFont} ;
+    font: bold #{rem(19px)}/#{rem(24px)}  #{$headersFont} ;
     color:$primary-color;
 }
 .h3{
-    font: bold 12px  #{$mainFont} ;
+    font: bold rem(12px)  #{$mainFont} ;
     
     text-transform: uppercase;
 

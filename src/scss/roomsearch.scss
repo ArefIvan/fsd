@@ -1,15 +1,29 @@
 .wrapper--roomsearch{
     display: flex;
     flex-direction: row; 
+    position: relative;
+    overflow: hidden;
+    user-select: none;
 }
 .filterroom{
     display: flex;
-    
-    padding: 0 rem(20);
 
+    
+    @media screen and (max-width: $tableWidth ){
+        position: absolute;
+        left:rem(-306);
+        z-index: 1000;
+        background-color: white;
+        border-radius: 0 rem(4) rem(4) 0;
+    }
+    // visibility: hidden;
+    
+    // padding: 0 rem(20);
+    
 
     &__item{
-        width: rem(266);
+        width: rem(306);
+        padding: 0 rem(20);
         margin:rem(30) auto;
         
 
@@ -28,23 +42,41 @@
             }
         }
     }
-    // &__drop{
-    //     width: 10px;
-    //     height: 100%;
-    //     background-color: grey;
+    &__drop{
 
-    // }
+        width: rem(30);
+        background-color: $primary-color--10;
+        display: none;
+        @media screen and (max-width: $tableWidth ){
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-radius: 0 rem(4) rem(4) 0;
+        }
+        &__item{
+            width: 1px;
+            height: 5%;
+            background-color: $primary-color--25;
+            
+        }
+
+    }
 }
 .rooms{
-    padding: 0 rem(25); 
+    padding: 0 rem(25) rem(20); 
     display: flex;
     flex-wrap: wrap;
     @media screen and (max-width: $smDesktopWidth ){
-        padding:0 rem(10)
+        padding:0 rem(10) rem(20)
     }
+    
     &__header{
         margin:rem(30) auto 0;
         flex-grow: 1;
+        @media screen and (max-width: $tableWidth ){
+            text-align: center;
+            margin: rem(30) rem(10) 0 rem(30)
+        }
     }
 
     &__items{
@@ -56,7 +88,7 @@
     
         .card-room{
             @media screen and (max-width: $desktopWidth){
-                margin: o auto;        
+                margin: 0 auto;        
             }
         }
     }

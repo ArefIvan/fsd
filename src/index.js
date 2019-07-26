@@ -3,6 +3,8 @@
 import "./form"
 import "./cards"
 import "./js/data"
+import "./roomsearch"
+import "./js/ondelay.jquery"
 // import './components/range/range'
 // import "./components/counter/counter"
 // import "./components/dropdown/dropdown"

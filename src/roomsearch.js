@@ -1,25 +1,28 @@
-import "./js/jquery.touchSwipe.min.js"
+
 let filter = $(".filterroom")
 let drop = $(".filterroom__drop")
 let rooms = $(".roomsearch__rooms")
-console.log(1)
+console.log(drop)
 
-rooms.swipe({
-
-    swipeOpen:function(event, direction, distance, duration, fingerCount, fingerData){        
+drop.dblclick(function(){        
         let filterWidht=filter.width()
         let dropWidht=drop.width()
-        console.log(12)
-        if(direction=="right"){
+        console.log(parseInt(filter.css("left")))
+
+        if(parseInt(filter.css("left"))<0){
             filter.animate({
                 left:0
             })
         }
-    }
-    
-}
+        if(parseInt(filter.css("left"))==0){
+            filter.animate({
+                left:"-"+(filterWidht-dropWidht)+"px"
+            })
+        }
 
+    }
 )
+drop.on("thoch")
 // drop.swipe({
 //     swipeClose:
 //     function(event, direction, distance, duration, fingerCount, fingerData){        

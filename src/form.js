@@ -5,6 +5,7 @@ import rating from "./components/rate/rate";
 import range from './components/range/range';
 import like from "./components/likeButton/likeButton";
 import Pagination from "./components/pagination/pagination";
+import "./components/pie-chart/pie-chart"
 
 // PAGINATION
 function catalogItemPagination(elem){
@@ -77,4 +78,6 @@ let likeEl = document.querySelectorAll(elem);
     });
 }
 catalogItemLike(".like")
+// 
+// Pie
 // 

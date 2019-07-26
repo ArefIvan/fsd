@@ -5,7 +5,9 @@ include blocks/dropdown-date/dropdown-date-two.pug
 include components/range/range.pug
 include components/checkbox/checkbox.pug
 include components/avatar/avatar.pug
+include components/dropdown/dropdown.pug
 include /blocks/cards/card-room/card-room
+include components/pagination/pagination.pug
 
 -let imgs350 = getImgs("350",2)
 -let imgs352 = getImgs("352",4)
@@ -65,38 +67,52 @@ html.html(lang="ru")
                     .filterroom__item
                         +form-elem("Удобства номера")
                             include blocks/dropdown-counter-list/dropdown-counter-list.pug
+                    .filterroom__item.filterroom__item--checkbox.filterroom__item--expchecklist
+                            +dropdown("Дополнитьньные удобства",false)
+                                +checkbox("breackfast","Завтрак")
+                                +checkbox("desk","Письменный стол",true)
+                                +checkbox("feeding chair","Стул для кормления",true)      
+                                +checkbox("child's bed","Кроватка",true)    
+                                +checkbox("tv","Телевизор") 
+                                +checkbox("shampoo2","Шампунь")
+                                +checkbox("tv2","Телевизор")      
+                                +checkbox("shampoo","Шампунь")
+                            
+
                 .filterroom__drop
                     .filterroom__drop__item
                     .filterroom__drop__item
                     .filterroom__drop__item
                     
-            section.rooms
-                h1.h1.rooms__header Номера которые мы для вас подобрали
-                .rooms__items
-                    .rooms__item
+            section.roomsearch__rooms
+                h1.h1.roomsearch__rooms__header Номера которые мы для вас подобрали
+                .roomsearch__rooms__items
+                    .roomsearch__rooms__item
                         +cardRoom(room888)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room840)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room980)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room856)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room740)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room982)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room678)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room450)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room350)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room666)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room444)
-                    .rooms__item
+                    .roomsearch__rooms__item
                         +cardRoom(room352)
+                .roomsearch__rooms__pagination        
+                    +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")  
                 
                 
 

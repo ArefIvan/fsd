@@ -35,10 +35,27 @@
                 padding-bottom:rem(15);
             }
             .checkbox{
+                width: 100%;
                 padding-bottom: rem(10);
                     &__subtitle{
                         padding-top:rem(5);
                     }
+            }
+        }
+        &--expchecklist{
+            .field-dropdown{
+                border:0;
+                &__title{
+                    padding:0;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 12px;               
+                }
+                &__content{
+                    border:0;
+                    padding:0;
+                }
+                
             }
         }
     }
@@ -62,48 +79,55 @@
 
     }
 }
-.rooms{
-    padding: 0 rem(25) rem(20); 
-    display: flex;
-    flex-wrap: wrap;
-    @media screen and (max-width: $smDesktopWidth ){
-        padding:0 rem(10) rem(20)
-    }
-    
-    &__header{
-        margin:rem(30) auto 0;
-        flex-grow: 1;
-        @media screen and (max-width: $tableWidth ){
-            text-align: center;
-            margin: rem(30) rem(10) 0 rem(30)
-        }
-    }
-
-    &__items{
+.roomsearch{
+    &__rooms{
+        padding: 0 rem(25) rem(20); 
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
-        align-items:flex-start;
-    
-    
-        .card-room{
-            @media screen and (max-width: $desktopWidth){
-                margin: 0 auto;        
+        @media screen and (max-width: $smDesktopWidth ){
+            padding:0 rem(10) rem(20)
+        }
+        
+        &__header{
+            margin:rem(30) auto 0;
+            flex-grow: 1;
+            @media screen and (max-width: $tableWidth ){
+                text-align: center;
+                margin: rem(30) rem(10) 0 rem(30)
             }
         }
-    }
-    &__item{
-        display: flex;
-        width: 30%;
-        margin-top: rem(20);
 
-        @media screen and (max-width: $desktopWidth){
-            justify-content: center;
-            width: 50%;
+        &__items{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items:flex-start;
+        
+        
+            
         }
-        @media screen and (max-width: $tableWidth ){
-            width: 100%;
+        &__item{
+            display: flex;
+
+            width: 30%;
+            margin-top: rem(20);
+
+            @media screen and (max-width: $desktopWidth){
+                justify-content: center;
+                width: 50%;
+            }
+            @media screen and (max-width: $tableWidth ){
+                width: 100%;
+            }
+            .card-room{            
+                    margin: 0 auto;                   
+            }
         }
+        &__pagination{
+            flex-grow: 1;
+            margin:rem(40) auto rem(80);
+            text-align: center;
+        }
+        
     }
-    
 }

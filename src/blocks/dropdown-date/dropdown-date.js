@@ -114,7 +114,7 @@ export function dropdownDateTwo(el){
     })     
 }; 
 let changeDate =(e,calendar)=>{
-    console.log(calendar)
+    
     let value = e.target.value;          
     let valueStr;
     let now = new Date()

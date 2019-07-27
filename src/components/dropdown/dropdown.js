@@ -13,7 +13,7 @@ function catalogItemDropdown(field){
         })
         assept.on('click',function(e){
             e.preventDefault();
-            console.log(btn)
+           
             btn[0].click();
         })
     };   

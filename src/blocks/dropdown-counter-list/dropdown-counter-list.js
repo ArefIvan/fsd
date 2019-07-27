@@ -30,8 +30,7 @@ function countsList(el){
     let dec=el.find(".dec")
     let inc=el.find(".inc")
     let titleCoutner=el.find(".counter__title")
-    // console.log(assept)
-    // assept.hide()
+
     getTitleDrop()
 
 
@@ -82,32 +81,22 @@ function countsList(el){
         
         for (let i = 0; i < str.length; i++) {
             let word = str[i]  
-            console.log(word)
+            
             for (let i = 0; i < dist.length; i++) {
-                // console.log(dist[i].word)
+                
                 if( word== dist[i].word){
-                    // console.log(1)
+                    
                     word = ext(dist[i].root,dist[i].ext)
-                    // console.log(elem)
+                    
                 }
                 
             }
             str[i]=word
-        console.log(str.join(" "))
+        
         }
         return str.join(" ")
 
-        // if(str=="спальни"){
-        //    return ext("спал",["ьня","ьни","ен"])          
-        // }
-        // if(str=="кровати"){
-        //     return ext("кроват",["ь","и","ей"])
-        // }
-        // if(str=="ванные комнаты"){
-            
-        //   return ext("ванн",["ая","ых","ых"]) + " " + ext("комнат",["а","ы",""])
-          
-        // }
+
                 
     }
     counts.each(function(){

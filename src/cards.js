@@ -6,15 +6,15 @@ import "./blocks/cards/card-room/card-room"
     
 function calendarOne(el){
     let calendar= el.querySelector('.calendar'); //календарь
-    console.log(calendar)
+   
     cal(calendar);
 }
 function catalogCalendarOne(elem){
     let calendarOneEl = document.querySelectorAll(elem);
-    console.log(calendarOneEl)
+    
         calendarOneEl.forEach(item => {
             calendarOne(item)
-            console.log(item)    
+            
         });
     }
 catalogCalendarOne(".card-calendar")

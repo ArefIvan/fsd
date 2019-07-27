@@ -2,12 +2,12 @@
 let filter = $(".filterroom")
 let drop = $(".filterroom__drop")
 let rooms = $(".roomsearch__rooms")
-console.log(drop)
+
 
 drop.dblclick(function(){        
         let filterWidht=filter.width()
         let dropWidht=drop.width()
-        console.log(parseInt(filter.css("left")))
+        
 
         if(parseInt(filter.css("left"))<0){
             filter.animate({

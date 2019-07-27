@@ -25,7 +25,9 @@ function calculateSectors( data ) {
         "#61C0BF", "#DA507A", "#BB3D49", "#DB4547"
     ];
 
-    let l = data.size / 2
+    let center = data.size / 2 //center
+    let l = (data.size/2)-4 //large
+    let stroke = 4 //stroke
     let a = 0 // Angle
     let aRad = 0 // Angle in Rad
     let z = 0 // Size z
@@ -48,14 +50,14 @@ function calculateSectors( data ) {
         }
         
         y = Math.sqrt( z*z - x*x );
-        Y = y;
+        Y = y + 4;
 
         if( a <= 180 ) {
-            X = l + x;
+            X = center + x;
             arcSweep = 0;
         }
         else {
-            X = l - x;
+            X = center - x;
             arcSweep = 1;
         }
 
@@ -67,7 +69,8 @@ function calculateSectors( data ) {
             L: l,
             X: X,
             Y: Y,
-            R: R
+            R: R,
+            C:center
         });
 
         R = R + a;
@@ -87,15 +90,15 @@ sectors.map( function(sector) {
 
     var newSector = document.createElementNS( "http://www.w3.org/2000/svg","path" );
     newSector.setAttributeNS(null, 'fill', sector.color);
-    newSector.setAttributeNS(null, 'd', 'M' + sector.L + ',' + sector.L + ' L' + sector.L + ',0 A' + sector.L + ',' + sector.L + ' 1 0,1 ' + sector.X + ', ' + sector.Y + ' z');
-    newSector.setAttributeNS(null, 'transform', 'rotate(' + sector.R + ', '+ sector.L+', '+ sector.L+')');
+    newSector.setAttributeNS(null, 'd', 'M' + sector.C + ',' + sector.C + ' L' + sector.C + ',4 A' + sector.L + ',' + sector.L + ' 1 0,1 ' + sector.X + ', ' + sector.Y + ' z');
+    newSector.setAttributeNS(null, 'transform', 'rotate(' + sector.R + ', '+ sector.C+', '+ sector.C+')');
 
     newSVG.appendChild(newSector);
 })
-var midCircle = document.createElementNS( "http://www.w3.org/2000/svg","circle" );
-midCircle.setAttributeNS(null, 'cx', data.size * 0.5 );
-midCircle.setAttributeNS(null, 'cy', data.size * 0.5);
-midCircle.setAttributeNS(null, 'r', data.size * 0.4 );
-midCircle.setAttributeNS(null, 'fill', '#ffffff' );
+// var midCircle = document.createElementNS( "http://www.w3.org/2000/svg","circle" );
+// midCircle.setAttributeNS(null, 'cx', data.size * 0.5 );
+// midCircle.setAttributeNS(null, 'cy', data.size * 0.5);
+// midCircle.setAttributeNS(null, 'r', data.size * 0.4 );
+// midCircle.setAttributeNS(null, 'fill', '#ffffff' );
 
 newSVG.appendChild(midCircle);

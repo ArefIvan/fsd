@@ -7,14 +7,14 @@ include ../../../components/rate/rate.pug
 -      i++}
 -   return arr 
 -}
-mixin cardRoom(room)
+mixin cardRoom(imgs,room)
     .card-room
         .card__item.card-room__slider.owl-carousel
-            each val,index in room.imgs
+            each val,index in imgs
                 .card-room__slider__item
                     img.card-room__slider__img(src=val, alt="")
         .card__item.card-room__description  
-            +roomprice(room.number,room.price,room.category) 
+            +roomprice(room) 
             .card-room__footer 
                 +rate(room.rate||"5",room.rateRoom)
                 .card-room__review

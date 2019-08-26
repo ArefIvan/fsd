@@ -1,14 +1,14 @@
 mixin rate(item,rate,name)
     if name
         label    
-            .rate.rate--input(data-rating=rate)
+            span.rate.rate--input(data-rating=rate)
                 input.rate__input(type="text" name=name )
                 - let count = 0
                 while count < item   
                     i.material-icons.rate__item.rate__item--star-border
                     - count++
     else
-         .rate(data-rating=rate)
+         span.rate(data-rating=rate)
                 - let count = 0
                 while count < item   
                     i.material-icons.rate__item.rate__item--star-border

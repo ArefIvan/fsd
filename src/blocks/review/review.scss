@@ -1,0 +1,15 @@
+.review{
+    &__down{
+        display: flex;
+        margin-top: rem(10)
+    }
+    &__like{
+        min-width: rem(48px);
+        .like{
+            margin:0 auto;
+        }
+    }
+    &__text{
+        padding-left: rem(10)
+    }
+}

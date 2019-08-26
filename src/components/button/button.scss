@@ -7,10 +7,14 @@
     }
 
     &__link{
-        text-decoration: none;
+        
+       
         color:inherit;
+
     }
     &__body{
+        display: block;
+        position: relative;
         color:$purple-color;
         line-height: rem(44px);
     }

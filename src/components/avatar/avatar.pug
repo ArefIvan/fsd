@@ -2,10 +2,10 @@ mixin avatar(img,title,subtitle)
     -let alt = img.split("/")
     each val in alt
         - alt=val.split(".")[0]    
-    .avatar
+    .avatar&attributes(attributes)
         .avatar__img
             img(src=img, alt=alt)
         .avatar__titles
-            .avatar__title= title
-            .avatar__subtitle= subtitle
+            .avatar__name= title
+            .avatar__date= subtitle
                 

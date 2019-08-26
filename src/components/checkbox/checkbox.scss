@@ -4,6 +4,7 @@
         align-items:flex-start;
         // margin:10px;
     &__check{
+        display:block;
         position: relative;
         box-sizing: border-box;
         @include size(rem(20px));
@@ -12,6 +13,7 @@
     }
         
     &__icon{
+        display: block;
         width: rem(5px);
         height: rem(7px);
         border: rem(2px) solid transparent;

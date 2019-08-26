@@ -1,13 +1,14 @@
 mixin btn(title,href)
-    button.button.h3&attributes(attributes)
-        if href
-            a.button__link(href=href)
-                .button__body
-                    span.button__title= title
-                    i(class='material-icons button__icon')
+    if href
+        a.button.h3(href=href).button__link&attributes(attributes)
+            span.button__body               
+                span.button__title= title
+                i(class='material-icons button__icon')
+                
                     
-        else
-            .button__body
+    else
+        button.button.h3&attributes(attributes)
+            span.button__body
                 span.button__title= title
                 i(class='material-icons button__icon')
                 

@@ -1,16 +1,83 @@
 .pie-chart{
-    display: inline-block;
+    display: flex;
     &__diagram{
+        display: inline-block;
         position: relative;
     }
-    &__votes{
+    &__votes{        
+        color:transparent;      
         position: absolute;
-        top:0;
-        left:0;
-        @include size(100%);
+        top:50%;
+        left:50%;        
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        transform: translate(-50%,-50%);
+        &__num{
+            font: bold #{rem(19px)}/#{rem(24px)}  #{$headersFont} ;      
+        }
+        &--very_good{   
+            // background: linear-gradient(to bottom,#FFE39C,#FFBA9C); 
+            // background-clip: text;
+            color:#FFE39C;
+        }
+       
+        &--good{
+            
+            // background: -webkit-linear-gradient(to bottom,#BC9CFF,#8BA4F9);
+            // background-clip: text;
+            color:#BC9CFF;
+        }
+        &--indifferently{
+            
+            // background: -webkit-linear-gradient(to bottom,#6FCF97,#66D2EA);
+            // background-clip: text;
+            color:#6FCF97;
+        }
+        &--bad{
+            
+            // background: -webkit-linear-gradient(to bottom,#919191,#3D4975);
+            // background-clip: text;
+            color:#919191;
+        }
     }
+    &__legend{
+        align-self: flex-end;
+        margin-left: rem(30);
+        &__item{
+            display: flex;
+            align-items: center;
+            &::before{
+                content:"";
+                // display: inline-block;
+                @include size(rem(10));
+                border-radius: 50%;
+                margin-right: rem(7px);
+                
+         
+        }
+        &:nth-child(1){
+            &::before{
+                background: linear-gradient(to bottom,#FFE39C,#FFBA9C);
+            }
+        }
+        &:nth-child(2){
+            &::before{
+                background: linear-gradient(to bottom,#BC9CFF,#8BA4F9);
+            }
+        }
+        &:nth-child(3){
+            &::before{
+                background: linear-gradient(to bottom,#6FCF97,#66D2EA);
+            }
+        }
+        &:nth-child(4){
+            &::before{
+                background: linear-gradient(to bottom,#919191,#3D4975);
+            }
+        }
+        }
+    }
+
 }

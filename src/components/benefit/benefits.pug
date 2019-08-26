@@ -1,0 +1,11 @@
+mixin benefit(img,title,subtitle)
+    -let alt = img.split("/")
+    each val in alt
+        - alt=val.split(".")[0]    
+    .benefit
+        .benefit__img
+            img(src=img, alt=alt)
+        .benefit__titles
+            .benefit__name= title
+            .benefit__descr= subtitle
+                

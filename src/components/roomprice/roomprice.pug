@@ -1,11 +1,11 @@
-mixin roomprice(number,price,category)
+mixin roomprice(data)
     .roomprice
         .roomprice__number 
             span.roomprice__simb № 
-            span.roomprice__number--big=number+" "
+            span.roomprice__number--big=data.number+" "
             if category
-                span.roomprice__category=category
+                span.roomprice__category=data.category
         .roomprice__price
-            span.roomprice__sum=price 
+            span.roomprice__sum=data.price 
                 |&#8381; 
             span.roomprice__day в сутки

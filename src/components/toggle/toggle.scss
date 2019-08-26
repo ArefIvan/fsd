@@ -10,6 +10,7 @@
         border-radius: rem(10px);
     }    
     &__icon{
+        display: block;
         @include size(rem(12));
         background: $primary-color--25;
         border-radius: 50%;
@@ -20,6 +21,7 @@
     }
     
     &__input{
+        display: block;        
         visibility: hidden;   
         height: 0;
         width: 0;
@@ -33,7 +35,8 @@
         }
     }
     &__title{
-        columns: $primary-color--75;
+        display: block;
+        color: $primary-color--75;
         padding-left: rem(10px);
 
     }

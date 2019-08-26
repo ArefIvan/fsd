@@ -17,6 +17,8 @@ include /blocks/header/header.pug
 -let smile= require("./img/smile.svg")
 -let house= require("./img/svg/house.svg")
 -let avMurad = require("./img/avatar_murad.jpg")
+-let aref = require("./img/arefiev.jpg")
+
 <!DOCTYPE html>
 html.html(lang="ru")
     head
@@ -27,20 +29,19 @@ html.html(lang="ru")
     body.main.main--form
         +header(true)
         .wrapper.wrapper--form
-            section.column
-                include components/pie-chart/pie-chart.pug   
+            section.column 
                 +form-elem("text field","default hover/focus")
-                    +text-field("email","")(class="input-email")
-                form(action="", method="get")
+                    +text-field("email","E-mail")(class="input-email")
+                form(action="#", method="get")
                     +form-elem("dropdown","default")(class="form-element__counter")
                         include blocks/dropdown-counter-list/dropdown-counter-list.pug
-                form(action="", method="get")                
+                form(action="#", method="get")                
                     +form-elem("dropdown")(class="form-element__counter")
                         include blocks/dropdown-counter-plus/dropdown-counter-plus.pug
-                form(action="", method="get")
+                form(action="#", method="get")
                     +form-elem("filter date dropdown")
                         include blocks/dropdown-date/dropdown-date-filter.pug 
-                form(action="", method="get")
+                form(action="#", method="get")
                     +form-elem()
                         +dateTwo(["date1","date2"],["date dropdown","date dropdown"])
                 +form-elem("subscription text field")
@@ -56,7 +57,7 @@ html.html(lang="ru")
                         +checkbox("tv2","Телевизор")      
                         +checkbox("shampoo","Шампунь")
             section.column
-                form(action="",method='get' name= "")
+                form(action="#",method='get')
                     +form-elem("checkbox button")(class="form-element--checkbox")
                         +checkbox("smoking","Можно курить")
                         +checkbox("pets","Можно с питомцами")
@@ -76,7 +77,7 @@ html.html(lang="ru")
                         +checkbox("corridor",["Широкий коридор","Ширина коридора в номере не менее 91 см"])(class='checkbox--rich')
                         +checkbox("assistent",["Помощник для инвалидов","На 1 этаже вас встретит специалист и проводит до номера."])(class='checkbox--rich')
             section.column                
-                form(action="",method='get' name= "")
+                form(action="#",method='get' )
                     +form-elem()
                         +range(["range-slider"],"range",3000,16000,100,5000,10000)
                     +form-elem("buttons")
@@ -107,7 +108,7 @@ html.html(lang="ru")
                 
             .form__review
                 .form__review__up
-                    +avatar(avMurad,"Мурад Сарафанов"," 5 дней назад")
+                    +avatar(aref,"Мурад Сарафанов"," 5 дней назад")(class="avatar--border")
                 .form__review__down
                     .form__review__like
                         +like("review",12)

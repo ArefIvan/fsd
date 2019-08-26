@@ -1,14 +1,8 @@
 include /blocks/header/header.pug 
 include /components/calendar/calendar.pug
+include /blocks/cards/pricing/pricing.pug
 include /blocks/cards/card-room/card-room
-
-//- IMGS
-
--let imgs840 = getImgs("840",4)
--let imgs888 = getImgs("740",5)
-//- End IMGS
-- let room888 ={imgs:imgs888,number:"888",price:"9 900",category:"люкс",rateRoom:"5",review:"145"};
-- let room840 ={imgs:imgs840,number:"840",price:"9 300",rateRoom:"4",review:"65"};
+-let rooms = require("../src/data/data.json").rooms
 <!DOCTYPE html>
 html.html(lang="ru")
     head
@@ -23,10 +17,11 @@ html.html(lang="ru")
                 include /blocks/cards/roomselect/roomselect
                 include /blocks/cards/registration/registration
             section.column 
-                include /blocks/cards/pricing/pricing.pug
+                +pricing(rooms.room888)
                 include /blocks/cards/login/login
             section.column
                 .card.card-calendar
-                    +calendar()
-                +cardRoom(room888)
-                +cardRoom(room840)
+                    +calendar()   
+                +cardRoom(getImgs(rooms.room888.number,rooms.room888.imgcount),rooms.room888)
+                +cardRoom(getImgs(rooms.room840.number,rooms.room840.imgcount),rooms.room840)
+               

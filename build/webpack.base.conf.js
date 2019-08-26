@@ -139,9 +139,15 @@ module.exports = {
       template: `${PATHS.src}/roomsearch.pug`,
       filename: './roomsearch.html'
     }),
+    new HtmlWebpackPlugin({
+      hash: false,
+      template: `${PATHS.src}/room-info.pug`,
+      filename: './roominfo.html',
+      // file:require("../src/data/data.json")
+    }),
     new CopyWebpackPlugin([
     //  { from: `${PATHS.src}/img/`, to: `${PATHS.assets}img` },
       { from: `${PATHS.src}/static`, to: '' },
-    ])
+    ]),
   ],
 }

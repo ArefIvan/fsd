@@ -1,0 +1,73 @@
+include /blocks/header/header.pug 
+include components/avatar/avatar.pug
+include components/benefit/benefits.pug
+include blocks/review/review.pug
+include components/bulletList/bulletList.pug
+include /blocks/cards/pricing/pricing.pug
+
+
+
+-let room = require("../src/data/data.json").rooms.room666
+-let reviews = require("../src/data/data.json").reviews
+-let imgLarge = require("./img/rooms/room"+room.number+"/img_large.jpg")
+-let imgSmall1 = require("./img/rooms/room"+room.number+"/img_small.jpg")
+-let imgSmall2 = require("./img/rooms/room"+room.number+"/img_small_2.jpg")
+-let smile= require("./img/smile.svg")
+-let house= require("./img/svg/house.svg")
+-let whatshot= require("./img/svg/whatshot.svg")
+-let avMurad = require("./img/avatar_murad.jpg")
+-let avPat = require("./img/avatar_pat.jpg")
+-let aref = require("./img/arefiev.jpg")
+
+<!DOCTYPE html>
+html.html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Найти номер
+    body.body.body--landing
+        +header()
+        main.wrapper.roominfo
+            .roominfo__imgs
+                .roominfo__img.roominfo__img--large
+                    img(src=imgLarge, alt="room №" + room.number )
+                .roominfo__img.roominfo__img--small
+                    img(src=imgSmall1, alt="room №" + room.number)
+                .roominfo__img.roominfo__img--small
+                    img(src=imgSmall2, alt="room №" + room.number)
+            .roominfo__content
+                .roominfo__benefits
+                    .roominfo__content__header.h2 Сведения о номере
+                    +benefit(smile,"Комфорт","Шумопоглощающие стены")
+                    +benefit(house,"Удобство","Окно в каждой спальне")
+                    +benefit(whatshot,"Уют","Номер оснащён камином")
+                .roominfo__piechart
+                    include components/pie-chart/pie-chart.pug                     
+                .roominfo__reviews
+                    .roominfo__content__header
+                        .roominfo__reviews__title.h2 Отзывы посетителей номера
+                        .roominfo__reviews__reviewValue 2 отзыва
+                    +review(aref,reviews.review1)
+                    +review(avPat,reviews.review2)
+                .roominfo__rules
+                    .roominfo__content__header.h2 Правила
+                    +bulletList(room.rules)
+                .roominfo__refund
+                    .roominfo__content__header.h2 Отмена
+                    .roominfo__refund__text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .roominfo__pricing
+                    +pricing(room)
+
+
+
+
+
+
+
+
+
+
+
+
+        include /blocks/footer/footer-widget

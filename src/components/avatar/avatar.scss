@@ -4,17 +4,19 @@
     &__img{
         @include size(rem(48));
         display: flex;
+        border-radius: 50%;
+            overflow: hidden;
+
          img{
             margin:auto;
         }
         
     }
-
     &__titles{
         padding-left: rem(10);
         color: $primary-color--75;
     }
-    &__title{
+    &__name{
         font-weight: bold;
     }
 }

@@ -9,31 +9,7 @@ include components/dropdown/dropdown.pug
 include /blocks/cards/card-room/card-room
 include components/pagination/pagination.pug
 
--let imgs350 = getImgs("350",2)
--let imgs352 = getImgs("352",4)
--let imgs444 = getImgs("444",5)
--let imgs450 = getImgs("450",2)
--let imgs666 = getImgs("666",3)
--let imgs678 = getImgs("678",3)
--let imgs740 = getImgs("740",5)
--let imgs840 = getImgs("840",5)
--let imgs856 = getImgs("856",4)
--let imgs888 = getImgs("888",4)
--let imgs980 = getImgs("980",2)
--let imgs982 = getImgs("982",3)
-
-- let room350 ={imgs:imgs350,number:"350",price:"5 000",rateRoom:"3",review:"77"};
-- let room352 ={imgs:imgs352,number:"352",price:"5 000",rateRoom:"3",review:"55"};
-- let room444 ={imgs:imgs444,number:"444",price:"5 000",rateRoom:"3",review:"15"};
-- let room450 ={imgs:imgs450,number:"450",price:"5 300",rateRoom:"4",review:"39"};
-- let room666 ={imgs:imgs666,number:"666",price:"5 000",rateRoom:"5",review:"25"};
-- let room678 ={imgs:imgs678,number:"678",price:"5 500",rateRoom:"5",review:"45"};
-- let room740 ={imgs:imgs740,number:"740",price:"6 000",rateRoom:"4",review:"44"};
-- let room840 ={imgs:imgs840,number:"840",price:"9 900",rateRoom:"4",review:"65"};
-- let room856 ={imgs:imgs856,number:"856",price:"7 300",rateRoom:"5",review:"19"};
-- let room888 ={imgs:imgs888,number:"888",price:"9 900",category:"люкс",rateRoom:"5",review:"145"};
-- let room980 ={imgs:imgs980,number:"980",price:"8 500",category:"люкс",rateRoom:"3",review:"35"};
-- let room982 ={imgs:imgs982,number:"982",price:"5 800",rateRoom:"3",review:"56"};
+-let rooms = require("../src/data/data.json").rooms
 
 <!DOCTYPE html>
 html.html(lang="ru")
@@ -87,30 +63,10 @@ html.html(lang="ru")
             section.roomsearch__rooms
                 h1.h1.roomsearch__rooms__header Номера которые мы для вас подобрали
                 .roomsearch__rooms__items
-                    .roomsearch__rooms__item
-                        +cardRoom(room888)
-                    .roomsearch__rooms__item
-                        +cardRoom(room840)
-                    .roomsearch__rooms__item
-                        +cardRoom(room980)
-                    .roomsearch__rooms__item
-                        +cardRoom(room856)
-                    .roomsearch__rooms__item
-                        +cardRoom(room740)
-                    .roomsearch__rooms__item
-                        +cardRoom(room982)
-                    .roomsearch__rooms__item
-                        +cardRoom(room678)
-                    .roomsearch__rooms__item
-                        +cardRoom(room450)
-                    .roomsearch__rooms__item
-                        +cardRoom(room350)
-                    .roomsearch__rooms__item
-                        +cardRoom(room666)
-                    .roomsearch__rooms__item
-                        +cardRoom(room444)
-                    .roomsearch__rooms__item
-                        +cardRoom(room352)
+                    each val in rooms
+                        .roomsearch__rooms__item
+                            +cardRoom(getImgs(val.number,val.imgcount),val)
+            
                 .roomsearch__rooms__pagination        
                     +pagination([15,1,1],"1 – 12 из 100+ вариантов аренды")  
                 

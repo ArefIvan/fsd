@@ -1,0 +1,11 @@
+include ../../components/avatar/avatar.pug
+include ../../components/likeButton/likeButton.pug
+
+mixin review(img,data)
+    .review
+        .review__up
+            +avatar(img,data.userName,data.date)
+        .review__down
+            .review__like
+                +like(data.likeName,data.likeValue)
+            .review__text=data.text
